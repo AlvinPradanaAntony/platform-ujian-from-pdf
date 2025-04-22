@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Platform Ujian Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script>
+      // Mengatur worker source untuk pdf.js agar bisa berjalan di lingkungan web
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js";
+    </script>
+    <style>
+      /* Gaya dasar body */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc; /* Tailwind gray-50 */
+      }
+      /* Gaya untuk card opsi jawaban yang dipilih */
+      .selected-answer {
+        border-color: #2563eb; /* Tailwind blue-600 */
+        box-shadow: 0 0 0 2px #bfdbfe; /* Tailwind blue-200 */
+      }
+      /* Gaya untuk card jawaban benar di halaman hasil */
+      .correct-answer-style {
+        border: 2px dashed #16a34a; /* Tailwind green-600 */
+        background-color: #dcfce7; /* Tailwind green-200 */
+        color: #15803d; /* Tailwind green-700 */
+      }
+      /* Gaya untuk card jawaban salah di halaman hasil */
+      .incorrect-answer-style {
+        border: 2px dashed #dc2626; /* Tailwind red-600 */
+        background-color: #fee2e2; /* Tailwind red-200 */
+        color: #b91c1c; /* Tailwind red-700 */
+      }
+      /* Menyembunyikan radio button asli */
+      input[type="radio"] {
+        display: none;
+      }
+      /* Gaya dasar dan transisi untuk card opsi jawaban */
+      .option-card {
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+      }
+      /* Gaya hover untuk card opsi (jika tidak dipilih) */
+      .option-card:not(.selected-answer):not(.bg-blue-100):hover {
+        background-color: #e0e7ff; /* Tailwind indigo-100 */
+      }
+      /* Gaya label di dalam card opsi (hanya style dasar) */
+      .option-card label {
+        cursor: pointer;
+        user-select: none; /* Mencegah teks terseleksi */
+        display: block;
+        /* Padding & Font size akan diatur via Tailwind class di JS */
+      }
+      /* Gaya untuk kotak pembahasan */
+      .explanation-box {
+        margin-top: 1rem;
+        padding: 0.75rem;
+        background-color: #f3f4f6; /* bg-gray-100 */
+        border-left: 4px solid #6b7280; /* border-l-4 border-gray-500 */
+        font-size: 0.875rem; /* text-sm */
+        color: #4b5563; /* text-gray-700 */
+        border-radius: 0.25rem; /* rounded */
+      }
+      /* Gaya animasi spinner loading */
+      .spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border-left-color: #09f; /* Warna animasi */
+        animation: spin 1s ease infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      /* Transisi untuk progress bar */
+      #progress-bar-inner {
+        transition: width 0.3s ease-in-out;
+      }
+      /* Gaya overlay untuk modal */
+      .modal-overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      /* Gaya area tombol upload */
+      #upload-area {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem; /* Mengurangi gap sedikit */
+        align-items: center;
+      }
+      /* Gaya canvas confetti */
+      #confetti-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* Agar tidak mengganggu interaksi */
+        z-index: 9999; /* Tampil di paling atas */
+      }
+      /* Gaya daftar file JSON yang tersedia di modal (hanya style dasar) */
+      #available-json-list button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 0.5rem;
+        border: 1px solid #e5e7eb; /* gray-200 */
+        border-radius: 0.375rem; /* rounded-md */
+        background-color: #f9fafb; /* gray-50 */
+        transition: background-color 0.2s;
+        /* Padding & Font size akan diatur via Tailwind class di JS */
+      }
+      #available-json-list button:hover {
+        background-color: #f3f4f6; /* gray-100 */
+      }
+    </style>
+  </head>
+  <body class="flex items-center justify-center min-h-screen p-4 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div id="app-container" class="w-full max-w-4xl bg-white rounded-lg shadow-xl overflow-hidden relative">
+      <div id="landing-page">
+        <div class="flex flex-col-reverse md:flex-row">
+          <div class="w-full md:w-1/2 p-6 md:p-10 lg:p-12 flex flex-col justify-center">
+            <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 md:mb-4 leading-tight">Ujian Online <span class="text-blue-600">Lebih Mudah</span></h1>
+            <p class="text-base md:text-lg text-gray-600 mb-6 md:mb-8">Unggah file PDF atau JSON berisi soal pilihan ganda Anda, atau pilih dari soal yang tersedia.</p>
+
+            <div id="upload-area">
+              <label for="pdf-upload" class="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 text-sm md:py-3 md:px-6 md:text-base rounded-lg transition duration-300 ease-in-out inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                </svg>
+                Pilih File PDF
+              </label>
+              <input id="pdf-upload" type="file" class="hidden" accept=".pdf" onchange="handleFileUpload(event)" />
+
+              <button id="open-json-modal-button" onclick="openJsonSourceModal()" class="cursor-pointer bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 text-sm md:py-3 md:px-6 md:text-base rounded-lg transition duration-300 ease-in-out inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+                Pilih Sumber JSON
+              </button>
+              <input id="json-upload" type="file" class="hidden" accept=".json" onchange="handleJsonFileUpload(event)" />
+            </div>
+            <p id="upload-status" class="text-gray-600 text-sm mt-4 hidden"></p>
+            <div id="upload-loading" class="hidden mt-4 flex items-center space-x-2 text-gray-600 text-sm">
+              <div class="spinner"></div>
+              <span id="loading-text">Mengunggah file...</span>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 bg-gradient-to-br from-blue-400 to-indigo-500 p-8 flex items-center justify-center min-h-[200px] md:min-h-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32 md:h-48 md:w-48 text-white opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m6 4H9m4-8l-4 4 4 4" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div id="onboarding-page" class="hidden p-6 md:p-10 lg:p-12">
+        <div class="text-center max-w-md mx-auto">
+          <div id="analysis-result">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 md:h-16 md:w-16 text-green-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-3">File Siap!</h2>
+            <p class="text-base md:text-lg text-gray-600 mb-4 md:mb-6">Kami mendeteksi <strong id="question-count" class="text-blue-600">0</strong> soal dari file Anda.</p>
+            <p class="text-base md:text-lg text-gray-600 mb-6 md:mb-8">Apakah Anda siap untuk memulai ujian?</p>
+            <button onclick="startExam()" class="w-full md:w-auto bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 text-sm md:py-3 md:px-8 md:text-base rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-lg">Mulai Ujian</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="exam-page" class="hidden p-4 md:p-8 lg:p-10">
+        <div class="mb-4 flex justify-between items-center">
+          <h2 class="text-lg md:text-xl font-semibold text-gray-800">Soal <span id="current-question-number">1</span> dari <span id="total-questions">0</span></h2>
+        </div>
+        <div class="mb-6 w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+          <div id="progress-bar-inner" class="bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
+        </div>
+        <div id="question-container" class="mb-6 md:mb-8 p-4 md:p-6 bg-gray-50 rounded-lg border border-gray-200">
+          <p id="question-text" class="text-base md:text-lg text-gray-700 mb-5 md:mb-6 font-medium"></p>
+          <div id="options-container" class="space-y-3 md:space-y-4"></div>
+        </div>
+        <div class="flex justify-between items-center">
+          <button id="prev-button" onclick="previousQuestion()" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 text-sm md:px-6 md:text-base rounded-lg transition duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">Sebelumnya</button>
+          <button id="next-button" onclick="nextQuestion()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 text-sm md:px-6 md:text-base rounded-lg transition duration-300 ease-in-out">Berikutnya</button>
+          <button id="submit-button" onclick="submitExam()" class="hidden bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 text-sm md:px-6 md:text-base rounded-lg transition duration-300 ease-in-out">Submit Ujian</button>
+        </div>
+      </div>
+
+      <div id="results-page" class="hidden p-4 md:p-8 lg:p-10">
+        <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-center text-gray-800 mb-6 md:mb-8">Hasil Ujian Anda</h2>
+        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-5 md:p-6 rounded-lg shadow-lg mb-8 md:mb-10 text-center">
+          <p class="text-base md:text-lg mb-2">Skor Akhir Anda:</p>
+          <p id="final-score" class="text-4xl md:text-5xl font-bold mb-2">0 / 100</p>
+          <p id="score-summary" class="text-sm md:text-base text-blue-100">Anda menjawab 0 dari 0 soal dengan benar.</p>
+        </div>
+        <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-5 md:mb-6">Rincian Jawaban & Pembahasan:</h3>
+        <div id="results-details-container" class="space-y-6 md:space-y-8"></div>
+        <div class="mt-8 md:mt-10 text-center">
+          <button onclick="restartExam()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 text-sm md:py-3 md:px-8 md:text-base rounded-lg transition duration-300 ease-in-out">Coba Lagi (Ulangi Ujian)</button>
+        </div>
+      </div>
+
+      <div id="error-confirmation-dialog" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay">
+        <div class="bg-white rounded-lg shadow-xl p-6 max-w-sm w-full text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 text-red-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          <h3 class="text-base md:text-lg font-medium text-gray-900 mb-2">Gagal Memproses PDF</h3>
+          <p id="error-message-detail" class="text-sm text-gray-600 mb-4 md:mb-6">Kami tidak dapat mengurai soal dari file PDF yang Anda unggah.</p>
+          <p class="text-sm text-gray-600 mb-4">Apakah Anda ingin melanjutkan dengan data soal contoh?</p>
+          <div class="flex justify-center space-x-3 md:space-x-4">
+            <button id="use-dummy-data-button" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-3 md:px-4 rounded-lg transition duration-300 ease-in-out text-sm">Ya, Gunakan Contoh</button>
+            <button id="try-another-file-button" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-3 md:px-4 rounded-lg transition duration-300 ease-in-out text-sm">Pilih File Lain</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="json-source-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay">
+        <div class="bg-white rounded-lg shadow-xl p-5 md:p-6 max-w-md w-full">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-base md:text-lg font-medium text-gray-900">Pilih Sumber Soal JSON</h3>
+            <button onclick="closeJsonSourceModal()" class="text-gray-400 hover:text-gray-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div id="json-modal-initial-options">
+            <p class="text-sm text-gray-600 mb-5 md:mb-6">Anda dapat mengunggah file JSON dari perangkat Anda atau memilih dari daftar soal yang sudah tersedia.</p>
+            <div class="space-y-3 md:space-y-4">
+              <button id="trigger-json-upload-button" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 text-sm md:py-3 md:text-base px-4 rounded-lg transition duration-300 ease-in-out flex items-center justify-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                </svg>
+                <span>Unggah File JSON</span>
+              </button>
+              <button id="show-available-json-button" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 text-sm md:py-3 md:text-base px-4 rounded-lg transition duration-300 ease-in-out flex items-center justify-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                </svg>
+                <span>Pilih Soal Tersedia</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="json-modal-available-list" class="hidden">
+            <p class="text-sm text-gray-600 mb-4">Pilih salah satu set soal berikut:</p>
+            <div id="available-json-list" class="max-h-60 overflow-y-auto mb-4"></div>
+            <button onclick="showInitialJsonOptions()" class="w-full text-sm text-blue-600 hover:underline">Kembali</button>
+          </div>
+        </div>
+      </div>
+
+      <canvas id="confetti-canvas"></canvas>
+    </div>
+
+    <script>
+      // --- State Aplikasi (Variabel Global) ---
+      let currentPage = "landing-page"; // Halaman aktif saat ini
+      let questions = []; // Array untuk menyimpan data soal
+      let userAnswers = []; // Array untuk menyimpan jawaban pengguna
+      let currentQuestionIndex = 0; // Indeks soal yang ditampilkan
+      let score = 0; // Skor akhir
+
+      // --- Data Soal Contoh (Digunakan jika PDF gagal atau sebagai fallback) ---
+      const mockQuestions = [
+        { question: "Apa ibu kota negara Indonesia?", options: ["Jakarta", "Bandung", "Surabaya", "Yogyakarta"], correctAnswer: 0, explanation: "Jakarta adalah ibu kota resmi Republik Indonesia sesuai dengan Undang-Undang." },
+        { question: "Siapakah presiden pertama Republik Indonesia?", options: ["Soeharto", "Joko Widodo", "Soekarno", "B.J. Habibie"], correctAnswer: 2, explanation: "Ir. Soekarno adalah proklamator kemerdekaan sekaligus presiden pertama Indonesia." },
+        { question: "Gunung tertinggi di Indonesia adalah...", options: ["Gunung Semeru", "Gunung Rinjani", "Puncak Jaya", "Gunung Kerinci"], correctAnswer: 2, explanation: "Puncak Jaya (Cartensz Pyramid) adalah puncak tertinggi di Indonesia." },
+        { question: "Apa warna bendera Indonesia?", options: ["Merah Putih", "Putih Merah", "Biru Putih", "Merah Kuning"], correctAnswer: 0, explanation: "Bendera Indonesia adalah Sang Merah Putih." },
+        { question: "Pulau terbesar di Indonesia berdasarkan luas wilayah adalah...", options: ["Jawa", "Sumatra", "Kalimantan (bagian Indonesia)", "Papua (bagian Indonesia)"], correctAnswer: 3, explanation: "Bagian Indonesia di Pulau Papua memiliki luas daratan terbesar." },
+      ];
+
+      // --- SIMULASI HASIL BUILD STEP ---
+      const availableSoalFiles = ["soal-verbal-logic1.json","soal-verbal-logic2.json","soal-tkd-word-classification1.json","soal-tkd-word-classification2.json","soal-akhlak.json","soal-akhlak2.json","soal-twk1.json",];
+      // --- AKHIR SIMULASI HASIL BUILD STEP ---
+
+      // --- SIMULASI KONTEN FILE JSON ---
+      const availableJsonData = {
+        "soal_pengetahuan_umum.json": [
+          { question: "Apa ibu kota negara Indonesia?", options: ["Jakarta", "Bandung", "Surabaya", "Yogyakarta"], correctAnswer: 0, explanation: "Jakarta adalah ibu kota resmi Republik Indonesia sesuai dengan Undang-Undang." },
+          { question: "Siapakah presiden pertama Republik Indonesia?", options: ["Soeharto", "Joko Widodo", "Soekarno", "B.J. Habibie"], correctAnswer: 2, explanation: "Ir. Soekarno adalah proklamator kemerdekaan sekaligus presiden pertama Indonesia." },
+          { question: "Gunung tertinggi di Indonesia adalah...", options: ["Gunung Semeru", "Gunung Rinjani", "Puncak Jaya", "Gunung Kerinci"], correctAnswer: 2, explanation: "Puncak Jaya (Cartensz Pyramid) adalah puncak tertinggi di Indonesia." },
+        ],
+        "soal_matematika_dasar.json": [
+          { question: "Berapa hasil dari 5 + 7?", options: ["10", "11", "12", "13"], correctAnswer: 2, explanation: "5 + 7 = 12" },
+          { question: "Berapa hasil dari 3 * 4?", options: ["9", "10", "11", "12"], correctAnswer: 3, explanation: "3 dikali 4 sama dengan 12" },
+          { question: "Mana yang lebih besar, 1/2 atau 1/4?", options: ["1/2", "1/4", "Sama besar"], correctAnswer: 0, explanation: "Setengah (1/2) lebih besar dari seperempat (1/4)." },
+        ],
+        "soal_kosong.json": [],
+      };
+      // --- AKHIR SIMULASI KONTEN FILE JSON ---
+
+      // --- Elemen DOM ---
+      const appContainer = document.getElementById("app-container");
+      const landingPage = document.getElementById("landing-page");
+      const onboardingPage = document.getElementById("onboarding-page");
+      const examPage = document.getElementById("exam-page");
+      const resultsPage = document.getElementById("results-page");
+      const uploadArea = document.getElementById("upload-area");
+      const uploadLoading = document.getElementById("upload-loading");
+      const loadingText = document.getElementById("loading-text");
+      const uploadStatusEl = document.getElementById("upload-status");
+      const pdfUploadInput = document.getElementById("pdf-upload");
+      const jsonUploadInput = document.getElementById("json-upload");
+      const openJsonModalButton = document.getElementById("open-json-modal-button");
+      const analysisResult = document.getElementById("analysis-result");
+      const questionCountEl = document.getElementById("question-count");
+      const currentQuestionNumberEl = document.getElementById("current-question-number");
+      const totalQuestionsEl = document.getElementById("total-questions");
+      const questionTextEl = document.getElementById("question-text");
+      const optionsContainerEl = document.getElementById("options-container");
+      const prevButton = document.getElementById("prev-button");
+      const nextButton = document.getElementById("next-button");
+      const submitButton = document.getElementById("submit-button");
+      const progressBarInner = document.getElementById("progress-bar-inner");
+      const finalScoreEl = document.getElementById("final-score");
+      const scoreSummaryEl = document.getElementById("score-summary");
+      const resultsDetailsContainerEl = document.getElementById("results-details-container");
+      const errorDialog = document.getElementById("error-confirmation-dialog");
+      const errorMessageDetail = document.getElementById("error-message-detail");
+      const useDummyDataButton = document.getElementById("use-dummy-data-button");
+      const tryAnotherFileButton = document.getElementById("try-another-file-button");
+      const jsonSourceModal = document.getElementById("json-source-modal");
+      const jsonModalInitialOptions = document.getElementById("json-modal-initial-options");
+      const jsonModalAvailableList = document.getElementById("json-modal-available-list");
+      const availableJsonListContainer = document.getElementById("available-json-list");
+      const triggerJsonUploadButton = document.getElementById("trigger-json-upload-button");
+      const showAvailableJsonButton = document.getElementById("show-available-json-button");
+      const confettiCanvas = document.getElementById("confetti-canvas");
+      const myConfetti = confetti.create(confettiCanvas, { resize: true, useWorker: true });
+
+      // --- Fungsi Navigasi Halaman & UI Bantuan ---
+
+      function showPage(pageId) {
+        const mainPages = [landingPage, onboardingPage, examPage, resultsPage];
+        mainPages.forEach((page) => page.classList.add("hidden"));
+        const pageToShow = document.getElementById(pageId);
+        if (pageToShow) {
+          pageToShow.classList.remove("hidden");
+          currentPage = pageId;
+        } else {
+          console.error("Page not found:", pageId);
+          landingPage.classList.remove("hidden");
+          currentPage = "landing-page";
+        }
+      }
+      function showLoading(message = "Memproses...") {
+        loadingText.textContent = message;
+        uploadArea.classList.add("hidden");
+        uploadStatusEl.classList.add("hidden");
+        uploadLoading.classList.remove("hidden");
+      }
+      function hideLoading() {
+        uploadLoading.classList.add("hidden");
+        uploadArea.classList.remove("hidden");
+      }
+      function showStatus(message, isError = false) {
+        uploadStatusEl.textContent = message;
+        uploadStatusEl.classList.remove("hidden", "text-red-500", "text-gray-600");
+        uploadStatusEl.classList.add(isError ? "text-red-500" : "text-gray-600");
+        hideLoading();
+      }
+      function showErrorDialog(message) {
+        errorMessageDetail.textContent = message || "Kami tidak dapat mengurai soal dari file PDF yang Anda unggah.";
+        errorDialog.classList.remove("hidden");
+        errorDialog.classList.add("flex");
+      }
+      function hideErrorDialog() {
+        errorDialog.classList.add("hidden");
+        errorDialog.classList.remove("flex");
+        resetUploadState();
+      }
+      function resetUploadState() {
+        pdfUploadInput.value = null;
+        jsonUploadInput.value = null;
+        uploadStatusEl.classList.add("hidden");
+        uploadArea.classList.remove("hidden");
+        uploadLoading.classList.add("hidden");
+      }
+
+      // --- Fungsi Modal Pemilihan Sumber JSON ---
+
+      function openJsonSourceModal() {
+        jsonSourceModal.classList.remove("hidden");
+        jsonSourceModal.classList.add("flex");
+        showInitialJsonOptions();
+      }
+      function closeJsonSourceModal() {
+        jsonSourceModal.classList.add("hidden");
+        jsonSourceModal.classList.remove("flex");
+      }
+      function showInitialJsonOptions() {
+        jsonModalInitialOptions.classList.remove("hidden");
+        jsonModalAvailableList.classList.add("hidden");
+      }
+      function showAvailableJsonList() {
+        jsonModalInitialOptions.classList.add("hidden");
+        jsonModalAvailableList.classList.remove("hidden");
+        displayAvailableJsonFiles();
+      }
+
+      /** Mengisi daftar tombol file JSON yang tersedia. */
+      function displayAvailableJsonFiles() {
+        availableJsonListContainer.innerHTML = "";
+        const fileNames = availableSoalFiles;
+        if (!fileNames || fileNames.length === 0) {
+          availableJsonListContainer.innerHTML = '<p class="text-sm text-gray-500 italic">Tidak ada soal tersedia (simulasi).</p>';
+          return;
+        }
+        fileNames.forEach((fileName) => {
+          const button = document.createElement("button");
+          button.className = "py-2 px-3 text-sm md:text-base w-full text-left mb-2 border border-gray-200 rounded-md bg-gray-50 hover:bg-gray-100 transition-colors duration-200"; // Menggabungkan gaya dari CSS ke JS
+          const displayName = fileName
+            .replace(".json", "")
+            .replace(/_/g, " ")
+            .replace(/\b\w/g, (l) => l.toUpperCase());
+          button.textContent = displayName;
+          button.onclick = () => loadPredefinedJson(fileName);
+          availableJsonListContainer.appendChild(button);
+        });
+      }
+
+      /** Memuat data soal dari file JSON yang telah ditentukan (simulasi). */
+      async function loadPredefinedJson(fileName) {
+        console.log(`Memuat soal dari file: ${fileName}`);
+        closeJsonSourceModal();
+        showLoading(`Memuat soal ${fileName.replace(".json", "").replace(/_/g, " ")}...`);
+        await new Promise((resolve) => setTimeout(resolve, 300));
+        try {
+          // const data = availableJsonData[fileName];
+          const response = await fetch(`src/soal-json/${fileName}`);
+          const data = await response.json();
+          if (data === undefined) throw new Error(`Konten simulasi untuk ${fileName} tidak ditemukan.`);
+          if (validateJsonData(data, fileName)) {
+            questions = data;
+            console.log("Soal berhasil dimuat dari file JSON (simulasi):", questions);
+            hideLoading();
+            proceedToOnboarding();
+          } else {
+            resetUploadState();
+          }
+        } catch (error) {
+          console.error(`Gagal memuat atau memvalidasi file JSON: ${fileName}`, error);
+          showStatus(`Gagal memuat soal dari ${fileName}. ${error.message}`, true);
+          resetUploadState();
+        }
+      }
+
+      // --- Fungsi Logika Inti Ujian ---
+
+      async function handleFileUpload(event) {
+        const file = event.target.files[0];
+        uploadStatusEl.classList.add("hidden");
+        if (!file || file.type !== "application/pdf") {
+          showStatus("Harap unggah file dengan format PDF.", true);
+          resetUploadState();
+          return;
+        }
+        showLoading("Membaca file PDF...");
+        try {
+          const fileReader = new FileReader();
+          fileReader.onload = async (loadEvent) => {
+            const pdfData = new Uint8Array(loadEvent.target.result);
+            showLoading("Mengekstrak teks dari PDF...");
+            try {
+              const pdfDocument = await pdfjsLib.getDocument({ data: pdfData }).promise;
+              let fullText = "";
+              for (let i = 1; i <= pdfDocument.numPages; i++) {
+                const page = await pdfDocument.getPage(i);
+                const textContent = await page.getTextContent();
+                let lastY = -1;
+                let pageText = "";
+                textContent.items.forEach((item) => {
+                  if (lastY !== -1 && item.transform[5] < lastY) pageText += "\n";
+                  pageText += item.str + " ";
+                  lastY = item.transform[5];
+                });
+                fullText += pageText.replace(/\s+/g, " ").trim() + "\n\n";
+              }
+              showLoading("Mengurai soal dari PDF...");
+              const parsedQuestions = parseQuestionsFromText(fullText);
+              if (parsedQuestions.length > 0) {
+                questions = parsedQuestions;
+                console.log("Soal berhasil diparsing dari PDF:", questions);
+                hideLoading();
+                proceedToOnboarding();
+              } else {
+                throw new Error("Tidak ada soal yang dapat diurai dari teks PDF. Pastikan format penomoran (1.) dan opsi (A.) jelas.");
+              }
+            } catch (parseError) {
+              console.error("Error saat memproses atau mengurai PDF:", parseError);
+              hideLoading();
+              showErrorDialog(`Gagal memproses PDF: ${parseError.message}.`);
+            }
+          };
+          fileReader.onerror = () => {
+            console.error("Gagal membaca file PDF.");
+            showStatus("Gagal membaca file PDF.", true);
+            hideLoading();
+            resetUploadState();
+          };
+          fileReader.readAsArrayBuffer(file);
+        } catch (uploadError) {
+          console.error("Error saat persiapan unggah PDF:", uploadError);
+          showStatus("Terjadi kesalahan saat memproses file PDF.", true);
+          hideLoading();
+          resetUploadState();
+        }
+      }
+      async function handleJsonFileUpload(event) {
+        closeJsonSourceModal();
+        const file = event.target.files[0];
+        uploadStatusEl.classList.add("hidden");
+        if (!file) {
+          resetUploadState();
+          return;
+        }
+        if (file.type !== "application/json") {
+          showStatus("Harap unggah file dengan format JSON.", true);
+          resetUploadState();
+          return;
+        }
+        showLoading("Membaca file JSON...");
+        try {
+          const fileReader = new FileReader();
+          fileReader.onload = async (loadEvent) => {
+            showLoading("Memvalidasi data JSON...");
+            try {
+              const jsonData = JSON.parse(loadEvent.target.result);
+              if (validateJsonData(jsonData, file.name)) {
+                questions = jsonData;
+                console.log("Soal berhasil dimuat dari JSON:", questions);
+                hideLoading();
+                proceedToOnboarding();
+              } else {
+                resetUploadState();
+              }
+            } catch (parseError) {
+              console.error("Error parsing JSON:", parseError);
+              showStatus(`Gagal memproses file ${file.name}: Format JSON tidak valid.`, true);
+              resetUploadState();
+            }
+          };
+          fileReader.onerror = () => {
+            console.error("Gagal membaca file JSON.");
+            showStatus("Gagal membaca file JSON.", true);
+            hideLoading();
+            resetUploadState();
+          };
+          fileReader.readAsText(file);
+        } catch (uploadError) {
+          console.error("Error saat persiapan unggah JSON:", uploadError);
+          showStatus("Terjadi kesalahan saat memproses file JSON.", true);
+          hideLoading();
+          resetUploadState();
+        }
+      }
+      function validateJsonData(data, sourceName = "Data") {
+        if (!Array.isArray(data)) {
+          showStatus(`Struktur tidak valid (${sourceName}): Data harus berupa array.`, true);
+          return false;
+        }
+        for (let i = 0; i < data.length; i++) {
+          const q = data[i];
+          const questionNumber = i + 1;
+          if (!q || typeof q !== "object" || !q.hasOwnProperty("question") || !q.hasOwnProperty("options") || !q.hasOwnProperty("correctAnswer") || !q.hasOwnProperty("explanation")) {
+            showStatus(`Struktur tidak valid (${sourceName}): Soal #${questionNumber} kekurangan kunci.`, true);
+            return false;
+          }
+          if (typeof q.question !== "string" || q.question.trim() === "") {
+            showStatus(`Struktur tidak valid (${sourceName}): 'question' soal #${questionNumber} harus teks.`, true);
+            return false;
+          }
+          if (!Array.isArray(q.options) || q.options.length < 2) {
+            showStatus(`Struktur tidak valid (${sourceName}): 'options' soal #${questionNumber} harus array min 2 opsi.`, true);
+            return false;
+          }
+          if (!q.options.every((opt) => typeof opt === "string" && opt.trim() !== "")) {
+            showStatus(`Struktur tidak valid (${sourceName}): Setiap 'options' soal #${questionNumber} harus teks.`, true);
+            return false;
+          }
+          if (typeof q.correctAnswer !== "number" || !Number.isInteger(q.correctAnswer) || q.correctAnswer < 0 || q.correctAnswer >= q.options.length) {
+            showStatus(`Struktur tidak valid (${sourceName}): 'correctAnswer' soal #${questionNumber} harus indeks valid.`, true);
+            return false;
+          }
+          if (typeof q.explanation !== "string") {
+            showStatus(`Struktur tidak valid (${sourceName}): 'explanation' soal #${questionNumber} harus teks.`, true);
+            return false;
+          }
+        }
+        return true;
+      }
+      function parseQuestionsFromText(text) {
+        console.log("Mencoba mengurai teks PDF...");
+        const parsed = [];
+        const questionBlockRegex = /(\d+)\.\s+([\s\S]+?)(?=\n\s*[A-Z]\.\s+|\n\s*\d+\.\s+|$)/g;
+        const optionRegex = /([A-Z])\.\s+([\s\S]+?)(?=\n\s*[A-Z]\.\s+|\n\s*\d+\.\s+|$)/g;
+        let match;
+        while ((match = questionBlockRegex.exec(text)) !== null) {
+          const questionNumber = match[1];
+          let fullBlock = match[2].trim();
+          let questionText = fullBlock;
+          const options = [];
+          const optionMap = {};
+          let optionMatch;
+          optionRegex.lastIndex = 0;
+          while ((optionMatch = optionRegex.exec(fullBlock)) !== null) {
+            const optionLetter = optionMatch[1];
+            const optionText = optionMatch[2].trim();
+            if (["A", "B", "C", "D"].includes(optionLetter)) optionMap[optionLetter] = optionText;
+            if (options.length === 0) questionText = fullBlock.substring(0, optionMatch.index).trim();
+          }
+          ["A", "B", "C", "D"].forEach((letter) => {
+            if (optionMap[letter]) options.push(optionMap[letter]);
+          });
+          if (questionText && options.length >= 2) {
+            parsed.push({ question: questionText, options: options, correctAnswer: 0, explanation: "Pembahasan tidak tersedia dari PDF." });
+          } else {
+            console.warn(`Gagal mengurai blok soal PDF di sekitar nomor ${questionNumber}.`);
+          }
+        }
+        console.log(`Hasil parsing PDF: ${parsed.length} soal ditemukan.`);
+        return parsed;
+      }
+      function proceedToOnboarding() {
+        if (!uploadLoading.classList.contains("hidden")) hideLoading();
+        userAnswers = new Array(questions.length).fill(null);
+        currentQuestionIndex = 0;
+        score = 0;
+        if (questions.length > 0) {
+          showPage("onboarding-page");
+          questionCountEl.textContent = questions.length;
+          if (totalQuestionsEl) totalQuestionsEl.textContent = questions.length;
+        } else {
+          showStatus("File berhasil diproses, tetapi tidak ada soal yang ditemukan.", true);
+          resetUploadState();
+        }
+      }
+      function startExam() {
+        if (questions.length === 0) return;
+        currentQuestionIndex = 0;
+        if (totalQuestionsEl) totalQuestionsEl.textContent = questions.length;
+        displayQuestion(currentQuestionIndex);
+        showPage("exam-page");
+      }
+
+      /**
+       * Menampilkan soal dan opsi jawaban.
+       * @param {number} index - Indeks soal.
+       */
+      function displayQuestion(index) {
+        if (index < 0 || index >= questions.length) return;
+        const q = questions[index];
+        currentQuestionNumberEl.textContent = index + 1;
+        questionTextEl.textContent = q.question;
+        optionsContainerEl.innerHTML = "";
+        const progressPercentage = questions.length > 0 ? ((index + 1) / questions.length) * 100 : 0;
+        if (progressBarInner) progressBarInner.style.width = `${progressPercentage}%`;
+        q.options.forEach((option, i) => {
+          const optionId = `q${index}_option${i}`;
+          const isSelected = userAnswers[index] === i;
+          const card = document.createElement("div");
+          card.classList.add("option-card", "border", "border-gray-300", "rounded-lg", "bg-white");
+          if (isSelected) {
+            card.classList.add("selected-answer", "bg-blue-100");
+            card.classList.remove("bg-white");
+          }
+          const input = document.createElement("input");
+          input.type = "radio";
+          input.id = optionId;
+          input.name = `question_${index}`;
+          input.value = i;
+          input.checked = isSelected;
+          input.onchange = () => selectAnswer(index, i);
+          const label = document.createElement("label");
+          label.className = "block cursor-pointer user-select-none p-3 text-sm md:p-4 md:text-base"; // Menggabungkan gaya dari CSS ke JS
+          label.htmlFor = optionId;
+          const optionLabel = String.fromCharCode(65 + i);
+          label.textContent = `${optionLabel}. ${option}`;
+          card.appendChild(input);
+          card.appendChild(label);
+          optionsContainerEl.appendChild(card);
+        });
+        updateNavigationButtons();
+      }
+
+      function updateNavigationButtons() {
+        prevButton.disabled = currentQuestionIndex === 0;
+        const isCurrentAnswered = userAnswers[currentQuestionIndex] !== null;
+        nextButton.disabled = !isCurrentAnswered;
+        submitButton.disabled = !isCurrentAnswered;
+        if (currentQuestionIndex === questions.length - 1) {
+          nextButton.classList.add("hidden");
+          submitButton.classList.remove("hidden");
+        } else {
+          nextButton.classList.remove("hidden");
+          submitButton.classList.add("hidden");
+        }
+      }
+      function selectAnswer(questionIndex, answerIndex) {
+        userAnswers[questionIndex] = answerIndex;
+        const currentOptions = optionsContainerEl.querySelectorAll(".option-card");
+        currentOptions.forEach((card) => {
+          card.classList.remove("selected-answer", "bg-blue-100");
+          card.classList.add("bg-white");
+        });
+        const selectedCard = optionsContainerEl.querySelector(`#q${questionIndex}_option${answerIndex}`).parentElement;
+        if (selectedCard) {
+          selectedCard.classList.add("selected-answer", "bg-blue-100");
+          selectedCard.classList.remove("bg-white");
+        }
+        updateNavigationButtons();
+      }
+      function nextQuestion() {
+        if (currentQuestionIndex < questions.length - 1) {
+          currentQuestionIndex++;
+          displayQuestion(currentQuestionIndex);
+        }
+      }
+      function previousQuestion() {
+        if (currentQuestionIndex > 0) {
+          currentQuestionIndex--;
+          displayQuestion(currentQuestionIndex);
+        }
+      }
+      function submitExam() {
+        const unanswered = userAnswers.filter((ans) => ans === null).length;
+        if (unanswered > 0) {
+          const confirmation = confirm(`Ada ${unanswered} soal yang belum terjawab. Yakin ingin mengirim?`);
+          if (!confirmation) return;
+        }
+        score = 0;
+        let correctCount = 0;
+        for (let i = 0; i < questions.length; i++) {
+          if (userAnswers[i] !== null && userAnswers[i] === questions[i].correctAnswer) correctCount++;
+        }
+        score = questions.length > 0 ? Math.round((correctCount / questions.length) * 100) : 0;
+        displayResults();
+        showPage("results-page");
+      }
+
+      /** Menampilkan halaman hasil. */
+      function displayResults() {
+        finalScoreEl.textContent = `${score} / 100`;
+        const correctCount = questions.length > 0 ? Math.round((score / 100) * questions.length) : 0;
+        scoreSummaryEl.textContent = `Anda menjawab ${correctCount} dari ${questions.length} soal dengan benar.`;
+        resultsDetailsContainerEl.innerHTML = "";
+        questions.forEach((q, index) => {
+          const resultDiv = document.createElement("div");
+          resultDiv.classList.add("p-4", "md:p-5", "bg-white", "rounded-lg", "border", "border-gray-200", "shadow-sm");
+          const questionP = document.createElement("p");
+          questionP.classList.add("text-base", "md:text-lg", "font-medium", "text-gray-800", "mb-4");
+          questionP.textContent = `${index + 1}. ${q.question}`;
+          resultDiv.appendChild(questionP);
+          const optionsDiv = document.createElement("div");
+          optionsDiv.classList.add("space-y-2", "md:space-y-3");
+          q.options.forEach((option, i) => {
+            const optionCard = document.createElement("div");
+            optionCard.className = "p-2 text-sm md:p-3 md:text-base rounded-md border"; // Menggabungkan gaya dari CSS ke JS
+            const isCorrectAnswer = i === q.correctAnswer;
+            const isUserChoice = userAnswers[index] === i;
+            const optionLabel = String.fromCharCode(65 + i);
+            optionCard.textContent = `${optionLabel}. ${option}`;
+            const originalTextContent = optionCard.textContent;
+            let statusText = "";
+            // Tambahkan kelas style spesifik (benar/salah) setelah kelas dasar
+            if (isCorrectAnswer) {
+              optionCard.classList.add("correct-answer-style");
+              statusText = "(Jawaban Benar)";
+              if (isUserChoice) statusText = "(Jawaban Anda Benar)";
+            } else if (isUserChoice) {
+              optionCard.classList.add("incorrect-answer-style");
+              statusText = "(Jawaban Anda)";
+            } else {
+              optionCard.classList.add("bg-gray-100", "border-gray-200", "text-gray-600");
+            }
+            if (statusText) {
+              optionCard.textContent = originalTextContent + " ";
+              const span = document.createElement("span");
+              span.className = "font-semibold";
+              span.textContent = statusText;
+              optionCard.appendChild(span);
+            }
+            optionsDiv.appendChild(optionCard);
+          });
+          resultDiv.appendChild(optionsDiv);
+          if (q.explanation && q.explanation.trim() !== "") {
+            const explanationDiv = document.createElement("div");
+            explanationDiv.classList.add("explanation-box");
+            const explanationTitle = document.createElement("strong");
+            explanationTitle.textContent = "Pembahasan: ";
+            explanationTitle.classList.add("text-gray-800");
+            const explanationText = document.createElement("span");
+            explanationText.textContent = q.explanation;
+            explanationDiv.appendChild(explanationTitle);
+            explanationDiv.appendChild(explanationText);
+            resultDiv.appendChild(explanationDiv);
+          }
+          resultsDetailsContainerEl.appendChild(resultDiv);
+        });
+        triggerConfetti();
+      }
+
+      function triggerConfetti() {
+        myConfetti({ particleCount: 150, spread: 100, origin: { y: 0.6 } });
+        myConfetti({ particleCount: 50, angle: 60, spread: 55, origin: { x: 0 } });
+        myConfetti({ particleCount: 50, angle: 120, spread: 55, origin: { x: 1 } });
+      }
+      function restartExam() {
+        questions = [];
+        resetUploadState();
+        if (progressBarInner) progressBarInner.style.width = "0%";
+        showPage("landing-page");
+      }
+
+      // --- Event Listeners ---
+      useDummyDataButton.addEventListener("click", () => {
+        console.log("Menggunakan data contoh...");
+        questions = [...mockQuestions];
+        hideErrorDialog();
+        proceedToOnboarding();
+      });
+      tryAnotherFileButton.addEventListener("click", () => {
+        console.log("Memilih file lain...");
+        hideErrorDialog();
+      });
+      triggerJsonUploadButton.addEventListener("click", () => jsonUploadInput.click());
+      showAvailableJsonButton.addEventListener("click", showAvailableJsonList);
+
+      // --- Inisialisasi Aplikasi ---
+      showPage("landing-page");
+    </script>
+  </body>
+</html>
