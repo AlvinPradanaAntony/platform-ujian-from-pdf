@@ -1,290 +1,151 @@
 [
   {
-    "question": "Satu kata ini tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah",
-    "options": [
-      "Turquoise",
-      "Magenta",
-      "Chartreuse",
-      "Cyan",
-      "Sphere"
-    ],
-    "correctAnswer": 4,
-    "explanation": "Jawaban: E\nPembahasan:\nKata-kata A, B, C, dan D adalah nama-nama warna dengan nuansa yang berbeda-beda, sementara \"Sphere\" adalah nama bentuk geometris yang tidak terkait dengan warna[cite: 2]. Oleh karena itu, \"Sphere\" adalah yang paling berbeda dari kategori warna yang lainnya[cite: 3]."
-  },
-  {
-    "question": "Temukan satu kata dari lima kata yang memiliki perbedaan dengan kata yang lain. Satu kata ini tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah [cite: 7]",
-    "options": [
-      "Wortel",
-      "Selada",
-      "Sawi",
-      "Bayam",
-      "Kangkung"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: A.\nPembahasan :\nSemua merupakan sayuran yang diambil daunnya, kecuali wortel[cite: 8]."
-  },
-  {
-    "question": "Satu kata di bawah ini yang tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah....",
-    "options": [
-      "Ekspor",
-      "Impor",
-      "Distribusi",
-      "Barter",
-      "Konsinyasi"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Pembahasan:\nEkspor, impor, barter dan konsinyasi adalah jenis-jenis perdagangan internasional, sedangkan distribusi tidak termasuk[cite: 8].\nKETERANGAN:\nEkspor: menjual sumber daya yang ada di dalam negara atau dihasilkan negara ke negara lain [cite: 8]\nImpor: negara membeli barang atau jasa dari negara lain [cite: 8]\nDistribusi: salah satu kegiatan ekonomi yang merupakan kegiatan menyalurkan barang atau jasa dari pihak produsen kepada pihak konsumen [cite: 8]\nBarter: menukarkan hasil sumber daya alam dengan barang yang belum bisa diproduksi atau didapat negara tersebut ke negara lain [cite: 8]\nKonsinyasi: penjualan dengan cara pengiriman barang ke luar negeri (pasar bebas/ bursa dagang) [cite: 8]"
-  },
-  {
-    "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah ... [cite: 10]",
-    "options": [
-      "Gram",
-      "Kilogram",
-      "Ons",
-      "Centimeter",
-      "Pon"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Jawaban: D\nPembahasan:\nKelompok kata tersebut adalah tentang satuan berat[cite: 10]. Maka kata yang bukan satuan berat adalah centimeter[cite: 11]."
-  },
-  {
-    "question": "Satu kata ini tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah ...",
-    "options": [
-      "Teori Bilangan",
-      "Persamaan Navier-Stokes",
-      "Ruang Euclidean",
-      "Teorema Fermat",
-      "Dodekahedron"
-    ],
-    "correctAnswer": 4,
-    "explanation": "Jawaban: E\nPembahasan:\nKata-kata A, B, C, dan D adalah konsep matematika atau teorema yang umum atau sering digunakan dalam matematika atau fisika[cite: 12]. Sementara itu, \"Dodekahedron\" adalah bentuk geometris yang bukanlah konsep matematika atau teorema[cite: 12]. Oleh karena itu, \"Dodekahedron\" adalah yang paling tidak sesuai dengan kelompok konsep matematika atau teorema yang lainnya[cite: 13]."
-  },
-  {
-    "question": "Satu kata di bawah ini yang tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah.... [cite: 14]",
-    "options": [
-      "Dilatasi",
-      "Transisi",
-      "Refleksi",
-      "Rotasi",
-      "Translasi"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: В.\nPembahasan:\nDilatasi, refleksi, rotasi dan translasi adalah jenis-jenis transformasi geometri (proses perubahan bentuk dan letak suatu bangun gemotri dari posisi awal ke posisi lainya), sedangkan transisi adalah peralihan dari satu keadaan, tindakan, kondisi, tempat, dan sebagainya ke keadaan, tindakan, kondisi, atau tempat yang lain[cite: 15].\nKeterangan:\nDilatasi: perkalian [cite: 15]\nRefleksi: pencerminan [cite: 15]\nRotasi: perputaran [cite: 15]\nTranslasi: pergeseran [cite: 15]"
-  },
-  {
-    "question": "Satu kata di bawah ini yang tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah..",
-    "options": [
-      "Analogi",
-      "Antitesis",
-      "Ibarat",
-      "Kias",
-      "Metafora"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: B.\nPembahasan:\nAnalogi, ibarat, kias dan metafora memiliki tujuan yang sama yaitu memberikan persamaan atau persesuaian antara dua benda atau hal yang berlainan, sedangkan antitesis tidak memiliki makna yang sama[cite: 15].\nKeterangan:\nAnalogi: persamaan atau persesuaian antara dua benda atau hal yang berlainan [cite: 15]\nIbarat: perkataan atau cerita yang dipakai sebagai perumpamaan (perbandingan, lambang, kiasan) [cite: 15]\nKias: perbandingan (persamaan); ibarat; contoh yang telah ada (terjadi) [cite: 15]\nMetafora: pemakaian kata atau kelompok kata bukan dengan arti yang sebenarnya melainkan sebagai lukisan yang berdasarkan persamaan atau perbandingan[cite: 15].\nAntitesis: pengungkapan gagasan yang bertentangan dalam susunan kata yang sejajar [cite: 16]"
-  },
-  {
-    "question": "Satu kata ini tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah ... [cite: 16]",
-    "options": [
-      "Perusahaan",
-      "Organisasi",
-      "Perpustakaan",
-      "Restoran",
-      "Bank"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Jawaban: C.\nPembahasan :\nDari pilihan yang diberikan, kata \"Perpustakaan\" tidak memiliki kesamaan dalam hal tertentu dengan kata lain. Hal ini karena \"Perusahaan,\" \"Organisasi,\" \"Restoran,\" dan \"Bank\" secara umum berkaitan dengan bisnis atau tempat yang menyediakan layanan atau produk untuk keuntungan. Sementara \"Perpustakaan\" lebih berfokus pada penyediaan akses ke informasi dan bahan bacaan secara gratis atau non-profit[cite: 16]."
-  },
-  {
-    "question": "Satu kata di bawah ini yang tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah.... [cite: 16]",
-    "options": [
-      "Disjungsi",
-      "Implikasi",
-      "Kontraposisi",
-      "Biimplikasi",
-      "Konjungsi"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Jawaban: C.\nPembahasan :\nDisjungsi, implikasi, biimplikasi dan konjungsi adalah jenis-jenis pernyataan majemuk di dalam logika matematika, sedangkan kontraposisi adalah tidak termasuk diantaranya[cite: 16].\nKeterangan:\nDisjungsi: pernyataan majemuk dengan kata hubung \"atau\" [cite: 16]\nImplikasi: pernyataan majemuk dengan kata hubung \"jika... maka...\" [cite: 17]\nBiimplikasi: pernyataan majemuk dengan kata hubung \"... jika dan hanya jika\" [cite: 17]\nKonjungsi: pernyataan majemuk dengan kata hubung \"dan\" [cite: 17]\nKontraposisi: kebalikan dan negasi dari implikasi [cite: 17]"
-  },
-  {
-    "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah... [cite: 17]",
-    "options": [
-      "Jurnalis",
-      "Dokter",
-      "Nelayan",
-      "Berita",
-      "Masinis"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Jawaban: D. Berita karena persamaan dari kata diatas adalah Nama profesi. Maka, yang tidak memiliki kesamaan adalah Berita yang merupakan bahan informasi [cite: 17]"
-  },
-  {
-    "question": "Pilihlah satu pilihan yang berbeda dengan pilihan yang lain! [cite: 17]",
-    "options": [
-      "Penguatan",
-      "Pengulangan",
-      "Asosiasi",
-      "Diferensiasi",
-      "Fotosfer"
-    ],
-    "correctAnswer": 4,
-    "explanation": "Jawaban: E\nPembahasan:\nFotosfer adalah lapisan luar matahari, bukan prinsip dalam teori belajar. Prinsip-prinsip lain adalah dasar dalam teori belajar[cite: 17]."
-  },
-  {
-    "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain Adalah... [cite: 17]",
-    "options": [
-      "Mangga",
-      "Alpukat",
-      "Semangka",
-      "Terong",
-      "Pisang"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Jawaban: D. Terong karena persamaan dari kata diatas buah - buahan. Maka, yang tidak memiliki kesamaan adalah Terong yang merupakan sayuran [cite: 18]"
-  },
-  {
-    "question": "Satu kata di bawah ini yang tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah [cite: 18]",
-    "options": [
-      "Paku",
-      "Gunting",
-      "Gerinda",
-      "Gergaji",
-      "Pisau"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: A.\nPembahasan:\nGunting, gerinda, gergaji dan pisau adalah adalal alat pemotongong, . sedangkan paku bukan termasuk alat pemotong[cite: 18].\nKeterangan:\nGunting: alat pemotong benda-benda tipis [cite: 18]\nGerinda: alat pemotong benda kerja [cite: 18]\nGergaji: alat pemotong kayu atau benda lainnya [cite: 18]\nPisau: alat pemotong berbagai macam bahan makanan [cite: 18]\nPaku: alat untuk melekatkan dua bahan dengan menembus keduanya [cite: 18]"
-  },
-  {
-    "question": "Satu kata di bawah ini yang tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah.... [cite: 18]",
-    "options": [
-      "Saklar",
-      "Steker",
-      "Kabel",
-      "Soket",
-      "Briket"
-    ],
-    "correctAnswer": 4,
-    "explanation": "Jawaban: E.\nPembahasan:\nSaklar, steker, kabel dan soket termasuk alat- alat instalasi listrik, sedangkan briket tidak termasuk[cite: 19].\nKeterangan:\nSaklar: alat instalasi listrik yang berfungsi untuk menyambung atau memutuskan aliran daya [cite: 19]\nSteker: colokan listrik berfungsi untuk mengalirkan arus [cite: 19]\nKabel: alat instalasi listrik yang berfungsi menghantarkan arus dari sumbernya [cite: 19]\nSoket: alat instalasi listrik yang berfungsi untuk menghubungkan sumber daya ke perangkat elektronik seperti TV, telepon, wifi, dan lain-lain [cite: 19]\nBriket: blok bahan yang dapat dibakar dan digunakan sebagai bahan bakar untuk memulai dan mempertahankan nyala api [cite: 19]"
-  },
-   {
-    "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain Adalah... [cite: 19]",
-    "options": [
-      "Aromatic",
-      "Citrusy",
-      "Fruity",
-      "Woody",
-      "Tasty"
-    ],
-    "correctAnswer": 4,
-    "explanation": "Jawaban: E. Tasty karena persamaan dari kata diatas merujuk pada aroma atau wangi pada parfum. Maka, yang tidak memiliki kesamaan adalah Tasty yang merujuk pada rasa makanan [cite: 19]"
-  },
-  {
-    "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah ... [cite: 19]",
-    "options": [
-      "Laut",
-      "Danau",
-      "Waduk",
-      "Sungai",
-      "Teluk"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Jawaban: C\nPembahasan:\nSemua merupakan jenis kenampakan alam, kecuali waduk yang merupakan kenampakan buatan[cite: 20, 21]."
-  },
-  {
-    "question": "Satu kata ini tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah ... [cite: 21]",
-    "options": [
-      "Jazz",
-      "Rock",
-      "Reggae",
-      "Hip-Hop",
-      "Impresionisme"
-    ],
-    "correctAnswer": 4,
-    "explanation": "Jawaban: E.\nPembahasan :\nImpresionisme adalah gerakan dalam seni lukis, bukan genre musik. Jazz, Rock, Reggae, dan Hip-Hop adalah genre-genre musik yang dikenal[cite: 21]."
-  },
-  {
-    "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain Adalah... [cite: 21]",
-    "options": [
-      "Camar",
-      "Cendrawasih",
-      "Ketilang",
-      "Kepodang",
-      "Tokek"
-    ],
-    "correctAnswer": 4,
-    "explanation": "Jawaban: E. Tokek, karena persamaan dari kata diatas adalah jenis burung maka yang tidak memiliki kesamaan adalah Tokek yang merupakan jenis hewan reptil bukan burung [cite: 21]"
-  },
-  {
-    "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah... [cite: 21]",
-    "options": [
-      "Sel",
-      "Sistem",
-      "Organ",
-      "Jaringan",
-      "Tulang belakang"
-    ],
-    "correctAnswer": 4,
-    "explanation": "Jawaban: E. Tulang Belakang karena persamaan dari kata diatas adalah Tingkatan organisasi dalam tubuh organisme. Maka, yang tidak memiliki kesamaan adalah Tulang belakang karena bagian tubuh [cite: 22]"
-  },
-  {
-    "question": "Satu kata ini tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah ... [cite: 22]",
-    "options": [
-      "Berkeliling",
-      "Menyusuri",
-      "Melingkari",
-      "Menyusun",
-      "Membelit"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Jawaban: D\nPembahasan:\nKata-kata A, B, C, dan E semuanya berkaitan dengan gerakan atau aktivitas dalam menjelajahi atau mengelilingi suatu area atau objek. Sementara itu, kata \"Menyusun\" memiliki makna yang berbeda karena lebih terkait dengan tindakan mengatur atau merangkai sesuatu daripada menjelajahi atau mengelilingi[cite: 22]."
-  },
-  {
-    "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah... [cite: 22]",
-    "options": [
-      "Itik",
-      "Puyuh",
-      "Kalkun",
-      "Ayam",
-      "Platypus"
-    ],
-    "correctAnswer": 4,
-    "explanation": "Jawaban: E. Platypus, karena persamaan dari kata diatas adalah Jenis Unggas, maka yang tidak memiliki kesamaan adalah Platypus yang merupakan jenis mamalia [cite: 22]"
-  },
-  {
-    "question": "Temukan satu kata dari lima kata yang memiliki perbedaan dengan kata yang lain. Satu kata ini tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah [cite: 23]",
-    "options": [
-      "Duku",
-      "Ceri",
-      "Anggur",
-      "Kelengkeng",
-      "Semangka"
-    ],
-    "correctAnswer": 4,
-    "explanation": "Jawaban: E.\nPembahasan:\nSemua merupakan buah yang berukuran kecil, kecuali semangka yang merupakan buah berukuran besar[cite: 23]."
-  },
-  {
-    "question": "Pilihlah satu pilihan yang berbeda dengan pilihan yang lain! [cite: 23]",
-    "options": [
-      "Dilatasi waktu",
-      "Kontraksi panjang",
-      "Ekuivalensi massa-energi",
-      "Gravitasi",
-      "Termodinamika"
-    ],
-    "correctAnswer": 4,
-    "explanation": "Jawaban: E.\nPembahasan:\nTermodinamika bukan bagian dari teori relativitas. Prinsip-prinsip lainnya adalah fondasi dari teori relativitas khusus dan umum Einstein[cite: 23]."
-  },
-  {
-    "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain Adalah... [cite: 23]",
-    "options": [
-      "Tagalog",
-      "Latin",
-      "Hebrew",
-      "Hindi",
-      "Makau"
-    ],
-    "correctAnswer": 4,
-    "explanation": "Jawaban: E. Makau, karena persamaan dari kata diatas adalah bahasa maka yang tidak memiliki kesamaan adalah Makau yang merupakan nama sebuah wilayah administratif khusus di Tiongkok [cite: 23, 24]"
+    "material": "Word Classification",
+    "questions": [
+      {
+        "question": "Satu kata ini tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah",
+        "options": ["Turquoise", "Magenta", "Chartreuse", "Cyan", "Sphere"],
+        "correctAnswer": 4,
+        "explanation": "Jawaban: E\nPembahasan:\nKata-kata A, B, C, dan D adalah nama-nama warna dengan nuansa yang berbeda-beda, sementara \"Sphere\" adalah nama bentuk geometris yang tidak terkait dengan warna[cite: 2]. Oleh karena itu, \"Sphere\" adalah yang paling berbeda dari kategori warna yang lainnya[cite: 3]."
+      },
+      {
+        "question": "Temukan satu kata dari lima kata yang memiliki perbedaan dengan kata yang lain. Satu kata ini tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah [cite: 7]",
+        "options": ["Wortel", "Selada", "Sawi", "Bayam", "Kangkung"],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: A.\nPembahasan :\nSemua merupakan sayuran yang diambil daunnya, kecuali wortel[cite: 8]."
+      },
+      {
+        "question": "Satu kata di bawah ini yang tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah....",
+        "options": ["Ekspor", "Impor", "Distribusi", "Barter", "Konsinyasi"],
+        "correctAnswer": 2,
+        "explanation": "Pembahasan:\nEkspor, impor, barter dan konsinyasi adalah jenis-jenis perdagangan internasional, sedangkan distribusi tidak termasuk[cite: 8].\nKETERANGAN:\nEkspor: menjual sumber daya yang ada di dalam negara atau dihasilkan negara ke negara lain [cite: 8]\nImpor: negara membeli barang atau jasa dari negara lain [cite: 8]\nDistribusi: salah satu kegiatan ekonomi yang merupakan kegiatan menyalurkan barang atau jasa dari pihak produsen kepada pihak konsumen [cite: 8]\nBarter: menukarkan hasil sumber daya alam dengan barang yang belum bisa diproduksi atau didapat negara tersebut ke negara lain [cite: 8]\nKonsinyasi: penjualan dengan cara pengiriman barang ke luar negeri (pasar bebas/ bursa dagang) [cite: 8]"
+      },
+      {
+        "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah ... [cite: 10]",
+        "options": ["Gram", "Kilogram", "Ons", "Centimeter", "Pon"],
+        "correctAnswer": 3,
+        "explanation": "Jawaban: D\nPembahasan:\nKelompok kata tersebut adalah tentang satuan berat[cite: 10]. Maka kata yang bukan satuan berat adalah centimeter[cite: 11]."
+      },
+      {
+        "question": "Satu kata ini tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah ...",
+        "options": ["Teori Bilangan", "Persamaan Navier-Stokes", "Ruang Euclidean", "Teorema Fermat", "Dodekahedron"],
+        "correctAnswer": 4,
+        "explanation": "Jawaban: E\nPembahasan:\nKata-kata A, B, C, dan D adalah konsep matematika atau teorema yang umum atau sering digunakan dalam matematika atau fisika[cite: 12]. Sementara itu, \"Dodekahedron\" adalah bentuk geometris yang bukanlah konsep matematika atau teorema[cite: 12]. Oleh karena itu, \"Dodekahedron\" adalah yang paling tidak sesuai dengan kelompok konsep matematika atau teorema yang lainnya[cite: 13]."
+      },
+      {
+        "question": "Satu kata di bawah ini yang tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah.... [cite: 14]",
+        "options": ["Dilatasi", "Transisi", "Refleksi", "Rotasi", "Translasi"],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: В.\nPembahasan:\nDilatasi, refleksi, rotasi dan translasi adalah jenis-jenis transformasi geometri (proses perubahan bentuk dan letak suatu bangun gemotri dari posisi awal ke posisi lainya), sedangkan transisi adalah peralihan dari satu keadaan, tindakan, kondisi, tempat, dan sebagainya ke keadaan, tindakan, kondisi, atau tempat yang lain[cite: 15].\nKeterangan:\nDilatasi: perkalian [cite: 15]\nRefleksi: pencerminan [cite: 15]\nRotasi: perputaran [cite: 15]\nTranslasi: pergeseran [cite: 15]"
+      },
+      {
+        "question": "Satu kata di bawah ini yang tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah..",
+        "options": ["Analogi", "Antitesis", "Ibarat", "Kias", "Metafora"],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: B.\nPembahasan:\nAnalogi, ibarat, kias dan metafora memiliki tujuan yang sama yaitu memberikan persamaan atau persesuaian antara dua benda atau hal yang berlainan, sedangkan antitesis tidak memiliki makna yang sama[cite: 15].\nKeterangan:\nAnalogi: persamaan atau persesuaian antara dua benda atau hal yang berlainan [cite: 15]\nIbarat: perkataan atau cerita yang dipakai sebagai perumpamaan (perbandingan, lambang, kiasan) [cite: 15]\nKias: perbandingan (persamaan); ibarat; contoh yang telah ada (terjadi) [cite: 15]\nMetafora: pemakaian kata atau kelompok kata bukan dengan arti yang sebenarnya melainkan sebagai lukisan yang berdasarkan persamaan atau perbandingan[cite: 15].\nAntitesis: pengungkapan gagasan yang bertentangan dalam susunan kata yang sejajar [cite: 16]"
+      },
+      {
+        "question": "Satu kata ini tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah ... [cite: 16]",
+        "options": ["Perusahaan", "Organisasi", "Perpustakaan", "Restoran", "Bank"],
+        "correctAnswer": 2,
+        "explanation": "Jawaban: C.\nPembahasan :\nDari pilihan yang diberikan, kata \"Perpustakaan\" tidak memiliki kesamaan dalam hal tertentu dengan kata lain. Hal ini karena \"Perusahaan,\" \"Organisasi,\" \"Restoran,\" dan \"Bank\" secara umum berkaitan dengan bisnis atau tempat yang menyediakan layanan atau produk untuk keuntungan. Sementara \"Perpustakaan\" lebih berfokus pada penyediaan akses ke informasi dan bahan bacaan secara gratis atau non-profit[cite: 16]."
+      },
+      {
+        "question": "Satu kata di bawah ini yang tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah.... [cite: 16]",
+        "options": ["Disjungsi", "Implikasi", "Kontraposisi", "Biimplikasi", "Konjungsi"],
+        "correctAnswer": 2,
+        "explanation": "Jawaban: C.\nPembahasan :\nDisjungsi, implikasi, biimplikasi dan konjungsi adalah jenis-jenis pernyataan majemuk di dalam logika matematika, sedangkan kontraposisi adalah tidak termasuk diantaranya[cite: 16].\nKeterangan:\nDisjungsi: pernyataan majemuk dengan kata hubung \"atau\" [cite: 16]\nImplikasi: pernyataan majemuk dengan kata hubung \"jika... maka...\" [cite: 17]\nBiimplikasi: pernyataan majemuk dengan kata hubung \"... jika dan hanya jika\" [cite: 17]\nKonjungsi: pernyataan majemuk dengan kata hubung \"dan\" [cite: 17]\nKontraposisi: kebalikan dan negasi dari implikasi [cite: 17]"
+      },
+      {
+        "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah... [cite: 17]",
+        "options": ["Jurnalis", "Dokter", "Nelayan", "Berita", "Masinis"],
+        "correctAnswer": 3,
+        "explanation": "Jawaban: D. Berita karena persamaan dari kata diatas adalah Nama profesi. Maka, yang tidak memiliki kesamaan adalah Berita yang merupakan bahan informasi [cite: 17]"
+      },
+      {
+        "question": "Pilihlah satu pilihan yang berbeda dengan pilihan yang lain! [cite: 17]",
+        "options": ["Penguatan", "Pengulangan", "Asosiasi", "Diferensiasi", "Fotosfer"],
+        "correctAnswer": 4,
+        "explanation": "Jawaban: E\nPembahasan:\nFotosfer adalah lapisan luar matahari, bukan prinsip dalam teori belajar. Prinsip-prinsip lain adalah dasar dalam teori belajar[cite: 17]."
+      },
+      {
+        "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain Adalah... [cite: 17]",
+        "options": ["Mangga", "Alpukat", "Semangka", "Terong", "Pisang"],
+        "correctAnswer": 3,
+        "explanation": "Jawaban: D. Terong karena persamaan dari kata diatas buah - buahan. Maka, yang tidak memiliki kesamaan adalah Terong yang merupakan sayuran [cite: 18]"
+      },
+      {
+        "question": "Satu kata di bawah ini yang tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah [cite: 18]",
+        "options": ["Paku", "Gunting", "Gerinda", "Gergaji", "Pisau"],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: A.\nPembahasan:\nGunting, gerinda, gergaji dan pisau adalah adalal alat pemotongong, . sedangkan paku bukan termasuk alat pemotong[cite: 18].\nKeterangan:\nGunting: alat pemotong benda-benda tipis [cite: 18]\nGerinda: alat pemotong benda kerja [cite: 18]\nGergaji: alat pemotong kayu atau benda lainnya [cite: 18]\nPisau: alat pemotong berbagai macam bahan makanan [cite: 18]\nPaku: alat untuk melekatkan dua bahan dengan menembus keduanya [cite: 18]"
+      },
+      {
+        "question": "Satu kata di bawah ini yang tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah.... [cite: 18]",
+        "options": ["Saklar", "Steker", "Kabel", "Soket", "Briket"],
+        "correctAnswer": 4,
+        "explanation": "Jawaban: E.\nPembahasan:\nSaklar, steker, kabel dan soket termasuk alat- alat instalasi listrik, sedangkan briket tidak termasuk[cite: 19].\nKeterangan:\nSaklar: alat instalasi listrik yang berfungsi untuk menyambung atau memutuskan aliran daya [cite: 19]\nSteker: colokan listrik berfungsi untuk mengalirkan arus [cite: 19]\nKabel: alat instalasi listrik yang berfungsi menghantarkan arus dari sumbernya [cite: 19]\nSoket: alat instalasi listrik yang berfungsi untuk menghubungkan sumber daya ke perangkat elektronik seperti TV, telepon, wifi, dan lain-lain [cite: 19]\nBriket: blok bahan yang dapat dibakar dan digunakan sebagai bahan bakar untuk memulai dan mempertahankan nyala api [cite: 19]"
+      },
+      {
+        "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain Adalah... [cite: 19]",
+        "options": ["Aromatic", "Citrusy", "Fruity", "Woody", "Tasty"],
+        "correctAnswer": 4,
+        "explanation": "Jawaban: E. Tasty karena persamaan dari kata diatas merujuk pada aroma atau wangi pada parfum. Maka, yang tidak memiliki kesamaan adalah Tasty yang merujuk pada rasa makanan [cite: 19]"
+      },
+      {
+        "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah ... [cite: 19]",
+        "options": ["Laut", "Danau", "Waduk", "Sungai", "Teluk"],
+        "correctAnswer": 2,
+        "explanation": "Jawaban: C\nPembahasan:\nSemua merupakan jenis kenampakan alam, kecuali waduk yang merupakan kenampakan buatan[cite: 20, 21]."
+      },
+      {
+        "question": "Satu kata ini tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah ... [cite: 21]",
+        "options": ["Jazz", "Rock", "Reggae", "Hip-Hop", "Impresionisme"],
+        "correctAnswer": 4,
+        "explanation": "Jawaban: E.\nPembahasan :\nImpresionisme adalah gerakan dalam seni lukis, bukan genre musik. Jazz, Rock, Reggae, dan Hip-Hop adalah genre-genre musik yang dikenal[cite: 21]."
+      },
+      {
+        "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain Adalah... [cite: 21]",
+        "options": ["Camar", "Cendrawasih", "Ketilang", "Kepodang", "Tokek"],
+        "correctAnswer": 4,
+        "explanation": "Jawaban: E. Tokek, karena persamaan dari kata diatas adalah jenis burung maka yang tidak memiliki kesamaan adalah Tokek yang merupakan jenis hewan reptil bukan burung [cite: 21]"
+      },
+      {
+        "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah... [cite: 21]",
+        "options": ["Sel", "Sistem", "Organ", "Jaringan", "Tulang belakang"],
+        "correctAnswer": 4,
+        "explanation": "Jawaban: E. Tulang Belakang karena persamaan dari kata diatas adalah Tingkatan organisasi dalam tubuh organisme. Maka, yang tidak memiliki kesamaan adalah Tulang belakang karena bagian tubuh [cite: 22]"
+      },
+      {
+        "question": "Satu kata ini tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah ... [cite: 22]",
+        "options": ["Berkeliling", "Menyusuri", "Melingkari", "Menyusun", "Membelit"],
+        "correctAnswer": 3,
+        "explanation": "Jawaban: D\nPembahasan:\nKata-kata A, B, C, dan E semuanya berkaitan dengan gerakan atau aktivitas dalam menjelajahi atau mengelilingi suatu area atau objek. Sementara itu, kata \"Menyusun\" memiliki makna yang berbeda karena lebih terkait dengan tindakan mengatur atau merangkai sesuatu daripada menjelajahi atau mengelilingi[cite: 22]."
+      },
+      {
+        "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain adalah... [cite: 22]",
+        "options": ["Itik", "Puyuh", "Kalkun", "Ayam", "Platypus"],
+        "correctAnswer": 4,
+        "explanation": "Jawaban: E. Platypus, karena persamaan dari kata diatas adalah Jenis Unggas, maka yang tidak memiliki kesamaan adalah Platypus yang merupakan jenis mamalia [cite: 22]"
+      },
+      {
+        "question": "Temukan satu kata dari lima kata yang memiliki perbedaan dengan kata yang lain. Satu kata ini tidak memiliki kesamaan dalam hal tertentu dengan kata lainnya adalah [cite: 23]",
+        "options": ["Duku", "Ceri", "Anggur", "Kelengkeng", "Semangka"],
+        "correctAnswer": 4,
+        "explanation": "Jawaban: E.\nPembahasan:\nSemua merupakan buah yang berukuran kecil, kecuali semangka yang merupakan buah berukuran besar[cite: 23]."
+      },
+      {
+        "question": "Pilihlah satu pilihan yang berbeda dengan pilihan yang lain! [cite: 23]",
+        "options": ["Dilatasi waktu", "Kontraksi panjang", "Ekuivalensi massa-energi", "Gravitasi", "Termodinamika"],
+        "correctAnswer": 4,
+        "explanation": "Jawaban: E.\nPembahasan:\nTermodinamika bukan bagian dari teori relativitas. Prinsip-prinsip lainnya adalah fondasi dari teori relativitas khusus dan umum Einstein[cite: 23]."
+      },
+      {
+        "question": "Satu kata yang tidak memiliki kesamaan dalam hal tertentu dengan kata lain Adalah... [cite: 23]",
+        "options": ["Tagalog", "Latin", "Hebrew", "Hindi", "Makau"],
+        "correctAnswer": 4,
+        "explanation": "Jawaban: E. Makau, karena persamaan dari kata diatas adalah bahasa maka yang tidak memiliki kesamaan adalah Makau yang merupakan nama sebuah wilayah administratif khusus di Tiongkok [cite: 23, 24]"
+      }
+    ]
   }
 ]

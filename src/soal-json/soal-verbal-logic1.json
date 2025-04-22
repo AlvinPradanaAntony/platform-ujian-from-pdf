@@ -1,254 +1,163 @@
 [
   {
-    "question": "Setiap kali Sarah membantu ibunya dengan pekerjaan rumah tangga, ia mendapat pujian dari ayahnya.\nJika Sarah mendapat pujian dari ayahnya, ia merasa bahagia.\nJika Sarah merasa bahagia, ia akan tersenyum sepanjang hari.\nSimpulan: Setiap kali Sarah membantu ibunya dengan pekerjaan rumah tangga, ia tidak akan tersenyum sepanjang hari.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat disimpulkan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Misalkan:\np: Setiap kali Sarah membantu ibunya dengan pekerjaan rumah tangga\nq: ia mendapat pujian dari ayahnya\nr: ia merasa bahagia\ns: ia akan tersenyum sepanjang hari\nMaka Modus Silogisme\n$p\\Rightarrow q$\n$q\\Rightarrow r$\n$r\\Rightarrow s$\n$p\\Rightarrow s$\nMaka simpulan 'Setiap kali Sarah membantu ibunya dengan pekerjaan rumah tangga, ia tidak akan tersenyum sepanjang hari' adalah salah. Jawaban yang benar adalah 'Setiap kali Sarah membantu ibunya dengan pekerjaan rumah tangga, ia akan tersenyum sepanjang hari'.\nJawabannya adalah B."
-  },
-  {
-    "question": "Seorang guru akan memberikan ujian di dua kelas yang berbeda, yaitu Kelas X dan Kelas Y, dari Senin hingga Jumat. Di setiap kelas, terdapat lima siswa yang disebut sebagai Siswa 1, Siswa 2, Siswa 3, Siswa 4, dan Siswa 5 di Kelas X, dan Siswa A, Siswa B, Siswa C, Siswa D, dan Siswa E di Kelas Y. Guru hanya akan memberikan ujian kepada satu siswa dari setiap kelas setiap harinya.\nAturan urutannya adalah sebagai berikut:\n1. Siswa 1 akan diuji sebelum Siswa 2.\n2. Siswa 2 akan diuji setelah Siswa 1 dan Siswa 3, dua hari setelah ujian kepada Siswa 5.\n3. Siswa 5 diuji tepat setelah Siswa B dan Siswa E.\n4. Siswa 3 diuji setelah Siswa 5 tetapi sebelum Siswa 2.\n5. Siswa 4 diuji tepat sebelum Siswa 5.\nSimpulan: Jika guru memberikan ujian kepada Siswa 2 pada hari Jumat dan B pada hari Selasa, maka siswa 1 dan E akan diuji di hari yang sama yaitu hari Senin.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat ditarik kesimpulan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Urutan berdasarkan analisis aturan:\nSenin: Siswa 1, Siswa E\nSelasa: Siswa 4, Siswa B\nRabu: Siswa 5\nKamis: Siswa 3\nJumat: Siswa 2\nPenjelasan:\nSiswa 2 diuji Jumat (diberikan) => Siswa 5 diuji Rabu (aturan 2: S2 dua hari setelah S5).\nSiswa B diuji Selasa (diberikan).\nSiswa 5 diuji Rabu, tepat setelah Siswa B dan Siswa E (aturan 3). Karena B Selasa, maka E harus Senin agar S5 Rabu.\nSiswa 4 diuji tepat sebelum Siswa 5 (aturan 5) => Siswa 4 diuji Selasa.\nSiswa 3 diuji setelah Siswa 5 (Rabu) tapi sebelum Siswa 2 (Jumat) (aturan 4) => Siswa 3 diuji Kamis.\nSiswa 1 diuji sebelum Siswa 2 (Jumat) (aturan 1) dan belum ditempatkan => Siswa 1 diuji Senin.\nJadi, Siswa 1 dan E diuji hari Senin.\nSimpulan adalah benar.\nJawaban A."
-  },
-  {
-    "question": "Pak Bram adalah mekanik mobil. Mobil yang siap digunakan memiliki ciri:\n- Mesin menyala tanpa suara kasar.\n- Tidak ada kebocoran oli.\n- Rem berfungsi dengan baik.\nSimpulan: Mobil dengan mesin menyala tanpa suara kasar, tidak ada kebocoran oli, tetapi remnya kurang pakem siap digunakan.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat ditarik kesimpulan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Pembahasan: Mobil siap digunakan harus memenuhi semua kriteria. Jika rem tidak berfungsi dengan baik (kurang pakem), mobil tidak siap digunakan.\nJawaban: B. Simpulan adalah salah"
-  },
-  {
-    "question": "Empat pemain sepak bola, yaitu Amir, Budi, Citra, dan Dian bermain di posisi berbeda: kiper, bek, gelandang, dan penyerang.\n- Amir adalah penyerang.\n- Dian tidak bermain sebagai bek.\n- Citra adalah kiper.\nSimpulan: Dian adalah gelandang.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat ditarik kesimpulan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Pembahasan: Posisi terisi: Penyerang (Amir), Kiper (Citra). Posisi tersisa: Bek, Gelandang. Pemain tersisa: Budi, Dian. Diketahui Dian tidak bermain sebagai bek. Maka, Dian harus bermain sebagai gelandang. Posisi yang tersisa (Bek) diisi Budi. Simpulan benar.\nJawaban: A. Simpulan adalah benar"
-  },
-  {
-    "question": "Di sebuah paduan suara sekolah, terdapat lima anggota utama: Ana, Bayu, Cici, Dito, dan Elan. Peraturan latihan mereka adalah sebagai berikut:\n- Latihan harus dimulai oleh Ana atau Bayu.\n- Cici tidak dapat bernyanyi bersamaan dengan Elan.\n- Dito hanya dapat bernyanyi jika Ana juga bernyanyi.\n- Jika Elan bernyanyi, maka Bayu harus keluar dari latihan.\nSimpulan: Pada sesi latihan terakhir, susunan anggota adalah: Ana, Cici, Dito, dan Elan. Susunan anggota tersebut melanggar aturan latihan.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat ditarik kesimpulan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Pembahasan: Dalam susunan Ana, Cici, Dito, dan Elan, terlihat bahwa Cici dan Elan bernyanyi bersamaan. Ini melanggar aturan kedua ('Cici tidak dapat bernyanyi bersamaan dengan Elan').\nJawaban: A. Simpulan adalah benar"
-  },
-  {
-    "question": "Pada sebuah kompetisi memasak di rumah sakit, terdapat lima peserta: Chef A, Chef B, Chef C, Chef D, dan Chef E. Hasil lomba menunjukkan:\n- Chef A selalu berhasil membuat hidangan pembuka terbaik.\n- Chef B selalu menang dalam kategori hidangan utama.\n- Chef C berhasil menciptakan hidangan penutup yang paling inovatif.\n- Chef D selalu mendapat kritik karena rasanya yang kurang konsisten.\n- Chef E tidak pernah mendapat penghargaan dalam kategori manapun.\nSimpulan: Chef B berpeluang lebih besar untuk menang jika bersaing dengan Chef A pada lomba berikutnya.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat ditarik kesimpulan"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Pembahasan: Chef A selalu unggul dalam hidangan pembuka, sedangkan Chef B unggul di hidangan utama. Karena mereka unggul di kategori yang berbeda, tidak ada informasi yang cukup untuk membandingkan peluang mereka jika bersaing secara langsung atau dalam kategori lain.\nJawaban: C. Tidak dapat ditarik kesimpulan"
-  },
-  {
-    "question": "Di sebuah grup musik, terdapat lima anggota utama: Alif, Bayu, Citra, Dito, dan Elvi. Peraturan latihan mereka adalah sebagai berikut:\n- Latihan harus dimulai oleh Alif atau Elvi.\n- Bayu tidak dapat bermain bersamaan dengan Dito.\n- Citra hanya dapat bermain jika Alif juga bermain.\n- Jika Elvi bermain, maka Bayu harus keluar dari latihan.\nSimpulan: Pada sesi latihan terakhir, susunan pemain adalah: Alif, Bayu, Citra, dan Dito. Susunan pemain tersebut melanggar aturan latihan.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat ditarik kesimpulan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Pembahasan: Dalam susunan Alif, Bayu, Citra, dan Dito, terlihat bahwa Bayu dan Dito bermain bersamaan. Ini melanggar aturan kedua ('Bayu tidak dapat bermain bersamaan dengan Dito').\nJawaban: A. Simpulan adalah benar"
-  },
-  {
-    "question": "Jika seseorang memiliki kartu perpustakaan, maka ia dapat meminjam buku.\nMaria memiliki kartu perpustakaan.\nSimpulan: Maria dapat meminjam buku.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat disimpulkan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: A\nPembahasan:\nIni adalah contoh Modus Ponens. Premis 1: Jika P maka Q (P: punya kartu, Q: bisa pinjam). Premis 2: P benar (Maria punya kartu). Kesimpulan: Q benar (Maria bisa pinjam).\nKepemilikan kartu perpustakaan memungkinkan Maria untuk meminjam buku, sesuai dengan premis awal."
-  },
-  {
-    "question": "Terdapat empat kotak berbeda warna (merah, kuning, hijau dan biru) yang disusun dalam satu deretan dari kiri ke kanan. Setiap kotak berisikan bola dengan warna yang berbeda juga (merah, kuning, hijau dan biru). Diketahui juga beberapa informasi sebagai berikut:\n1. Warna kotak dan warna bola yang ada didalamnya berbeda.\n2. Jika suatu kotak berisikan lebih dari satu bola, maka semua bolanya berwarna sama.\n3. Banyak bola di setiap kotak bertambah satu dari kiri ke kanan (misal tepat di sebelah kanan kotak yang berisikan 3 bola adalah kotak yang berisikan 4 bola).\n4. Bola berwarna hijau terletak di dalam kotak yang diapit oleh kotak berisikan bola merah dan bola biru.\n5. Kotak yang berisikan tiga bola terletak tepat disamping kotak berwarna kuning.\n6. Bola berwarna hijau ada di dalam kotak yang terletak di antara kotak berwarna merah dan kotak di urutan ketiga dari kiri.\n7. Kotak yang berisikan enam bola terletak di salah satu ujung deretan.\n8. Bola berwarna merah ada di dalam kotak berwarna biru.\n9. Apabila merupakan kotak yang paling ringan, maka kotak di urutan kedua dari kiri berisikan tiga bola.\n10. Semua kotak berukuran sama.\nSimpulan: Suatu kotak berisikan lebih dari satu bola dan ada bola di kotak tersebut yang berbeda warna.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat disimpulkan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: B. Simpulan adalah salah\nPEMBAHASAN\nSimpulan yang disebutkan berkaitan dengan informasi 2.\nPemisalan:\np: suatu kotak berisikan lebih dari satu bola\nq: semua bolanya berwarna sama\nPremis berdasarkan informasi 2: $p\\rightarrow q$\nSimpulan yang disebutkan: Suatu kotak berisikan lebih dari satu bola (p) DAN ada bola di kotak tersebut yang berbeda warna (~q). Ini adalah $p\\wedge\\sim q$.\nEkuivalensi: $p\\wedge\\sim q\\cong\\sim(p\\rightarrow q)$\nKarena simpulan yang disebutkan ($p\\wedge\\sim q$) adalah negasi dari premis yang ada (informasi 2: $p\\rightarrow q$) yang dianggap benar, maka simpulan adalah salah."
-  },
-  {
-    "question": "Sebuah perusahaan memiliki 6 karyawan: A, B, C, D, E, dan F. Mereka akan duduk dalam sebuah rapat yang diatur oleh manajer. Aturan untuk pengaturan kursi adalah sebagai berikut:\n1 Karyawan A harus duduk di depan karyawan B\n2 Karyawan C harus duduk tepat di belakang karyawan A\n3 Salah satu dari karyawan D atau F harus duduk di kursi keenam\n4 Karyawan F harus duduk tepat di depan karyawan A\nSimpulan: Urutan tempat duduk karyawan dalam rapat tersebut adalah F, A, C, E, B, D.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat disimpulkan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Pembahasan:\nMari kita periksa urutan F, A, C, E, B, D terhadap aturan:\n1. A (kursi 2) harus duduk di depan B (kursi 5). Benar.\n2. C (kursi 3) harus duduk tepat di belakang A (kursi 2). Benar.\n3. Salah satu dari D (kursi 6) atau F (kursi 1) harus duduk di kursi keenam. D duduk di kursi keenam. Benar.\n4. F (kursi 1) harus duduk tepat di depan A (kursi 2). Benar.\nSemua aturan terpenuhi oleh urutan F, A, C, E, B, D.\nMaka simpulan adalah benar. Jawaban adalah A."
-  },
-  {
-    "question": "Dalam sebuah penelitian tentang pengaruh sarapan terhadap konsentrasi dan energi siswa, ditemukan bahwa siswa yang sarapan secara teratur cenderung memiliki konsentrasi yang lebih baik dan tingkat energi yang lebih stabil. Selain itu, diketahui bahwa:\n• Rata-rata skor tes konsentrasi siswa yang tidak sarapan adalah 60 dari total skala 100.\n• Setiap kali siswa sarapan sebelum ujian, skor rata-rata tes konsentrasinya meningkat sebesar 10 poin.\n• Sarapan dianggap sehat jika mengandung setidaknya satu sumber protein dan satu sumber karbohidrat kompleks.\nSimpulan: Jika seorang siswa yang biasanya tidak sarapan memutuskan untuk sarapan sebelum ujian dan memperoleh skor 80 dalam tes konsentrasi, maka persentase peningkatan skornya adalah kurang dari 30%.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat disimpulkan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Pembahasan:\nSkor awal (tidak sarapan) = 60.\nSkor setelah sarapan = 80.\nPeningkatan skor = Skor setelah sarapan - Skor awal = $80 - 60 = 20$.\nPersentase peningkatan skor = (Peningkatan skor / Skor awal) x 100% = $(20 / 60)$ x 100% = $(1/3)$ x 100% = $33.3\\%$.\nSimpulan menyatakan bahwa persentase peningkatannya kurang dari 30%. Karena 33.3% lebih besar dari 30%, maka simpulan tersebut salah.\nJawaban: B"
-  },
-  {
-    "question": "Di sebuah tim futsal, terdapat lima pemain utama: Andra, Beni, Cici, Danu, dan Edo. Peraturan latihan mereka adalah sebagai berikut:\n- Latihan harus dimulai oleh Andra atau Danu.\n- Beni tidak dapat bermain bersamaan dengan Cici.\n- Danu hanya dapat bermain jika Edo juga bermain.\n- Jika Edo bermain, maka Andra harus keluar dari lapangan.\nSimpulan: Pada sesi latihan terakhir, susunan pemain adalah: Andra, Beni, Cici, dan Danu. Susunan pemain tersebut melanggar aturan latihan.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat ditarik kesimpulan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Pembahasan: Dalam susunan Andra, Beni, Cici, dan Danu, terlihat bahwa Beni dan Cici bermain bersamaan. Ini melanggar aturan kedua ('Beni tidak dapat bermain bersamaan dengan Cici').\nJawaban: A. Simpulan adalah benar"
-  },
-  {
-    "question": "Jika seorang siswa mendapatkan nilai A di semua mata pelajaran, maka ia akan mendapatkan beasiswa.\nFarah mendapatkan beasiswa.\nSimpulan: Farah mendapatkan nilai A di semua mata pelajaran.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat disimpulkan"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Pembahasan: Pernyataan awal adalah 'Jika P maka Q' (P: Nilai A semua mapel, Q: Dapat beasiswa). Diketahui Q benar (Farah dapat beasiswa). Menyimpulkan P benar (Farah nilai A semua mapel) adalah kesalahan logika yang disebut 'affirming the consequent'. Kita tidak bisa menyimpulkan penyebab hanya dari akibatnya; mungkin ada cara lain untuk mendapatkan beasiswa selain nilai A di semua mapel.\nJawaban: C. Tidak dapat disimpulkan"
-  },
-  {
-    "question": "Tepat setelah keluar dari suatu ruangan yang digunakan oleh Wenda dan teman-temannya untuk mengerjakan tugas kelompok, dia sadar bahwa handphonenya hilang. Meski sudah dicari, handphone tersebut tidak ditemukan di ruangan. Diketahui beberapa informasi sebagai berikut:\n1. Karena Wenda yakin masih menggunakan handphone sesaat sebelum memulai pengerjaan tugas dan menaruhnya di tas bagian depan, maka yang mencuri handphone Wenda pastilah orang yang berada di ruangan tersebut.\n2. Karena yang mencuri handphone Wenda pastilah orang di ruangan tersebut, maka Wenda melakukan pengecekan CCTV.\n3. CCTV yang ada pada ruangan tersebut sedang rusak, sehingga rekamannya tidak terlihat dengan jelas dan hanya diketahui beberapa petunjuk mengenai orang yang mencuri handphone Wenda.\n4. Orang yang mencuri handphone Wenda tidak memakai kacamata, tidak berkulit putih dan tidak berambut ikal.\n5. Selain Wenda, orang yang berada pada ruangan tersebut adalah Bianka, Cici dan Darry.\n6. Bianka berbadan kecil, berkulit putih dan berambut ikal.\n7. Cici memakai jam tangan, badannya pendek dan berambut pirang.\n8. Darry berkacamata, alisnya tebal dan tidak berambut ikal.\n9. Orang tersebut mencuri handphone Wenda 30 menit setelah proses pengerjaan tugas berlangsung.\nSimpulan: Karena Wenda tidak melakukan pengecekan CCTV, maka Wenda yakin tidak menggunakan handphone sesaat sebelum memulai pengerjaan tugas atau tidak menaruhnya di tas.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat disimpulkan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: A. Simpulan adalah benar\nPEMBAHASAN\nSimpulan yang disebutkan berkaitan dengan informasi 1 dan 2.\nPemisalan:\np: Wenda yakin bahwa masih menggunakan handphone sesaat sebelum memulai pengerjaan tugas\nq: Wenda menaruhnya di tas\nr: yang mencuri handphone Wenda pastilah orang yang berada di ruangan tersebut\ns: Wenda melakukan pengecekan CCTV\nBerdasarkan informasi:\nPremis 1 berdasarkan informasi 1: $(p \\wedge q) \\rightarrow r$\nPremis 2 berdasarkan informasi 2: $r \\rightarrow s$\nSehingga dapat dilakukan penarikan kesimpulan (silogisme): $(p \\wedge q) \\rightarrow s$\nSimpulan yang disebutkan: $\\sim s \\rightarrow (\\sim p \\vee \\sim q)$\nEkuivalensi (Kontraposisi): $(p \\wedge q) \\rightarrow s \\cong \\sim s \\rightarrow \\sim (p \\wedge q)$\nDan $\\sim (p \\wedge q) \\cong (\\sim p \\vee \\sim q)$ (De Morgan)\nJadi, $(p \\wedge q) \\rightarrow s \\cong \\sim s \\rightarrow (\\sim p \\vee \\sim q)$\nKarena simpulan yang disebutkan ekuivalen dengan simpulan yang benar berdasarkan informasi yang ada, maka simpulan adalah benar."
-  },
-  {
-    "question": "Program kesehatan masyarakat baru telah diimplementasikan di Kota Sejahtera untuk meningkatkan akses terhadap layanan kesehatan preventif. Program ini mencakup pemeriksaan kesehatan rutin gratis, vaksinasi, dan seminar kesehatan.\n- Setiap warga yang telah menerima vaksinasi lengkap berhak atas diskon layanan kesehatan tertentu.\n- Warga yang mengikuti seminar kesehatan mendapat prioritas untuk pemeriksaan kesehatan rutin.\n- Pemeriksaan kesehatan rutin gratis tersedia untuk semua warga Kota Sejahtera.\nSimpulan: Jika seseorang mendapat prioritas untuk pemeriksaan kesehatan rutin, maka orang tersebut telah mengikuti seminar kesehatan.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat disimpulkan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Pembahasan: Pernyataan 'Warga yang mengikuti seminar kesehatan mendapat prioritas untuk pemeriksaan kesehatan rutin' secara logis berarti 'Jika mengikuti seminar (P) maka mendapat prioritas (Q)' atau $P \\rightarrow Q$. Simpulan adalah 'Jika mendapat prioritas (Q) maka telah mengikuti seminar (P)' atau $Q \\rightarrow P$. Ini adalah kebalikan (converse) dari pernyataan awal, dan tidak selalu benar. Namun, jika 'mendapat prioritas' HANYA disebabkan oleh 'mengikuti seminar', maka simpulannya benar. Berdasarkan konteks kalimat, tampaknya mengikuti seminar adalah satu-satunya cara yang disebutkan untuk mendapat prioritas. Maka, simpulan dianggap benar dalam konteks ini.\njadi opsi yang benar adalah A"
-  },
-  {
-    "question": "Di sebuah restoran, steak berkualitas baik ditandai dengan daging empuk, matang merata, dan rasa gurih.\n- Sebuah steak terasa empuk dan matang merata, tetapi tidak gurih.\nSimpulan: Steak ini berkualitas baik.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat ditarik kesimpulan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Pembahasan: Steak berkualitas baik harus memenuhi SEMUA ciri (empuk DAN matang merata DAN gurih). Steak yang dijelaskan tidak memenuhi ciri 'rasa gurih'. Oleh karena itu, steak ini tidak berkualitas baik.\nJawaban: B. Simpulan adalah salah"
-  },
-  {
-    "question": "Empat anak tinggal di rumah dengan warna berbeda: merah, biru, hijau, dan kuning. Mereka adalah Mila, Nina, Oki, dan Putri.\n- Rumah Mila bukan warna biru.\n- Rumah Nina berwarna merah.\n- Oki tinggal di rumah hijau.\nSimpulan: Putri tinggal di rumah kuning.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat ditarik kesimpulan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Pembahasan: Rumah terisi: Merah (Nina), Hijau (Oki). Rumah tersisa: Biru, Kuning. Anak tersisa: Mila, Putri. Diketahui rumah Mila bukan Biru. Maka, rumah Mila harus Kuning. Rumah yang tersisa (Biru) adalah milik Putri. Simpulan 'Putri tinggal di rumah kuning' adalah salah.\nJawaban: B. Simpulan adalah salah"
-  },
-  {
-    "question": "Jika nilai matematika Beni lebih dari 5 maka Beni lulus ujian.\nSimpulan: Negasi dari pernyataan tersebut adalah nilai matematika Beni lebih dari 5 dan Beni lulus ujian.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat disimpulkan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: B\nPembahasan:\nPernyataan: Jika P maka Q (P: nilai > 5, Q: lulus).\nNegasi dari $P \\Rightarrow Q$ adalah $P \\wedge \\sim Q$.\nJadi, negasinya adalah 'Nilai matematika Beni lebih dari 5 DAN Beni tidak lulus ujian'.\nSimpulan yang diberikan ('Nilai matematika Beni lebih dari 5 dan Beni lulus ujian') adalah $P \\wedge Q$, bukan negasinya.\nSehingga simpulan adalah salah."
-  },
-  {
-    "question": "Rani akan lulus ujian jika Ia mendapat minimal nilai 80 pada tes akademik.\nPernyataan tersebut setara dengan",
-    "options": [
-      "Rani mendapat nilai kurang dari 80 pada tes akademik atau Rani lulus ujian",
-      "Jika Rani lulus ujian maka Ia tidak mendapat nilai di atas 80 pada tes akademik",
-      "Rani mendapat nilai kurang dari 80 pada tes akademik",
-      "Jika Rani lulus ujian maka Ia mendapat nilai 80 pada tes akademik",
-      "Rani tidak lulus ujian"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: A\nPembahasan:\nPernyataan 'Rani akan lulus ujian jika Ia mendapat minimal nilai 80' bisa ditulis sebagai implikasi: Jika Rani mendapat minimal nilai 80 (P), maka Rani akan lulus ujian (Q). $P \\Rightarrow Q$.\nPernyataan $P \\Rightarrow Q$ ekuivalen dengan $\\sim P \\vee Q$.\nNegasi dari P (Rani mendapat minimal nilai 80) adalah $\\sim P$ (Rani mendapat nilai kurang dari 80).\nJadi, $\\sim P \\vee Q$ adalah 'Rani mendapat nilai kurang dari 80 pada tes akademik atau Rani lulus ujian'."
-  },
-  {
-    "question": "Dalam sebuah kompetisi memasak, lima finalis: Ardi, Bella, Cindy, Dani, dan Eka, membuat hidangan penutup. Peraturan kompetisi adalah sebagai berikut:\n1. Setiap finalis harus membuat hidangan penutup yang berbeda.\n2. Dani tidak dapat membuat hidangan yang sama dengan Bella atau Eka.\n3. Ardi hanya dapat membuat hidangan berbasis cokelat.\n4. Cindy tidak dapat membuat hidangan yang mengandung Telur.\nSimpulan: Cindy memutuskan untuk membuat salad buah, sedangkan Dani membuat kue tart berbasis cokelat. Dani telah melanggar aturan kompetisi.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat ditarik kesimpulan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Pembahasan: Aturan yang relevan untuk Dani adalah aturan 2 (tidak boleh membuat hidangan yang sama dengan Bella atau Eka). Membuat kue tart berbasis cokelat tidak secara eksplisit melanggar aturan ini, kecuali jika Bella atau Eka juga membuat kue tart berbasis cokelat (yang tidak diketahui). Tidak ada aturan yang melarang Dani menggunakan cokelat (aturan 3 hanya berlaku untuk Ardi). Oleh karena itu, berdasarkan informasi yang diberikan, Dani tidak melanggar aturan.\nJawaban: B. Simpulan adalah salah"
-  },
-  {
-    "question": "Kepala Sekolah SMAN 1 Baleendah memberikan hadiah wisata ke Yogyakarta untuk siswa yang mendapatkan peringkat 3 besar secara paralel 1 sekolah selama 3 semester berturut-turut baik dari jurusan IPA maupun IPS dan diusulkan oleh teman-teman sekelasnya dan wali kelasnya. Diketahui bahwa:\n- Reza disukai oleh teman sekelasnya serta mendapatkan peringkat 3 besar secara paralel selama 4 semester berturut-turut.\n- Yanti mendapat peringkat 3 besar selama 2 tahun berturut-turut.\n- Yanti disukai oleh teman sekelasnya dan wali kelasnya.\n- Sidiq disukai wali kelasnya dan mendapatkan peringkat 2 selama 3 semester berturut-turut.\nSimpulan: Yang berangkat ke Yogyakarta adalah Yanti dan Sidiq",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat disimpulkan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: B\nPembahasan:\nSyarat: 1) Peringkat 3 besar paralel, 3 semester berturut-turut. 2) Diusulkan teman sekelas. 3) Diusulkan wali kelas.\n- Reza: Syarat 1 terpenuhi (4 semester). Syarat 2 terpenuhi. Syarat 3 tidak disebutkan. Tidak berangkat.\n- Yanti: Syarat 1 terpenuhi (2 tahun = 4 semester). Syarat 2 terpenuhi. Syarat 3 terpenuhi. Yanti berangkat.\n- Sidiq: Syarat 1 terpenuhi (peringkat 2, 3 semester). Syarat 3 terpenuhi. Syarat 2 tidak disebutkan. Tidak berangkat.\nHanya Yanti yang memenuhi semua syarat. Simpulan 'Yanti dan Sidiq' berangkat adalah Salah."
-  },
-  {
-    "question": "Pada hari senin ketika upacara bendera, Kepala Sekolah memberikan penghargaan kepada para siswa yang memenangkan lomba Olimpiade Sains tingkat Provinsi dengan memanggil para juara kedepan ketika upacara berlangsung untuk diberikan piagam penghargaan dan hadiah. Terdapat 5 mata pelajaran yang berhasil didapatkan dari 7 mata pelajaran yang dilombakan. Para siswa dipanggil maju kedepan dan berbaris.\n• Juara 2 Astronomi berdiri di tengah-tengah barisan\n• Juara 1 Kimia berdiri disebelah kiri Dary\n• Dary dan Afina berdiri sebelahan\n• Meilisa berdiri disebelah kanan Juara 1 Biologi\n• Juara 1 Matematika berdiri di sebelah kanan Julian\n• Afina adalah juara 2 astronomi\n• Julian berdiri di paling kiri barisan\n• Juara 3 Ekonomi berdiri paling kanan barisan\nSimpulan: Juara 1 Kimia adalah Julian",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat ditarik kesimpulan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: A\nPembahasan:\nBarisan 5 orang: [Pos 1] [Pos 2] [Pos 3] [Pos 4] [Pos 5]\n1. Julian paling kiri => Julian di Pos 1.\n2. Afina = Juara 2 Astronomi.\n3. Juara 2 Astronomi di tengah => Afina di Pos 3.\n4. Dary & Afina sebelahan => Dary di Pos 2 atau Pos 4.\n5. Juara 1 Kimia di kiri Dary. Jika Dary Pos 2, Kimia Pos 1 (Julian). Jika Dary Pos 4, Kimia Pos 3 (Afina, tidak mungkin karena Afina juara Astronomi). Jadi, Dary harus di Pos 2, dan Juara 1 Kimia di Pos 1 (Julian).\nBarisan sementara: [Julian(Kimia)] [Dary] [Afina(Astronomi)] [Pos 4] [Pos 5]\n6. Juara 3 Ekonomi paling kanan => Ekonomi di Pos 5.\n7. Juara 1 Matematika di kanan Julian => Mat di Pos 2, 3, 4, atau 5. Karena Pos 2 (Dary) dan Pos 3 (Afina) terisi, Mat di Pos 4 atau 5. Karena Pos 5 (Ekonomi) terisi, Mat di Pos 4.\nBarisan: [Julian(Kimia)] [Dary] [Afina(Astronomi)] [Matematika] [Ekonomi]\n8. Meilisa di kanan Juara 1 Biologi. Posisi tersisa untuk Biologi adalah Pos 2 (Dary) atau Pos 4 (Mat). Jika Bio di Pos 2, Meilisa di Pos 3 (Afina, tdk mungkin). Jika Bio di Pos 4, Meilisa di Pos 5 (Ekonomi). Ini juga tidak sesuai dengan nama juara. Ada kemungkinan nama (Dary, Meilisa) adalah juara mapel lain atau ada inkonsistensi.\nNamun, dari langkah 1-5 sudah pasti Juara 1 Kimia adalah Julian.\nMaka Juara 1 Kimia adalah Julian. Simpulan adalah benar, jawaban adalah A"
-  },
-  {
-    "question": "Seorang guru BK di sebuah SMP merencanakan perjalanan belajar untuk siswa yang telah menunjukkan perbaikan tingkat kedisiplinan selama 3 semester berturut-turut. Persyaratan tambahan adalah siswa tersebut juga harus direkomendasikan oleh guru kelas mereka. Berdasarkan data berikut:\n- Ani telah menunjukkan perbaikan kedisiplinan selama 4 semester berturut-turut dan direkomendasikan oleh semua guru kelasnya.\n- Budi memiliki rekam jejak disiplin yang stabil selama 2 tahun berturut-turut.\n- Cici direkomendasikan oleh guru kelasnya dan menunjukkan peningkatan disiplin dalam 3 semester berturut-turut.\n- Siswa yang direkomendasikan oleh teman sekelasnya akan mendapat prioritas dalam seleksi.\nSimpulan: Budi ikut dalam perjalanan belajar tersebut.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat disimpulkan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Syarat ikut: 1) Perbaikan disiplin 3 semester berturut-turut. 2) Direkomendasikan guru kelas.\n- Ani: Syarat 1 terpenuhi (4 semester > 3). Syarat 2 terpenuhi. Ani bisa ikut.\n- Budi: Rekam jejak stabil, bukan 'perbaikan'. Syarat 1 tidak terpenuhi. Tidak disebutkan rekomendasi guru kelas. Budi tidak bisa ikut.\n- Cici: Syarat 1 terpenuhi (3 semester). Syarat 2 terpenuhi. Cici bisa ikut.\n(Rekomendasi teman hanya prioritas, bukan syarat utama).\nSimpulan 'Budi ikut' adalah Salah.\nJawabannya B."
-  },
-  {
-    "question": "Jika seseorang mempelajari bahasa asing secara teratur (p), maka kemampuan berkomunikasi mereka dalam bahasa tersebut akan meningkat (q).\nJika kemampuan berkomunikasi dalam bahasa asing seseorang meningkat (q), maka mereka akan lebih percaya diri dalam berbicara dengan penutur asli bahasa tersebut (r).\nSimpulan: Jika seseorang tidak percaya diri dalam berbicara dengan penutur asli suatu bahasa (~r), maka mereka tidak mempelajari bahasa asing tersebut secara teratur (~p).",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat disimpulkan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Premis 1: $p \\Rightarrow q$\nPremis 2: $q \\Rightarrow r$\nKesimpulan (Silogisme): $p \\Rightarrow r$\nSimpulan yang diberikan: $\\sim r \\Rightarrow \\sim p$\n$\\sim r \\Rightarrow \\sim p$ adalah kontraposisi dari $p \\Rightarrow r$.\nKarena suatu implikasi ekuivalen dengan kontraposisinya ($p \\Rightarrow r \\cong \\sim r \\Rightarrow \\sim p$), maka simpulannya adalah benar.\nJawabannya adalah A."
-  },
-  {
-    "question": "Tiga orang perenang remaja dan tiga orang perenang anak-anak bertanding dalam sebuah turnamen. Diketahui beberapa informasi sebagai berikut:\n1. Semua perenang akan bertanding satu sama lain masing-masing satu kali.\n2. 3 skor akan diberikan jika berhasil mengalahkan perenang anak-anak.\n3. 6 skor akan diberikan jika berhasil mengalahkan perenang remaja.\n4. Jika perenang remaja kalah dalam satu pertandingan, nilainya akan dikurangi 6.\n5. Jika perenang anak-anak kalah dalam satu pertandingan, nilainya akan dikurangi.\n6. Jika sebuah pertandingan berakhir seri, maka pertandingan tersebut akan diulang.\n7. Perenang akan ditempatkan pada lintasan renang yang berbeda dengan pertandingan awal apabila pertandingan diulang.\n8. Setiap perenang pada turnamen tersebut diperkenankan menggunakan gaya bebas.\nSimpulan: 3 skor akan diberikan jika berhasil mengalahkan perenang remaja atau 6 skor akan diberikan jika berhasil mengalahkan perenang anak-anak.",
-    "options": [
-      "Simpulan adalah benar",
-      "Simpulan adalah salah",
-      "Tidak dapat disimpulkan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: B. Simpulan adalah salah\nPEMBAHASAN\nSimpulan yang disebutkan berkaitan dengan informasi 2 dan 3.\nPemisalan:\np: 3 skor akan diberikan jika berhasil mengalahkan perenang remaja\nq: 6 skor akan diberikan jika berhasil mengalahkan perenang anak-anak\nSimpulan yang disebutkan: $p \\vee q$\nBerdasarkan informasi:\nDari informasi 2: Jika mengalahkan anak-anak -> +3 skor. Ini berarti q SALAH.\nDari informasi 3: Jika mengalahkan remaja -> +6 skor. Ini berarti p SALAH.\nTabel kebenaran disjungsi:\np | q | p V q\n--|---|------\nS | S | S\nKarena p salah dan q salah, maka $p \\vee q$ adalah salah.\nBerdasarkan tabel kebenaran tersebut didapatkan bahwa simpulan yang disebutkan adalah SALAH."
+    "material": "Verbal Logic",
+    "questions": [
+      {
+        "question": "Setiap kali Sarah membantu ibunya dengan pekerjaan rumah tangga, ia mendapat pujian dari ayahnya.\nJika Sarah mendapat pujian dari ayahnya, ia merasa bahagia.\nJika Sarah merasa bahagia, ia akan tersenyum sepanjang hari.\nSimpulan: Setiap kali Sarah membantu ibunya dengan pekerjaan rumah tangga, ia tidak akan tersenyum sepanjang hari.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat disimpulkan"],
+        "correctAnswer": 1,
+        "explanation": "Misalkan:\np: Setiap kali Sarah membantu ibunya dengan pekerjaan rumah tangga\nq: ia mendapat pujian dari ayahnya\nr: ia merasa bahagia\ns: ia akan tersenyum sepanjang hari\nMaka Modus Silogisme\n$p\\Rightarrow q$\n$q\\Rightarrow r$\n$r\\Rightarrow s$\n$p\\Rightarrow s$\nMaka simpulan 'Setiap kali Sarah membantu ibunya dengan pekerjaan rumah tangga, ia tidak akan tersenyum sepanjang hari' adalah salah. Jawaban yang benar adalah 'Setiap kali Sarah membantu ibunya dengan pekerjaan rumah tangga, ia akan tersenyum sepanjang hari'.\nJawabannya adalah B."
+      },
+      {
+        "question": "Seorang guru akan memberikan ujian di dua kelas yang berbeda, yaitu Kelas X dan Kelas Y, dari Senin hingga Jumat. Di setiap kelas, terdapat lima siswa yang disebut sebagai Siswa 1, Siswa 2, Siswa 3, Siswa 4, dan Siswa 5 di Kelas X, dan Siswa A, Siswa B, Siswa C, Siswa D, dan Siswa E di Kelas Y. Guru hanya akan memberikan ujian kepada satu siswa dari setiap kelas setiap harinya.\nAturan urutannya adalah sebagai berikut:\n1. Siswa 1 akan diuji sebelum Siswa 2.\n2. Siswa 2 akan diuji setelah Siswa 1 dan Siswa 3, dua hari setelah ujian kepada Siswa 5.\n3. Siswa 5 diuji tepat setelah Siswa B dan Siswa E.\n4. Siswa 3 diuji setelah Siswa 5 tetapi sebelum Siswa 2.\n5. Siswa 4 diuji tepat sebelum Siswa 5.\nSimpulan: Jika guru memberikan ujian kepada Siswa 2 pada hari Jumat dan B pada hari Selasa, maka siswa 1 dan E akan diuji di hari yang sama yaitu hari Senin.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat ditarik kesimpulan"],
+        "correctAnswer": 0,
+        "explanation": "Urutan berdasarkan analisis aturan:\nSenin: Siswa 1, Siswa E\nSelasa: Siswa 4, Siswa B\nRabu: Siswa 5\nKamis: Siswa 3\nJumat: Siswa 2\nPenjelasan:\nSiswa 2 diuji Jumat (diberikan) => Siswa 5 diuji Rabu (aturan 2: S2 dua hari setelah S5).\nSiswa B diuji Selasa (diberikan).\nSiswa 5 diuji Rabu, tepat setelah Siswa B dan Siswa E (aturan 3). Karena B Selasa, maka E harus Senin agar S5 Rabu.\nSiswa 4 diuji tepat sebelum Siswa 5 (aturan 5) => Siswa 4 diuji Selasa.\nSiswa 3 diuji setelah Siswa 5 (Rabu) tapi sebelum Siswa 2 (Jumat) (aturan 4) => Siswa 3 diuji Kamis.\nSiswa 1 diuji sebelum Siswa 2 (Jumat) (aturan 1) dan belum ditempatkan => Siswa 1 diuji Senin.\nJadi, Siswa 1 dan E diuji hari Senin.\nSimpulan adalah benar.\nJawaban A."
+      },
+      {
+        "question": "Pak Bram adalah mekanik mobil. Mobil yang siap digunakan memiliki ciri:\n- Mesin menyala tanpa suara kasar.\n- Tidak ada kebocoran oli.\n- Rem berfungsi dengan baik.\nSimpulan: Mobil dengan mesin menyala tanpa suara kasar, tidak ada kebocoran oli, tetapi remnya kurang pakem siap digunakan.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat ditarik kesimpulan"],
+        "correctAnswer": 1,
+        "explanation": "Pembahasan: Mobil siap digunakan harus memenuhi semua kriteria. Jika rem tidak berfungsi dengan baik (kurang pakem), mobil tidak siap digunakan.\nJawaban: B. Simpulan adalah salah"
+      },
+      {
+        "question": "Empat pemain sepak bola, yaitu Amir, Budi, Citra, dan Dian bermain di posisi berbeda: kiper, bek, gelandang, dan penyerang.\n- Amir adalah penyerang.\n- Dian tidak bermain sebagai bek.\n- Citra adalah kiper.\nSimpulan: Dian adalah gelandang.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat ditarik kesimpulan"],
+        "correctAnswer": 0,
+        "explanation": "Pembahasan: Posisi terisi: Penyerang (Amir), Kiper (Citra). Posisi tersisa: Bek, Gelandang. Pemain tersisa: Budi, Dian. Diketahui Dian tidak bermain sebagai bek. Maka, Dian harus bermain sebagai gelandang. Posisi yang tersisa (Bek) diisi Budi. Simpulan benar.\nJawaban: A. Simpulan adalah benar"
+      },
+      {
+        "question": "Di sebuah paduan suara sekolah, terdapat lima anggota utama: Ana, Bayu, Cici, Dito, dan Elan. Peraturan latihan mereka adalah sebagai berikut:\n- Latihan harus dimulai oleh Ana atau Bayu.\n- Cici tidak dapat bernyanyi bersamaan dengan Elan.\n- Dito hanya dapat bernyanyi jika Ana juga bernyanyi.\n- Jika Elan bernyanyi, maka Bayu harus keluar dari latihan.\nSimpulan: Pada sesi latihan terakhir, susunan anggota adalah: Ana, Cici, Dito, dan Elan. Susunan anggota tersebut melanggar aturan latihan.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat ditarik kesimpulan"],
+        "correctAnswer": 0,
+        "explanation": "Pembahasan: Dalam susunan Ana, Cici, Dito, dan Elan, terlihat bahwa Cici dan Elan bernyanyi bersamaan. Ini melanggar aturan kedua ('Cici tidak dapat bernyanyi bersamaan dengan Elan').\nJawaban: A. Simpulan adalah benar"
+      },
+      {
+        "question": "Pada sebuah kompetisi memasak di rumah sakit, terdapat lima peserta: Chef A, Chef B, Chef C, Chef D, dan Chef E. Hasil lomba menunjukkan:\n- Chef A selalu berhasil membuat hidangan pembuka terbaik.\n- Chef B selalu menang dalam kategori hidangan utama.\n- Chef C berhasil menciptakan hidangan penutup yang paling inovatif.\n- Chef D selalu mendapat kritik karena rasanya yang kurang konsisten.\n- Chef E tidak pernah mendapat penghargaan dalam kategori manapun.\nSimpulan: Chef B berpeluang lebih besar untuk menang jika bersaing dengan Chef A pada lomba berikutnya.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat ditarik kesimpulan"],
+        "correctAnswer": 2,
+        "explanation": "Pembahasan: Chef A selalu unggul dalam hidangan pembuka, sedangkan Chef B unggul di hidangan utama. Karena mereka unggul di kategori yang berbeda, tidak ada informasi yang cukup untuk membandingkan peluang mereka jika bersaing secara langsung atau dalam kategori lain.\nJawaban: C. Tidak dapat ditarik kesimpulan"
+      },
+      {
+        "question": "Di sebuah grup musik, terdapat lima anggota utama: Alif, Bayu, Citra, Dito, dan Elvi. Peraturan latihan mereka adalah sebagai berikut:\n- Latihan harus dimulai oleh Alif atau Elvi.\n- Bayu tidak dapat bermain bersamaan dengan Dito.\n- Citra hanya dapat bermain jika Alif juga bermain.\n- Jika Elvi bermain, maka Bayu harus keluar dari latihan.\nSimpulan: Pada sesi latihan terakhir, susunan pemain adalah: Alif, Bayu, Citra, dan Dito. Susunan pemain tersebut melanggar aturan latihan.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat ditarik kesimpulan"],
+        "correctAnswer": 0,
+        "explanation": "Pembahasan: Dalam susunan Alif, Bayu, Citra, dan Dito, terlihat bahwa Bayu dan Dito bermain bersamaan. Ini melanggar aturan kedua ('Bayu tidak dapat bermain bersamaan dengan Dito').\nJawaban: A. Simpulan adalah benar"
+      },
+      {
+        "question": "Jika seseorang memiliki kartu perpustakaan, maka ia dapat meminjam buku.\nMaria memiliki kartu perpustakaan.\nSimpulan: Maria dapat meminjam buku.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat disimpulkan"],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: A\nPembahasan:\nIni adalah contoh Modus Ponens. Premis 1: Jika P maka Q (P: punya kartu, Q: bisa pinjam). Premis 2: P benar (Maria punya kartu). Kesimpulan: Q benar (Maria bisa pinjam).\nKepemilikan kartu perpustakaan memungkinkan Maria untuk meminjam buku, sesuai dengan premis awal."
+      },
+      {
+        "question": "Terdapat empat kotak berbeda warna (merah, kuning, hijau dan biru) yang disusun dalam satu deretan dari kiri ke kanan. Setiap kotak berisikan bola dengan warna yang berbeda juga (merah, kuning, hijau dan biru). Diketahui juga beberapa informasi sebagai berikut:\n1. Warna kotak dan warna bola yang ada didalamnya berbeda.\n2. Jika suatu kotak berisikan lebih dari satu bola, maka semua bolanya berwarna sama.\n3. Banyak bola di setiap kotak bertambah satu dari kiri ke kanan (misal tepat di sebelah kanan kotak yang berisikan 3 bola adalah kotak yang berisikan 4 bola).\n4. Bola berwarna hijau terletak di dalam kotak yang diapit oleh kotak berisikan bola merah dan bola biru.\n5. Kotak yang berisikan tiga bola terletak tepat disamping kotak berwarna kuning.\n6. Bola berwarna hijau ada di dalam kotak yang terletak di antara kotak berwarna merah dan kotak di urutan ketiga dari kiri.\n7. Kotak yang berisikan enam bola terletak di salah satu ujung deretan.\n8. Bola berwarna merah ada di dalam kotak berwarna biru.\n9. Apabila merupakan kotak yang paling ringan, maka kotak di urutan kedua dari kiri berisikan tiga bola.\n10. Semua kotak berukuran sama.\nSimpulan: Suatu kotak berisikan lebih dari satu bola dan ada bola di kotak tersebut yang berbeda warna.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat disimpulkan"],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: B. Simpulan adalah salah\nPEMBAHASAN\nSimpulan yang disebutkan berkaitan dengan informasi 2.\nPemisalan:\np: suatu kotak berisikan lebih dari satu bola\nq: semua bolanya berwarna sama\nPremis berdasarkan informasi 2: $p\\rightarrow q$\nSimpulan yang disebutkan: Suatu kotak berisikan lebih dari satu bola (p) DAN ada bola di kotak tersebut yang berbeda warna (~q). Ini adalah $p\\wedge\\sim q$.\nEkuivalensi: $p\\wedge\\sim q\\cong\\sim(p\\rightarrow q)$\nKarena simpulan yang disebutkan ($p\\wedge\\sim q$) adalah negasi dari premis yang ada (informasi 2: $p\\rightarrow q$) yang dianggap benar, maka simpulan adalah salah."
+      },
+      {
+        "question": "Sebuah perusahaan memiliki 6 karyawan: A, B, C, D, E, dan F. Mereka akan duduk dalam sebuah rapat yang diatur oleh manajer. Aturan untuk pengaturan kursi adalah sebagai berikut:\n1 Karyawan A harus duduk di depan karyawan B\n2 Karyawan C harus duduk tepat di belakang karyawan A\n3 Salah satu dari karyawan D atau F harus duduk di kursi keenam\n4 Karyawan F harus duduk tepat di depan karyawan A\nSimpulan: Urutan tempat duduk karyawan dalam rapat tersebut adalah F, A, C, E, B, D.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat disimpulkan"],
+        "correctAnswer": 0,
+        "explanation": "Pembahasan:\nMari kita periksa urutan F, A, C, E, B, D terhadap aturan:\n1. A (kursi 2) harus duduk di depan B (kursi 5). Benar.\n2. C (kursi 3) harus duduk tepat di belakang A (kursi 2). Benar.\n3. Salah satu dari D (kursi 6) atau F (kursi 1) harus duduk di kursi keenam. D duduk di kursi keenam. Benar.\n4. F (kursi 1) harus duduk tepat di depan A (kursi 2). Benar.\nSemua aturan terpenuhi oleh urutan F, A, C, E, B, D.\nMaka simpulan adalah benar. Jawaban adalah A."
+      },
+      {
+        "question": "Dalam sebuah penelitian tentang pengaruh sarapan terhadap konsentrasi dan energi siswa, ditemukan bahwa siswa yang sarapan secara teratur cenderung memiliki konsentrasi yang lebih baik dan tingkat energi yang lebih stabil. Selain itu, diketahui bahwa:\n• Rata-rata skor tes konsentrasi siswa yang tidak sarapan adalah 60 dari total skala 100.\n• Setiap kali siswa sarapan sebelum ujian, skor rata-rata tes konsentrasinya meningkat sebesar 10 poin.\n• Sarapan dianggap sehat jika mengandung setidaknya satu sumber protein dan satu sumber karbohidrat kompleks.\nSimpulan: Jika seorang siswa yang biasanya tidak sarapan memutuskan untuk sarapan sebelum ujian dan memperoleh skor 80 dalam tes konsentrasi, maka persentase peningkatan skornya adalah kurang dari 30%.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat disimpulkan"],
+        "correctAnswer": 1,
+        "explanation": "Pembahasan:\nSkor awal (tidak sarapan) = 60.\nSkor setelah sarapan = 80.\nPeningkatan skor = Skor setelah sarapan - Skor awal = $80 - 60 = 20$.\nPersentase peningkatan skor = (Peningkatan skor / Skor awal) x 100% = $(20 / 60)$ x 100% = $(1/3)$ x 100% = $33.3\\%$.\nSimpulan menyatakan bahwa persentase peningkatannya kurang dari 30%. Karena 33.3% lebih besar dari 30%, maka simpulan tersebut salah.\nJawaban: B"
+      },
+      {
+        "question": "Di sebuah tim futsal, terdapat lima pemain utama: Andra, Beni, Cici, Danu, dan Edo. Peraturan latihan mereka adalah sebagai berikut:\n- Latihan harus dimulai oleh Andra atau Danu.\n- Beni tidak dapat bermain bersamaan dengan Cici.\n- Danu hanya dapat bermain jika Edo juga bermain.\n- Jika Edo bermain, maka Andra harus keluar dari lapangan.\nSimpulan: Pada sesi latihan terakhir, susunan pemain adalah: Andra, Beni, Cici, dan Danu. Susunan pemain tersebut melanggar aturan latihan.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat ditarik kesimpulan"],
+        "correctAnswer": 0,
+        "explanation": "Pembahasan: Dalam susunan Andra, Beni, Cici, dan Danu, terlihat bahwa Beni dan Cici bermain bersamaan. Ini melanggar aturan kedua ('Beni tidak dapat bermain bersamaan dengan Cici').\nJawaban: A. Simpulan adalah benar"
+      },
+      {
+        "question": "Jika seorang siswa mendapatkan nilai A di semua mata pelajaran, maka ia akan mendapatkan beasiswa.\nFarah mendapatkan beasiswa.\nSimpulan: Farah mendapatkan nilai A di semua mata pelajaran.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat disimpulkan"],
+        "correctAnswer": 2,
+        "explanation": "Pembahasan: Pernyataan awal adalah 'Jika P maka Q' (P: Nilai A semua mapel, Q: Dapat beasiswa). Diketahui Q benar (Farah dapat beasiswa). Menyimpulkan P benar (Farah nilai A semua mapel) adalah kesalahan logika yang disebut 'affirming the consequent'. Kita tidak bisa menyimpulkan penyebab hanya dari akibatnya; mungkin ada cara lain untuk mendapatkan beasiswa selain nilai A di semua mapel.\nJawaban: C. Tidak dapat disimpulkan"
+      },
+      {
+        "question": "Tepat setelah keluar dari suatu ruangan yang digunakan oleh Wenda dan teman-temannya untuk mengerjakan tugas kelompok, dia sadar bahwa handphonenya hilang. Meski sudah dicari, handphone tersebut tidak ditemukan di ruangan. Diketahui beberapa informasi sebagai berikut:\n1. Karena Wenda yakin masih menggunakan handphone sesaat sebelum memulai pengerjaan tugas dan menaruhnya di tas bagian depan, maka yang mencuri handphone Wenda pastilah orang yang berada di ruangan tersebut.\n2. Karena yang mencuri handphone Wenda pastilah orang di ruangan tersebut, maka Wenda melakukan pengecekan CCTV.\n3. CCTV yang ada pada ruangan tersebut sedang rusak, sehingga rekamannya tidak terlihat dengan jelas dan hanya diketahui beberapa petunjuk mengenai orang yang mencuri handphone Wenda.\n4. Orang yang mencuri handphone Wenda tidak memakai kacamata, tidak berkulit putih dan tidak berambut ikal.\n5. Selain Wenda, orang yang berada pada ruangan tersebut adalah Bianka, Cici dan Darry.\n6. Bianka berbadan kecil, berkulit putih dan berambut ikal.\n7. Cici memakai jam tangan, badannya pendek dan berambut pirang.\n8. Darry berkacamata, alisnya tebal dan tidak berambut ikal.\n9. Orang tersebut mencuri handphone Wenda 30 menit setelah proses pengerjaan tugas berlangsung.\nSimpulan: Karena Wenda tidak melakukan pengecekan CCTV, maka Wenda yakin tidak menggunakan handphone sesaat sebelum memulai pengerjaan tugas atau tidak menaruhnya di tas.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat disimpulkan"],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: A. Simpulan adalah benar\nPEMBAHASAN\nSimpulan yang disebutkan berkaitan dengan informasi 1 dan 2.\nPemisalan:\np: Wenda yakin bahwa masih menggunakan handphone sesaat sebelum memulai pengerjaan tugas\nq: Wenda menaruhnya di tas\nr: yang mencuri handphone Wenda pastilah orang yang berada di ruangan tersebut\ns: Wenda melakukan pengecekan CCTV\nBerdasarkan informasi:\nPremis 1 berdasarkan informasi 1: $(p \\wedge q) \\rightarrow r$\nPremis 2 berdasarkan informasi 2: $r \\rightarrow s$\nSehingga dapat dilakukan penarikan kesimpulan (silogisme): $(p \\wedge q) \\rightarrow s$\nSimpulan yang disebutkan: $\\sim s \\rightarrow (\\sim p \\vee \\sim q)$\nEkuivalensi (Kontraposisi): $(p \\wedge q) \\rightarrow s \\cong \\sim s \\rightarrow \\sim (p \\wedge q)$\nDan $\\sim (p \\wedge q) \\cong (\\sim p \\vee \\sim q)$ (De Morgan)\nJadi, $(p \\wedge q) \\rightarrow s \\cong \\sim s \\rightarrow (\\sim p \\vee \\sim q)$\nKarena simpulan yang disebutkan ekuivalen dengan simpulan yang benar berdasarkan informasi yang ada, maka simpulan adalah benar."
+      },
+      {
+        "question": "Program kesehatan masyarakat baru telah diimplementasikan di Kota Sejahtera untuk meningkatkan akses terhadap layanan kesehatan preventif. Program ini mencakup pemeriksaan kesehatan rutin gratis, vaksinasi, dan seminar kesehatan.\n- Setiap warga yang telah menerima vaksinasi lengkap berhak atas diskon layanan kesehatan tertentu.\n- Warga yang mengikuti seminar kesehatan mendapat prioritas untuk pemeriksaan kesehatan rutin.\n- Pemeriksaan kesehatan rutin gratis tersedia untuk semua warga Kota Sejahtera.\nSimpulan: Jika seseorang mendapat prioritas untuk pemeriksaan kesehatan rutin, maka orang tersebut telah mengikuti seminar kesehatan.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat disimpulkan"],
+        "correctAnswer": 0,
+        "explanation": "Pembahasan: Pernyataan 'Warga yang mengikuti seminar kesehatan mendapat prioritas untuk pemeriksaan kesehatan rutin' secara logis berarti 'Jika mengikuti seminar (P) maka mendapat prioritas (Q)' atau $P \\rightarrow Q$. Simpulan adalah 'Jika mendapat prioritas (Q) maka telah mengikuti seminar (P)' atau $Q \\rightarrow P$. Ini adalah kebalikan (converse) dari pernyataan awal, dan tidak selalu benar. Namun, jika 'mendapat prioritas' HANYA disebabkan oleh 'mengikuti seminar', maka simpulannya benar. Berdasarkan konteks kalimat, tampaknya mengikuti seminar adalah satu-satunya cara yang disebutkan untuk mendapat prioritas. Maka, simpulan dianggap benar dalam konteks ini.\njadi opsi yang benar adalah A"
+      },
+      {
+        "question": "Di sebuah restoran, steak berkualitas baik ditandai dengan daging empuk, matang merata, dan rasa gurih.\n- Sebuah steak terasa empuk dan matang merata, tetapi tidak gurih.\nSimpulan: Steak ini berkualitas baik.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat ditarik kesimpulan"],
+        "correctAnswer": 1,
+        "explanation": "Pembahasan: Steak berkualitas baik harus memenuhi SEMUA ciri (empuk DAN matang merata DAN gurih). Steak yang dijelaskan tidak memenuhi ciri 'rasa gurih'. Oleh karena itu, steak ini tidak berkualitas baik.\nJawaban: B. Simpulan adalah salah"
+      },
+      {
+        "question": "Empat anak tinggal di rumah dengan warna berbeda: merah, biru, hijau, dan kuning. Mereka adalah Mila, Nina, Oki, dan Putri.\n- Rumah Mila bukan warna biru.\n- Rumah Nina berwarna merah.\n- Oki tinggal di rumah hijau.\nSimpulan: Putri tinggal di rumah kuning.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat ditarik kesimpulan"],
+        "correctAnswer": 1,
+        "explanation": "Pembahasan: Rumah terisi: Merah (Nina), Hijau (Oki). Rumah tersisa: Biru, Kuning. Anak tersisa: Mila, Putri. Diketahui rumah Mila bukan Biru. Maka, rumah Mila harus Kuning. Rumah yang tersisa (Biru) adalah milik Putri. Simpulan 'Putri tinggal di rumah kuning' adalah salah.\nJawaban: B. Simpulan adalah salah"
+      },
+      {
+        "question": "Jika nilai matematika Beni lebih dari 5 maka Beni lulus ujian.\nSimpulan: Negasi dari pernyataan tersebut adalah nilai matematika Beni lebih dari 5 dan Beni lulus ujian.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat disimpulkan"],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: B\nPembahasan:\nPernyataan: Jika P maka Q (P: nilai > 5, Q: lulus).\nNegasi dari $P \\Rightarrow Q$ adalah $P \\wedge \\sim Q$.\nJadi, negasinya adalah 'Nilai matematika Beni lebih dari 5 DAN Beni tidak lulus ujian'.\nSimpulan yang diberikan ('Nilai matematika Beni lebih dari 5 dan Beni lulus ujian') adalah $P \\wedge Q$, bukan negasinya.\nSehingga simpulan adalah salah."
+      },
+      {
+        "question": "Rani akan lulus ujian jika Ia mendapat minimal nilai 80 pada tes akademik.\nPernyataan tersebut setara dengan",
+        "options": [
+          "Rani mendapat nilai kurang dari 80 pada tes akademik atau Rani lulus ujian",
+          "Jika Rani lulus ujian maka Ia tidak mendapat nilai di atas 80 pada tes akademik",
+          "Rani mendapat nilai kurang dari 80 pada tes akademik",
+          "Jika Rani lulus ujian maka Ia mendapat nilai 80 pada tes akademik",
+          "Rani tidak lulus ujian"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: A\nPembahasan:\nPernyataan 'Rani akan lulus ujian jika Ia mendapat minimal nilai 80' bisa ditulis sebagai implikasi: Jika Rani mendapat minimal nilai 80 (P), maka Rani akan lulus ujian (Q). $P \\Rightarrow Q$.\nPernyataan $P \\Rightarrow Q$ ekuivalen dengan $\\sim P \\vee Q$.\nNegasi dari P (Rani mendapat minimal nilai 80) adalah $\\sim P$ (Rani mendapat nilai kurang dari 80).\nJadi, $\\sim P \\vee Q$ adalah 'Rani mendapat nilai kurang dari 80 pada tes akademik atau Rani lulus ujian'."
+      },
+      {
+        "question": "Dalam sebuah kompetisi memasak, lima finalis: Ardi, Bella, Cindy, Dani, dan Eka, membuat hidangan penutup. Peraturan kompetisi adalah sebagai berikut:\n1. Setiap finalis harus membuat hidangan penutup yang berbeda.\n2. Dani tidak dapat membuat hidangan yang sama dengan Bella atau Eka.\n3. Ardi hanya dapat membuat hidangan berbasis cokelat.\n4. Cindy tidak dapat membuat hidangan yang mengandung Telur.\nSimpulan: Cindy memutuskan untuk membuat salad buah, sedangkan Dani membuat kue tart berbasis cokelat. Dani telah melanggar aturan kompetisi.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat ditarik kesimpulan"],
+        "correctAnswer": 1,
+        "explanation": "Pembahasan: Aturan yang relevan untuk Dani adalah aturan 2 (tidak boleh membuat hidangan yang sama dengan Bella atau Eka). Membuat kue tart berbasis cokelat tidak secara eksplisit melanggar aturan ini, kecuali jika Bella atau Eka juga membuat kue tart berbasis cokelat (yang tidak diketahui). Tidak ada aturan yang melarang Dani menggunakan cokelat (aturan 3 hanya berlaku untuk Ardi). Oleh karena itu, berdasarkan informasi yang diberikan, Dani tidak melanggar aturan.\nJawaban: B. Simpulan adalah salah"
+      },
+      {
+        "question": "Kepala Sekolah SMAN 1 Baleendah memberikan hadiah wisata ke Yogyakarta untuk siswa yang mendapatkan peringkat 3 besar secara paralel 1 sekolah selama 3 semester berturut-turut baik dari jurusan IPA maupun IPS dan diusulkan oleh teman-teman sekelasnya dan wali kelasnya. Diketahui bahwa:\n- Reza disukai oleh teman sekelasnya serta mendapatkan peringkat 3 besar secara paralel selama 4 semester berturut-turut.\n- Yanti mendapat peringkat 3 besar selama 2 tahun berturut-turut.\n- Yanti disukai oleh teman sekelasnya dan wali kelasnya.\n- Sidiq disukai wali kelasnya dan mendapatkan peringkat 2 selama 3 semester berturut-turut.\nSimpulan: Yang berangkat ke Yogyakarta adalah Yanti dan Sidiq",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat disimpulkan"],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: B\nPembahasan:\nSyarat: 1) Peringkat 3 besar paralel, 3 semester berturut-turut. 2) Diusulkan teman sekelas. 3) Diusulkan wali kelas.\n- Reza: Syarat 1 terpenuhi (4 semester). Syarat 2 terpenuhi. Syarat 3 tidak disebutkan. Tidak berangkat.\n- Yanti: Syarat 1 terpenuhi (2 tahun = 4 semester). Syarat 2 terpenuhi. Syarat 3 terpenuhi. Yanti berangkat.\n- Sidiq: Syarat 1 terpenuhi (peringkat 2, 3 semester). Syarat 3 terpenuhi. Syarat 2 tidak disebutkan. Tidak berangkat.\nHanya Yanti yang memenuhi semua syarat. Simpulan 'Yanti dan Sidiq' berangkat adalah Salah."
+      },
+      {
+        "question": "Pada hari senin ketika upacara bendera, Kepala Sekolah memberikan penghargaan kepada para siswa yang memenangkan lomba Olimpiade Sains tingkat Provinsi dengan memanggil para juara kedepan ketika upacara berlangsung untuk diberikan piagam penghargaan dan hadiah. Terdapat 5 mata pelajaran yang berhasil didapatkan dari 7 mata pelajaran yang dilombakan. Para siswa dipanggil maju kedepan dan berbaris.\n• Juara 2 Astronomi berdiri di tengah-tengah barisan\n• Juara 1 Kimia berdiri disebelah kiri Dary\n• Dary dan Afina berdiri sebelahan\n• Meilisa berdiri disebelah kanan Juara 1 Biologi\n• Juara 1 Matematika berdiri di sebelah kanan Julian\n• Afina adalah juara 2 astronomi\n• Julian berdiri di paling kiri barisan\n• Juara 3 Ekonomi berdiri paling kanan barisan\nSimpulan: Juara 1 Kimia adalah Julian",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat ditarik kesimpulan"],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: A\nPembahasan:\nBarisan 5 orang: [Pos 1] [Pos 2] [Pos 3] [Pos 4] [Pos 5]\n1. Julian paling kiri => Julian di Pos 1.\n2. Afina = Juara 2 Astronomi.\n3. Juara 2 Astronomi di tengah => Afina di Pos 3.\n4. Dary & Afina sebelahan => Dary di Pos 2 atau Pos 4.\n5. Juara 1 Kimia di kiri Dary. Jika Dary Pos 2, Kimia Pos 1 (Julian). Jika Dary Pos 4, Kimia Pos 3 (Afina, tidak mungkin karena Afina juara Astronomi). Jadi, Dary harus di Pos 2, dan Juara 1 Kimia di Pos 1 (Julian).\nBarisan sementara: [Julian(Kimia)] [Dary] [Afina(Astronomi)] [Pos 4] [Pos 5]\n6. Juara 3 Ekonomi paling kanan => Ekonomi di Pos 5.\n7. Juara 1 Matematika di kanan Julian => Mat di Pos 2, 3, 4, atau 5. Karena Pos 2 (Dary) dan Pos 3 (Afina) terisi, Mat di Pos 4 atau 5. Karena Pos 5 (Ekonomi) terisi, Mat di Pos 4.\nBarisan: [Julian(Kimia)] [Dary] [Afina(Astronomi)] [Matematika] [Ekonomi]\n8. Meilisa di kanan Juara 1 Biologi. Posisi tersisa untuk Biologi adalah Pos 2 (Dary) atau Pos 4 (Mat). Jika Bio di Pos 2, Meilisa di Pos 3 (Afina, tdk mungkin). Jika Bio di Pos 4, Meilisa di Pos 5 (Ekonomi). Ini juga tidak sesuai dengan nama juara. Ada kemungkinan nama (Dary, Meilisa) adalah juara mapel lain atau ada inkonsistensi.\nNamun, dari langkah 1-5 sudah pasti Juara 1 Kimia adalah Julian.\nMaka Juara 1 Kimia adalah Julian. Simpulan adalah benar, jawaban adalah A"
+      },
+      {
+        "question": "Seorang guru BK di sebuah SMP merencanakan perjalanan belajar untuk siswa yang telah menunjukkan perbaikan tingkat kedisiplinan selama 3 semester berturut-turut. Persyaratan tambahan adalah siswa tersebut juga harus direkomendasikan oleh guru kelas mereka. Berdasarkan data berikut:\n- Ani telah menunjukkan perbaikan kedisiplinan selama 4 semester berturut-turut dan direkomendasikan oleh semua guru kelasnya.\n- Budi memiliki rekam jejak disiplin yang stabil selama 2 tahun berturut-turut.\n- Cici direkomendasikan oleh guru kelasnya dan menunjukkan peningkatan disiplin dalam 3 semester berturut-turut.\n- Siswa yang direkomendasikan oleh teman sekelasnya akan mendapat prioritas dalam seleksi.\nSimpulan: Budi ikut dalam perjalanan belajar tersebut.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat disimpulkan"],
+        "correctAnswer": 1,
+        "explanation": "Syarat ikut: 1) Perbaikan disiplin 3 semester berturut-turut. 2) Direkomendasikan guru kelas.\n- Ani: Syarat 1 terpenuhi (4 semester > 3). Syarat 2 terpenuhi. Ani bisa ikut.\n- Budi: Rekam jejak stabil, bukan 'perbaikan'. Syarat 1 tidak terpenuhi. Tidak disebutkan rekomendasi guru kelas. Budi tidak bisa ikut.\n- Cici: Syarat 1 terpenuhi (3 semester). Syarat 2 terpenuhi. Cici bisa ikut.\n(Rekomendasi teman hanya prioritas, bukan syarat utama).\nSimpulan 'Budi ikut' adalah Salah.\nJawabannya B."
+      },
+      {
+        "question": "Jika seseorang mempelajari bahasa asing secara teratur (p), maka kemampuan berkomunikasi mereka dalam bahasa tersebut akan meningkat (q).\nJika kemampuan berkomunikasi dalam bahasa asing seseorang meningkat (q), maka mereka akan lebih percaya diri dalam berbicara dengan penutur asli bahasa tersebut (r).\nSimpulan: Jika seseorang tidak percaya diri dalam berbicara dengan penutur asli suatu bahasa (~r), maka mereka tidak mempelajari bahasa asing tersebut secara teratur (~p).",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat disimpulkan"],
+        "correctAnswer": 0,
+        "explanation": "Premis 1: $p \\Rightarrow q$\nPremis 2: $q \\Rightarrow r$\nKesimpulan (Silogisme): $p \\Rightarrow r$\nSimpulan yang diberikan: $\\sim r \\Rightarrow \\sim p$\n$\\sim r \\Rightarrow \\sim p$ adalah kontraposisi dari $p \\Rightarrow r$.\nKarena suatu implikasi ekuivalen dengan kontraposisinya ($p \\Rightarrow r \\cong \\sim r \\Rightarrow \\sim p$), maka simpulannya adalah benar.\nJawabannya adalah A."
+      },
+      {
+        "question": "Tiga orang perenang remaja dan tiga orang perenang anak-anak bertanding dalam sebuah turnamen. Diketahui beberapa informasi sebagai berikut:\n1. Semua perenang akan bertanding satu sama lain masing-masing satu kali.\n2. 3 skor akan diberikan jika berhasil mengalahkan perenang anak-anak.\n3. 6 skor akan diberikan jika berhasil mengalahkan perenang remaja.\n4. Jika perenang remaja kalah dalam satu pertandingan, nilainya akan dikurangi 6.\n5. Jika perenang anak-anak kalah dalam satu pertandingan, nilainya akan dikurangi.\n6. Jika sebuah pertandingan berakhir seri, maka pertandingan tersebut akan diulang.\n7. Perenang akan ditempatkan pada lintasan renang yang berbeda dengan pertandingan awal apabila pertandingan diulang.\n8. Setiap perenang pada turnamen tersebut diperkenankan menggunakan gaya bebas.\nSimpulan: 3 skor akan diberikan jika berhasil mengalahkan perenang remaja atau 6 skor akan diberikan jika berhasil mengalahkan perenang anak-anak.",
+        "options": ["Simpulan adalah benar", "Simpulan adalah salah", "Tidak dapat disimpulkan"],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: B. Simpulan adalah salah\nPEMBAHASAN\nSimpulan yang disebutkan berkaitan dengan informasi 2 dan 3.\nPemisalan:\np: 3 skor akan diberikan jika berhasil mengalahkan perenang remaja\nq: 6 skor akan diberikan jika berhasil mengalahkan perenang anak-anak\nSimpulan yang disebutkan: $p \\vee q$\nBerdasarkan informasi:\nDari informasi 2: Jika mengalahkan anak-anak -> +3 skor. Ini berarti q SALAH.\nDari informasi 3: Jika mengalahkan remaja -> +6 skor. Ini berarti p SALAH.\nTabel kebenaran disjungsi:\np | q | p V q\n--|---|------\nS | S | S\nKarena p salah dan q salah, maka $p \\vee q$ adalah salah.\nBerdasarkan tabel kebenaran tersebut didapatkan bahwa simpulan yang disebutkan adalah SALAH."
+      }
+    ]
   }
 ]

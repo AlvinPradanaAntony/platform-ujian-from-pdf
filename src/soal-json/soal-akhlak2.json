@@ -1,812 +1,817 @@
 [
   {
-    "question": "Menurut saya, karyawan yang diberikan beasiswa oleh perusahaan, tetapi memilih resign sebelum masa ikatan dinas selesai merupakan...",
-    "options": [
-      "hal yang kurang profesional",
-      "hal yang dapat diterima karena ia melihat peluang yang lebih baik di perusahaan lain"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Hal yang kurang profesional\n→ Karena menerima beasiswa berarti ada komitmen kepada perusahaan[cite: 2]. Resign sebelum ikatan dinas selesai bisa dianggap sebagai tindakan yang kurang bertanggung jawab[cite: 3]."
-  },
-  {
-    "question": "Jika terdapat rekan kerja yang menggunakan bahasa daerahnya bersama rekan kerja lain pada saat rapat, maka sikap saya...",
-    "options": [
-      "memberi tahunya bahwa hal tersebut dapat menimbulkan kesalahpahaman",
-      "langsung menegurnya saat itu juga"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Memberi tahunya bahwa hal tersebut dapat menimbulkan kesalahpahaman\n→ Komunikasi harus inklusif agar semua peserta rapat dapat memahami isi pembahasan[cite: 4]."
-  },
-  {
-    "question": "Saat beberapa rekan kerja menilai perilaku bekerja saya masih kurang baik, maka.....",
-    "options": [
-      "saya akan mengajak mereka berdiskusi untuk mengetahui hal yang perlu saya tingkatkan",
-      "saya akan tetap pada pendirian saya dan menjadi diri saya sendiri"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Saya akan mengajak mereka berdiskusi untuk mengetahui hal yang perlu saya tingkatkan\n← Sikap terbuka terhadap kritik menunjukkan profesionalisme dan keinginan untuk terus berkembang[cite: 5, 6]."
-  },
-  {
-    "question": "Memiliki banyak anggota tim yang merupakan generasi Z, maka saya akan..",
-    "options": [
-      "lebih mendisiplinkan mereka",
-      "memberikan penugasan yang sesuai dengan hal yang menjadi kelebihan generasi"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Memberikan penugasan yang sesuai dengan hal yang menjadi kelebihan generasi\n→ Generasi Z memiliki karakteristik unik[cite: 6]. Memanfaatkan kelebihan mereka akan meningkatkan produktivitas[cite: 7]."
-  },
-  {
-    "question": "Pada saat terjadi kerusakan pada alat kantor yang menghambat kinerja saya, saya akan..",
-    "options": [
-      "menunggu hingga perusahaan saya memberikan peralatan penggantinya",
-      "mengerjakan bagian pekerjaan yang dapat dikerjakan dahulu untuk sementara waktu"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Mengerjakan bagian pekerjaan yang dapat dikerjakan dahulu untuk sementara waktu\n→ Menghindari keterlambatan kerja dengan tetap produktif meskipun ada kendala teknis[cite: 7]."
-  },
-  {
-    "question": "Metode untuk memperluas wawasan dan berpikir inovatif menurut saya lebih efektif dengan...",
-    "options": [
-      "memperbanyak liburan untuk mencari ide segar",
-      "memperbanyak diskusi dengan berbagai pihak"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Memperbanyak diskusi dengan berbagai pihak\n→ Diskusi membuka wawasan dan peluang inovasi melalui berbagai perspektif[cite: 8]."
-  },
-  {
-    "question": "Ketika banyak data yang tersimpan pada teknologi kami seringkali dibiarkan menjadi sumber daya yang tidak terpakai, menurut saya...",
-    "options": [
-      "dapat berkolaborasi dengan pihak eksternal yang ahli mengolah data menjadi informasi strategis",
-      "sebaiknya tetap disimpan sebagai arsip perusahaan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Dapat berkolaborasi dengan pihak eksternal yang ahli mengolah data menjadi informasi strategis\n→ Data sebaiknya dioptimalkan untuk mendukung pengambilan keputusan perusahaan[cite: 11]."
-  },
-  {
-    "question": "Ruang lingkup kerja sama yang dapat dilakukan pada tempat kerja saya sebaiknya...",
-    "options": [
-      "difokuskan pada perusahaan-perusahaan yang memiliki teknologi yang sama dengan perusahaan kami",
-      "dibuka seluas mungkin untuk seluruh kalangan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Dibuka seluas mungkin untuk seluruh kalangan\n→ Kolaborasi yang luas memberikan peluang inovasi dan pertumbuhan perusahaan[cite: 12]."
-  },
-  {
-    "question": "Saat terdapat perangkat lunak terbaru yang menjadi standar di perusahaan, tetapi saya belum pernah memakainya, saya akan..",
-    "options": [
-      "mengisi waktu saya untuk mempelajari perangkat lunak baru tersebut",
-      "memohon izin pimpinan agar saya dipersilakan menggunakan perangkat lunak yang biasa saya pakai"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Mengisi waktu saya untuk mempelajari perangkat lunak baru tersebut\n→ Adaptasi dengan teknologi baru menunjukkan sikap kompeten dan siap berkembang[cite: 13]."
-  },
-  {
-    "question": "Saat terdapat kesempatan bekerja sama dengan universitas di Indonesia, pertimbangan saya untuk mengambil kesempatan tersebut adalah...",
-    "options": [
-      "untuk memberikan kebermanfaatan bagi dua belah pihak",
-      "untuk menghemat biaya riset dan pengembangan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Untuk memberikan kebermanfaatan bagi dua belah pihak\n→ Kolaborasi harus bersifat win-win agar hubungan jangka panjang bisa terjalin[cite: 14]."
-  },
-  {
-    "question": "Salah satu rekan kerja kami terdampak musibah bencana alam sehingga menyebabkan rumahnya rusak, sikap saya..",
-    "options": [
-      "menyarankan dirinya untuk mencari kost di sekitar kantor",
-      "memberi tahu kepada manajemen untuk melakukan penggalangan dana"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Memberi tahu kepada manajemen untuk melakukan penggalangan dana\n→ Membantu rekan kerja yang sedang kesulitan menunjukkan nilai harmonis dan kepedulian[cite: 15]."
-  },
-  {
-    "question": "Ketika perusahaan saya memiliki kerja sama dengan perusahaan mitra yang nilai bagi hasilnya kurang menguntungkan perusahaan, sikap saya..",
-    "options": [
-      "mempercayakan nilai bagi hasil sesuai kesepakatan sebelumnya",
-      "merekomendasikan perusahaan saya untuk melakukan negosiasi ulang"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Merekomendasikan perusahaan saya untuk melakukan negosiasi ulang\n→ Jika hasil kerja sama kurang menguntungkan, negosiasi ulang adalah langkah bijak[cite: 16]."
-  },
-  {
-    "question": "Di tempat kerja saya terdapat budaya lembur yang mengurangi waktu saya bersama keluarga di rumah, sikap saya...",
-    "options": [
-      "mengikuti budaya lembur tersebut sebagai totalitas saya di pekerjaan",
-      "mencoba cara kerja yang lebih efisien agar dapat mengurangi lembur"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Mencoba cara kerja yang lebih efisien agar dapat mengurangi lembur\n→ Efisiensi kerja lebih baik dibanding sekadar mengikuti budaya lembur[cite: 17]."
-  },
-  {
-    "question": "Kebiasaan untuk saling sapa dan menjawab adalah hal yang...",
-    "options": [
-      "efektif hanya karyawan yang ekstrovert",
-      "baik untuk mendukung kohesivitas tim"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Baik untuk mendukung kohesivitas tim\n→ Kebiasaan saling sapa menciptakan lingkungan kerja yang harmonis[cite: 18]."
-  },
-  {
-    "question": "Banyaknya pengetahuan dalam setiap divisi yang tidak terbagi satu sama lain, menurut saya...",
-    "options": [
-      "hal tersebut perlu disolusikan melalui diskusi bersama antar divisi",
-      "hal tersebut merupakan hal normal dalam setiap perusahaan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Hal tersebut perlu disolusikan melalui diskusi bersama antar divisi\n← Pertukaran informasi antardivisi meningkatkan efektivitas kerja[cite: 20]."
-  },
-  {
-    "question": "Ketika pimpinan saya memberikan kepercayaan kepada saya untuk memimpin tim padahal saya merasa belum mampu..",
-    "options": [
-      "saya akan menerimanya sebagai kesempatan belajar",
-      "saya akan menolaknya dengan sopan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Saya akan menerimanya sebagai kesempatan belajar\n→ Mengambil tantangan baru menunjukkan sikap adaptif dan kompeten[cite: 21]."
-  },
-  {
-    "question": "Cara saya meminta bantuan kepada anggota tim saya..",
-    "options": [
-      "langsung memberikan instruksi untuk menghemat waktu",
-      "meminta bantuan dengan kata \"tolong\""
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Meminta bantuan dengan kata \"tolong\"\n→ Berkomunikasi dengan sopan meningkatkan hubungan baik dalam tim[cite: 21]."
-  },
-  {
-    "question": "Saat internet kantor saya seringkali mati, saya akan..",
-    "options": [
-      "segera melaporkan kepada pihak terkait agar dapat diperbaiki",
-      "menunggu perusahaan mengganti penyedia layanan internet"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Segera melaporkan kepada pihak terkait agar dapat diperbaiki\n→ Proaktif dalam menyelesaikan masalah akan mempercepat solusi[cite: 22]."
-  },
-  {
-    "question": "Banyak dari peserta magang di perusahaan saya yang ingin menyumbangkan ide-ide untuk perusahaan kami, sikap saya...",
-    "options": [
-      "menganggap ide mereka kurang relevan karena belum lama terlibat di perusahaan",
-      "menyediakan wadah untuk menampung ide-ide mereka"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Menyediakan wadah untuk menampung ide-ide mereka\n← Menghargai ide peserta magang menunjukkan nilai kolaboratif[cite: 23]."
-  },
-  {
-    "question": "Saat terdapat mahasiswa magang di perusahaan saya yang belum terampil, tetapi sangat disiplin dalam kehadirannya...",
-    "options": [
-      "saya akan mengembangkannya dengan menjadikannya anggota tim saya dalam bekerja",
-      "saya akan memberinya buku-buku untuk dipelajarinya"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Saya akan mengembangkannya dengan menjadikannya anggota tim saya dalam bekerja\n→ Bekerja langsung dalam tim akan mempercepat pembelajaran dibanding hanya membaca buku[cite: 24]."
-  },
-  {
-    "question": "Ketika saya memiliki tugas yang cukup sulit diselesaikan sesuai deadline, maka saya akan..",
-    "options": [
-      "bertanya cara mengerjakannya kepada rekan yang dianggap lebih menguasai agar dapat memenuhi deadline tersebut",
-      "meminta perpanjangan waktu untuk dapat menyelesaikan sesuai kemampuan saya"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Bertanya cara mengerjakannya kepada rekan yang dianggap lebih menguasai agar dapat memenuhi deadline tersebut\n→ Sikap kolaboratif dan mau belajar lebih baik daripada hanya meminta perpanjangan waktu[cite: 25]."
-  },
-  {
-    "question": "Jika hasil kerja tim saya tidak sesuai yang diharapkan, maka sikap saya sebagai ketua kelompok..",
-    "options": [
-      "bersama-sama dengan anggota tim mengevaluasi proses kerja yang dapat diperbaiki",
-      "mengarahkan anggota tim untuk mengulang semua proses kerja"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Bersama-sama dengan anggota tim mengevaluasi proses kerja yang dapat diperbaiki\n→ Evaluasi tim mendorong perbaikan berkelanjutan tanpa menyalahkan satu pihak[cite: 28]."
-  },
-  {
-    "question": "Saat terdapat prosedur perusahaan yang menurut saya kurang efektif, sikap saya..",
-    "options": [
-      "akan membuat prosedur baru yang lebih baik",
-      "tetap mengikutinya sambil menawarkan ide yang lebih baik di kemudian hari"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Tetap mengikutinya sambil menawarkan ide yang lebih baik di kemudian hari\n→ Mengikuti prosedur yang ada sambil tetap memberikan masukan adalah langkah profesional[cite: 29]."
-  },
-  {
-    "question": "Saat pimpinan saya seringkali salah dalam memberikan masukan, maka saya..",
-    "options": [
-      "akan mengangkat permasalahan tersebut kepada pihak management",
-      "mengajaknya diskusi one on one untuk membahas persoalan yang dihadapi bersama"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Mengajaknya diskusi one on one untuk membahas persoalan yang dihadapi bersama\n→ Diskusi langsung lebih efektif daripada mengangkat masalah ke level manajemen[cite: 30]."
-  },
-  {
-    "question": "Saat terdapat hutang pekerjaan yang belum dapat saya selesaikan maka..",
-    "options": [
-      "saya akan membiarkannya selama atasan saya tidak menagihnya",
-      "saya akan mengalokasikan waktu di luar jam kerja untuk menyelesaikannya"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Saya akan mengalokasikan waktu di luar jam kerja untuk menyelesaikannya\n→ Menyelesaikan tanggung jawab tanpa menunggu teguran mencerminkan sikap amanah[cite: 31]."
-  },
-  {
-    "question": "Menurut saya, cara paling efektif untuk memastikan hasil kerja saya sudah memiliki kualitas terbaik adalah dengan...",
-    "options": [
-      "meminta masukan dari pihak lain yang berkaitan dengan pekerjaan tersebut",
-      "membandingkan dengan kualitas hasil kerja orang lain"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Meminta masukan dari pihak lain yang berkaitan dengan pekerjaan tersebut\n→ Umpan balik dari pihak lain membantu memastikan kualitas kerja yang lebih baik[cite: 32]."
-  },
-  {
-    "question": "Ketika atasan memberikan masukan kepada hasil kerja tim saya, maka sikap saya..",
-    "options": [
-      "langsung merevisinya",
-      "menolaknya, karena pekerjaan sudah diselesaikan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Langsung merevisinya\n→ Menunjukkan sikap profesional dalam menerima kritik dan saran dari atasan[cite: 33]."
-  },
-  {
-    "question": "Ketika saya mengalami kesulitan dalam menyelesaikan tugas, maka sikap saya..",
-    "options": [
-      "menunggu arahan dari atasan untuk mendapatkan solusinya",
-      "bertanya kepada rekan kerja lain yang dianggap lebih menguasai"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Bertanya kepada rekan kerja lain yang dianggap lebih menguasai\n→ Mencari solusi secara proaktif lebih baik daripada hanya menunggu arahan atasan[cite: 34]."
-  },
-  {
-    "question": "Menurut saya, cara efektif untuk dapat mengenal lingkungan dan tim yang baru adalah...",
-    "options": [
-      "dengan mengamati lingkungan dan rekan kerja tersebut",
-      "dengan membuka komunikasi dan belajar kepada para rekan kerja di lingkungan tersebut"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Dengan membuka komunikasi dan belajar kepada para rekan kerja di lingkungan tersebut\n→ Interaksi aktif mempercepat proses adaptasi dalam lingkungan kerja baru[cite: 35]."
-  },
-  {
-    "question": "Pada saat terdapat rekan kerja yang sering membicarakan saya di belakang, maka...",
-    "options": [
-      "saya akan langsung menegurnya di depan umum",
-      "saya akan mengklarifikasi langsung kepada yang bersangkutan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Saya akan mengklarifikasi langsung kepada yang bersangkutan\n← Klarifikasi langsung menghindari kesalahpahaman dan menjaga hubungan kerja tetap harmonis[cite: 38]."
-  },
-  {
-    "question": "Saat saya memiliki hutang kepada rekan kerja..",
-    "options": [
-      "menghindari rekan kerja saya sambil berharap ia segera melupakannya",
-      "segera membayarnya saat terdapat dana yang cukup"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Segera membayarnya saat terdapat dana yang cukup\n← Menunjukkan sikap Amanah dan bertanggung jawab terhadap kewajiban[cite: 39]. Menghindari rekan kerja bukanlah perilaku profesional[cite: 40]."
-  },
-  {
-    "question": "Anggota tim yang baru menggebu-gebu dalam menyampaikan setiap pendapatnya dan terkadang sampai mengganggu jalannya pertemuan, maka sikap saya...",
-    "options": [
-      "mengapresiasi semangatnya dengan tetap memberikan masukan agar tidak mengganggu jalannya pertemuan",
-      "membiarkannya karena hal tersebut wajar"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Mengapresiasi semangatnya dengan tetap memberikan masukan agar tidak mengganggu jalannya pertemuan\n→ Mencerminkan nilai Harmonis dan Kolaboratif, dengan tetap menghargai semangat anggota tim, tetapi juga mengarahkan agar komunikasi tetap efektif[cite: 40]."
-  },
-  {
-    "question": "Bila terdapat pekerjaan yang sering membuat saya hingga jatuh sakit, maka saya akan...",
-    "options": [
-      "mengevaluasi gaya kerja saya yang tidak efisien",
-      "menyampaikan permohonan kepada atasan agar mengurangi pekerjaan saya"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Mengevaluasi gaya kerja saya yang tidak efisien\n→ Menunjukkan nilai Kompeten dan Adaptif, karena mencari solusi dengan meningkatkan efisiensi kerja tanpa langsung mengandalkan atasan[cite: 41]."
-  },
-  {
-    "question": "Terdapat rekan kerja saya yang mengalami penurunan semangat dikarenakan seringkali gagal mencapai target yang ditetapkan atasan. Hal tersebut mulai membuatnya meragukan kemampuan dirinya, maka....",
-    "options": [
-      "saya akan menyarankan atasan agar dapat mendekatinya secara personal",
-      "saya akan membiarkannya meningkatkan semangat secara mandiri"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Saya akan menyarankan atasan agar dapat mendekatinya secara personal\n→ Sesuai dengan nilai Harmonis, dengan peduli terhadap kesejahteraan rekan kerja dan mendorong pendekatan yang lebih personal dari atasan[cite: 43]."
-  },
-  {
-    "question": "Terdapat rekan saya yang kurang produktif karena saat ini memiliki permasalahan keluarga maka sikap saya..",
-    "options": [
-      "menawarkan bantuan untuk melakukan penyesuaian kembali",
-      "memberinya pandangan untuk menyesuaikan produktivitasnya dengan kemampuan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Menawarkan bantuan untuk melakukan penyesuaian kembali\n→ Sesuai dengan nilai Harmonis dan Kolaboratif, menunjukkan empati terhadap rekan kerja agar tetap bisa produktif tanpa mengabaikan kesejahteraannya[cite: 44]."
-  },
-  {
-    "question": "Ketika ada permintaan dari klien dengan budget yang terbatas, maka saya akan...",
-    "options": [
-      "tetap memberikan kualitas kerja yang baik",
-      "memberikan kualitas kerja sesuai budget klien tersebut"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Tetap memberikan kualitas kerja yang baik\n→ Menunjukkan nilai Amanah dan Kompeten, dengan tetap menjaga standar profesionalisme dan kepercayaan klien terhadap perusahaan[cite: 45]."
-  },
-  {
-    "question": "Atasan saya memberikan kami kewajiban untuk selalu memberikan ide inovasi terkait perusahaan kami tetapi sayangnya tidak semua karyawan melakukannya. Hal yang akan saya lakukan adalah...",
-    "options": [
-      "mengajak brainstorming rekan-rekan kerja saya agar semua terbiasa berdiskusi dan berinovasi",
-      "mengikuti rekan-rekan kerja yang tidak melakukannya"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Mengajak brainstorming rekan-rekan kerja saya agar semua terbiasa berdiskusi dan berinovasi\n← Menunjukkan nilai Kolaboratif dan Adaptif, dengan mendorong budaya inovasi dalam tim[cite: 48]."
-  },
-  {
-    "question": "Terdapat anggota tim yang kesulitan dalam menggunakan perangkat lunak baru, sikap saya..",
-    "options": [
-      "membiarkannya untuk mencoba menggunakan perangkat lunak tersebut",
-      "menawarkan diri untuk membantunya dalam menggunakan perangkat lunak"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Menawarkan diri untuk membantunya dalam menggunakan perangkat lunak\n→ Mencerminkan nilai Kolaboratif, dengan bersedia membantu sesama rekan kerja dalam beradaptasi dengan teknologi baru[cite: 49]."
-  },
-  {
-    "question": "Banyak buku di kantor saya yang tidak terpakai, sikap saya...",
-    "options": [
-      "mengembangkan perpustakaan kantor agar buku-buku tersebut dapat dimanfaatkan oleh karyawan",
-      "menyumbangkan buku-buku tersebut ke perpustakaan terdekat"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Mengembangkan perpustakaan kantor agar buku-buku tersebut dapat dimanfaatkan oleh karyawan\n→ Sesuai dengan nilai Kompeten dan Kolaboratif, dengan memanfaatkan sumber daya yang ada untuk meningkatkan pengetahuan bersama[cite: 50]."
-  },
-  {
-    "question": "Membaca buku dan informasi terbaru sebaiknya...",
-    "options": [
-      "dijadikan kebiasaan",
-      "dilakukan saat terdapat kebutuhan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Dijadikan kebiasaan\n→ Sesuai dengan nilai Kompeten, menunjukkan semangat belajar dan pengembangan diri secara berkelanjutan[cite: 51]."
-  },
-  {
-    "question": "Salah satu anggota tim kerja terbiasa untuk melimpahkan pekerjaannya kepada saya, sikap saya...",
-    "options": [
-      "saya akan tetap mengerjakan pekerjaannya",
-      "saya akan menyarankan kepada pimpinan tim untuk membuat pembagian tugas dengan jelas"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Saya akan menyarankan kepada pimpinan tim untuk membuat pembagian tugas dengan jelas\n→ Mencerminkan nilai Amanah dan Loyal, dengan menegakkan keadilan dalam pembagian tugas agar tidak ada yang terbebani secara tidak adil[cite: 52]."
-  },
-  {
-    "question": "Ketika terdapat mitra kerja yang skalanya belum terlalu besar menawarkan kerja sama, maka sikap saya...",
-    "options": [
-      "memberikan kesempatan kepada mereka untuk menjelaskan portofolio yang mereka miliki",
-      "memprioritaskan mitra yang sudah memiliki pengalaman lebih banyak"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Memberikan kesempatan kepada mereka untuk menjelaskan portofolio yang mereka miliki\n→ Sesuai dengan nilai Kolaboratif, mendukung peluang bagi mitra baru yang berpotensi tanpa mengesampingkan kualitas[cite: 53]."
-  },
-  {
-    "question": "Ketika saya harus mengikuti pelatihan dan pelatihan tersebut membutuhkan beberapa persyaratan yang harus dipenuhi terlebih dahulu, maka sikap saya..",
-    "options": [
-      "akan berusaha memenuhi prasyarat pelatihan tersebut",
-      "akan mengajukan penggantian pelatihan yang lebih dapat saya kuasai"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Akan berusaha memenuhi prasyarat pelatihan tersebut\n→ Menunjukkan nilai Kompeten, dengan berusaha memenuhi standar sebelum mengikuti pelatihan[cite: 56]."
-  },
-  {
-    "question": "Pimpinan yang harus saya taati di perusahaan adalah...",
-    "options": [
-      "seseorang yang ditunjuk oleh perusahaan sebagai pimpinan saya",
-      "seseorang yang menurut saya mampu menjadi panutan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Seseorang yang ditunjuk oleh perusahaan sebagai pimpinan saya\n← Menunjukkan nilai Loyal, dengan menghormati sistem dan struktur perusahaan[cite: 57]."
-  },
-  {
-    "question": "Saat menjabat sebagai pimpinan tim dan saya mengambil keputusan yang keliru, maka...",
-    "options": [
-      "saya akan menyampaikan siapa saja orang lain yang juga melakukan kesalahan serupa dengan saya",
-      "saya akan meminta maaf kepada semua pihak dan lebih membuka diri terhadap segala masukan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Saya akan meminta maaf kepada semua pihak dan lebih membuka diri terhadap segala masukan\n→ Mencerminkan nilai Amanah dan Harmonis, dengan mengakui kesalahan dan siap menerima masukan demi perbaikan[cite: 58]."
-  },
-  {
-    "question": "Saat perusahaan saya belum mampu mengembangkan teknologi tertentu untuk suatu kebutuhan, yang akan saya lakukan adalah...",
-    "options": [
-      "mencari perusahaan lain yang berpotensi menjadi mitra",
-      "meminta anggota tim untuk segera menguasai ilmu-ilmu yang dibutuhkan guna mengembangkan teknologi tersebut"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Mencari perusahaan lain yang berpotensi menjadi mitra\n→ Sesuai dengan nilai Kolaboratif, dengan mencari solusi melalui kerja sama strategis[cite: 59]."
-  },
-  {
-    "question": "Banyaknya calon karyawan yang memiliki keterampilan teknis yang baik, tetapi memiliki soft skill yang kurang memadai, menurut saya..",
-    "options": [
-      "mereka harus diberi kesempatan dengan diberikan pelatihan soft skill",
-      "sebaiknya tidak perlu menerima mereka karena soft skill adalah segalanya"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Mereka harus diberi kesempatan dengan diberikan pelatihan soft skill\n→ Sesuai dengan nilai Kompeten, memberikan peluang pengembangan bagi calon karyawan[cite: 60]."
-  },
-  {
-    "question": "Ketika saya harus piket di hari libur dan bersamaan dengan acara keluarga, maka sikap saya..",
-    "options": [
-      "mendahulukan acara keluarga saya",
-      "memenuhi jadwal piket yang diberikan kantor"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Memenuhi jadwal piket yang diberikan kantor\n→ Menunjukkan nilai Loyal, dengan tetap menjalankan tanggung jawab pekerjaan[cite: 61]."
-  },
-  {
-    "question": "Saya merasa revisi tugas yang diberikan dari atasan sangat banyak, menurut saya hal tersebut merupakan...",
-    "options": [
-      "bukti bahwa hasil kerja saya masih perlu ditingkatkan",
-      "cara atasan saya agar saya lebih terlihat bekerja"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Bukti bahwa hasil kerja saya masih perlu ditingkatkan\n→ Sesuai dengan nilai Kompeten, dengan menjadikan revisi sebagai pembelajaran untuk peningkatan kualitas kerja[cite: 62]."
-  },
-  {
-    "question": "Saat terdapat rekan kerja yang tertarik dengan buku yang saya miliki, maka...",
-    "options": [
-      "saya akan menyarankannya meminta bantuan kepada pihak lain",
-      "saya akan membantunya mencari referensi yang relevan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Saya akan membantunya mencari referensi yang relevan\n→ Mencerminkan nilai Kolaboratif, dengan membantu rekan kerja dalam mencari sumber informasi[cite: 63]."
-  },
-  {
-    "question": "Saat terdapat beberapa komputer di tempat kerja kami yang rusak dan saya memiliki kemampuan untuk memperbaikinya, maka saya akan...",
-    "options": [
-      "menawarkan diri untuk memperbaikinya",
-      "merekomendasikan perusahaan untuk segera menyewa teknisi komputer"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Menawarkan diri untuk memperbaikinya\n→ Menunjukkan Adaptif dan Kolaboratif[cite: 65]. Jika memiliki keterampilan, membantu perbaikan akan meningkatkan efisiensi dan menghemat biaya perusahaan[cite: 66]."
-  },
-  {
-    "question": "Terdapat perusahaan mitra kami yang seringkali menawarkan produk mereka untuk berkolaborasi dengan program-program yang dimiliki perusahaan, sikap saya...",
-    "options": [
-      "melihat dahulu kesesuaian produk mereka dengan program perusahaan",
-      "menolak produk tersebut karena bukan produk orisinal hasil karya kami"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Melihat dahulu kesesuaian produk mereka dengan program perusahaan\n→ Menunjukkan sikap Loyal dan Harmonis[cite: 67]. Tidak langsung menolak, tetapi melakukan analisis terlebih dahulu agar keputusan yang diambil tetap menguntungkan perusahaan[cite: 68]."
-  },
-  {
-    "question": "Saat terdapat beberapa startup yang dikembangkan oleh mahasiswa dan membutuhkan pendanaan dari perusahaan tempat saya bekerja, sikap saya..",
-    "options": [
-      "menyampaikan pesan tersebut kepada manajemen perusahaan kami agar ditindaklanjuti",
-      "memberikan sumbangan semampu saya untuk membantu pendanaan mereka"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Menyampaikan pesan tersebut kepada manajemen perusahaan kami agar ditindaklanjuti\n→ Menunjukkan sikap Harmonis dan Kolaboratif[cite: 69]. Menghubungkan startup dengan pihak yang memiliki kapasitas lebih besar untuk membantu mereka secara lebih strategis[cite: 70]."
-  },
-  {
-    "question": "Saya kurang memiliki pemahaman mengenai produk yang dikembangkan perusahaan, maka saya..",
-    "options": [
-      "mempertimbangkan masukan tersebut sebagai acuan pengembangan kedepan",
-      "akan menjelaskan kembali bahwa yang kami kerjakan sudah mengacu pada spesifikasi yang diberikan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Mempertimbangkan masukan tersebut sebagai acuan pengembangan ke depan\n→ Menunjukkan Adaptif dan Kompeten[cite: 71]. Selalu terbuka terhadap masukan demi pengembangan perusahaan[cite: 72]."
-  },
-  {
-    "question": "Saat terdapat suatu keterampilan yang bukan bidang saya namun terlihat menjadi kebutuhan perusahaan saya di masa depan...",
-    "options": [
-      "meluangkan waktu untuk mempelajarinya",
-      "menunggu hingga bidang tersebut populer di masyarakat"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Meluangkan waktu untuk mempelajarinya\n← Menunjukkan Adaptif dan Kompeten[cite: 72]. Mengembangkan keterampilan baru secara proaktif untuk kemajuan diri dan perusahaan[cite: 73]."
-  },
-  {
-    "question": "Ketika rapat berjalan kurang efektif, maka sikap saya..",
-    "options": [
-      "berinisiatif untuk memimpin jalannya rapat dengan mengajak setiap anggota tim menyatakan pendapatnya",
-      "mengandalkan pimpinan dalam mengarahkan rapat"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Berinisiatif untuk memimpin jalannya rapat dengan mengajak setiap anggota tim menyatakan pendapatnya\n→ Menunjukkan Harmonis dan Kolaboratif[cite: 73]. Mengambil inisiatif untuk memastikan rapat berjalan efektif dengan keterlibatan semua pihak[cite: 74]."
-  },
-  {
-    "question": "Saat terdapat rekan kerja saya yang sering beribadah terlalu lama hingga membuat pertemuan sering tertunda, maka...",
-    "options": [
-      "mengajaknya diskusi untuk mencari solusi bersama",
-      "menegurnya karena menghambat kinerja tim"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Mengajaknya diskusi untuk mencari solusi bersama\n→ Menunjukkan Harmonis dan Loyal[cite: 76]. Mengedepankan komunikasi yang baik agar semua pihak dapat menjalankan kewajibannya tanpa merasa tersisihkan[cite: 77]."
-  },
-  {
-    "question": "Bagi saya, keterampilan diri dapat dikembangkan selama terdapat...",
-    "options": [
-      "arahan dari manajemen",
-      "kebutuhan dari dalam diri untuk melakukannya"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Kebutuhan dari dalam diri untuk melakukannya\n→ Menunjukkan Adaptif dan Kompeten[cite: 78]. Pengembangan diri sebaiknya datang dari motivasi internal, bukan hanya instruksi dari manajemen[cite: 79]."
-  },
-  {
-    "question": "Ketika selesai mengerjakan tugas, maka sikap saya...",
-    "options": [
-      "percaya diri langsung mengirimkan kepada atasan",
-      "memeriksa terlebih dahulu untuk memastikan kualitas hasil kerja saya"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Memeriksa terlebih dahulu untuk memastikan kualitas hasil kerja saya\n→ Menunjukkan Kompeten dan Loyal[cite: 80]. Mengecek hasil kerja sebelum diserahkan agar kualitas tetap terjaga[cite: 81]."
-  },
-  {
-    "question": "Ketika seringkali tim saya terlambat dalam mengumpulkan tugas masing-masing, menurut saya..",
-    "options": [
-      "satu tim perlu melakukan evaluasi untuk perbaikan efektivitas kerja tim",
-      "perlu melaporkannya kepada atasan untuk mengajukan penggantian anggota tim"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Satu tim perlu melakukan evaluasi untuk perbaikan efektivitas kerja tim\n→ Menunjukkan Kolaboratif dan Kompeten[cite: 81]. Evaluasi internal lebih baik dibanding langsung melapor ke atasan, karena ini menunjukkan inisiatif dalam mencari solusi[cite: 82]."
-  },
-  {
-    "question": "Ketika anak magang mengeluh mengenai unit saya di media sosial, maka sikap saya..",
-    "options": [
-      "membiarkannya karena magang berbatas waktu",
-      "memberitahunya agar tidak mengulanginya di kemudian hari"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Memberitahunya agar tidak mengulanginya di kemudian hari\n→ Menunjukkan Loyal dan Harmonis[cite: 83]. Mengedukasi agar perilaku yang kurang profesional tidak terulang, tanpa menciptakan konflik[cite: 84]."
-  },
-  {
-    "question": "Saat diskusi, rekan kerja dari bidang lain ragu dalam menyampaikan pendapatnya, maka saya..",
-    "options": [
-      "meyakinkan mereka bahwa perbedaan pendapat adalah hal yang umum dalam sebuah diskusi",
-      "membiarkannya agar tidak terjadi konflik"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Meyakinkan mereka bahwa perbedaan pendapat adalah hal yang umum dalam sebuah diskusi\n→ Menunjukkan Harmonis dan Kolaboratif[cite: 84]. Mendukung keberagaman pemikiran dalam tim demi pengambilan keputusan yang lebih baik[cite: 85]."
-  },
-  {
-    "question": "Saat saya dipercaya perusahaan mengikuti beasiswa tertentu..",
-    "options": [
-      "saya akan menggunakan semua dana yang diberikan secara maksimal",
-      "saya akan mengoptimalkan waktu tempuh studi saya"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Saya akan mengoptimalkan waktu tempuh studi saya\n← Menunjukkan Loyal dan Kompeten[cite: 86]. Bertanggung jawab atas beasiswa yang diberikan dengan menyelesaikan studi seefisien mungkin[cite: 87]."
-  },
-  {
-    "question": "Sikap saya kepada para senior saya...",
-    "options": [
-      "terus memantaunya karena senior semestinya menjadi contoh bagi yang lain",
-      "tetap menghormatinya dan menyampaikan feedback dengan sopan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Tetap menghormatinya dan menyampaikan feedback dengan sopan\n→ Menunjukkan Harmonis dan Loyal[cite: 88]. Menghormati senior tetapi tetap memberikan masukan yang membangun dengan cara yang baik[cite: 89]."
-  },
-  {
-    "question": "Saya seringkali tidak mengetahui apa yang sedang dikerjakan oleh rekan kerja dalam satu tim saya, maka saya akan..",
-    "options": [
-      "tetap fokus pada tugas yang diberikan kepada saya",
-      "menyarankan atasan untuk mengadakan pertemuan rutin guna membahas pembagian tugas dan laporan kemajuan tugas"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Menyarankan atasan untuk mengadakan pertemuan rutin guna membahas pembagian tugas dan laporan kemajuan tugas\n→ Menunjukkan Kolaboratif dan Loyal[cite: 90]. Memastikan transparansi dalam tim agar pekerjaan lebih terorganisir[cite: 91]."
-  },
-  {
-    "question": "Memberikan masukan kepada orang lain, menurut saya..",
-    "options": [
-      "perlu dilakukan secara frontal",
-      "perlu dilakukan dengan bahasa yang sopan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Perlu dilakukan dengan bahasa yang sopan\n→ Menunjukkan Harmonis dan Kolaboratif[cite: 91]. Memberikan masukan yang membangun tanpa menyakiti perasaan orang lain[cite: 92]."
-  },
-  {
-    "question": "Saat terdapat kawan saya yang sakit dalam kurun waktu lama sedangkan saya tidak dapat membantunya dikarenakan kurangnya kompetensi saya akan..",
-    "options": [
-      "sementara mengambil pekerjaannya dan meluangkan waktu saya di malam hari untuk mempelajari kompetensi tersebut",
-      "menyarankan atasan saya untuk mencari pengganti sementara"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Mengambil pekerjaannya dan meluangkan waktu saya di malam hari untuk mempelajari kompetensi tersebut\n→ Menunjukkan Adaptif dan Kolaboratif[cite: 92]. Bersedia membantu rekan kerja sambil meningkatkan keterampilan pribadi[cite: 93]."
-  },
-  {
-    "question": "Saat rekan kerja saya menceritakan pengalaman buruknya di masa lalu...",
-    "options": [
-      "saya akan merahasiakannya dan mengambilnya sebagai pelajaran untuk diri saya sendiri",
-      "saya akan membagikannya kepada orang lain sebagai pelajaran bersama"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Saya akan merahasiakannya dan mengambilnya sebagai pelajaran untuk diri saya sendiri\n→ Menunjukkan Loyal dan Harmonis[cite: 93]. Menjaga kepercayaan dan privasi orang lain, serta belajar dari pengalaman mereka[cite: 94]."
-  },
-  {
-    "question": "Bersikap ramah kepada sesama rekan kerja, menurut saya...",
-    "options": [
-      "hal yang harus dibiasakan saat kita menjadi seseorang profesional",
-      "hal yang terlalu dipaksakan untuk seseorang yang kesehariannya tidak demikian"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Hal yang harus dibiasakan saat kita menjadi seseorang profesional\n→ Menunjukkan Harmonis dan Kolaboratif[cite: 94]. Bersikap ramah membantu menciptakan lingkungan kerja yang positif dan produktif[cite: 95]."
-  },
-  {
-    "question": "Ketika saya harus menyelesaikan pekerjaan yang belum pernah saya lakukan sebelumnya, maka sikap saya akan...",
-    "options": [
-      "mengajak rekan kerja yang dianggap ahli untuk mengerjakannya",
-      "mencoba menyelesaikannya dengan mencari beragam referensi yang relevan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Mencoba menyelesaikannya dengan mencari beragam referensi yang relevan\n→ Menunjukkan Kompeten dan Adaptif[cite: 97]. Mengambil inisiatif untuk belajar sebelum meminta bantuan, menunjukkan kemandirian dalam menyelesaikan tugas[cite: 98]."
-  },
-  {
-    "question": "Saat melihat pimpinan saya sering terlambat dalam memimpin rapat...",
-    "options": [
-      "saya akan mendengarkan pendapat-pendapatnya karena kegagalannya dalam memberi contoh yang baik",
-      "saya akan memulai diskusi kecil untuk mengisi kekosongan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Saya akan memulai diskusi kecil untuk mengisi kekosongan\n→ Menunjukkan Kolaboratif dan Adaptif[cite: 99]. Mengambil inisiatif untuk menjaga produktivitas tim meskipun pimpinan terlambat[cite: 100]."
-  },
-  {
-    "question": "Menurut saya bila terdapat ruang khusus liburan dan tempat bermain di kantor merupakan...",
-    "options": [
-      "hal yang tidak ada korelasinya dengan kebutuhan perusahaan",
-      "hal yang membangun produktivitas selama diawasi penggunanya"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Hal yang membangun produktivitas selama diawasi penggunanya\n→ Menunjukkan Harmonis dan Loyal[cite: 100]. Fasilitas ini dapat meningkatkan kesejahteraan karyawan dan produktivitas jika digunakan dengan bijak[cite: 101]."
-  },
-  {
-    "question": "Bagi saya, pekerjaan sosial merupakan tipe pekerjaan yang..",
-    "options": [
-      "Dapat dilakukan untuk memberikan kontribusi ke masyarakat",
-      "Sebaiknya dihindari apalagi jika sedang banyak pekerjaan"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Dapat dilakukan untuk memberikan kontribusi ke masyarakat\n→ Menunjukkan Amanah dan Harmonis[cite: 102]. Pekerjaan sosial sejalan dengan tanggung jawab sosial perusahaan dan kepedulian terhadap masyarakat[cite: 103]."
-  },
-  {
-    "question": "Ketika saya menjadi pembicara dan menerima honor, maka sikap saya...",
-    "options": [
-      "menggunakannya sesuai kebutuhan karena itu merupakan hak saya",
-      "melaporkannya kepada perusahaan"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Melaporkannya kepada perusahaan\n→ Menunjukkan Amanah dan Loyal[cite: 104]. Menghindari potensi konflik kepentingan dan menjaga transparansi dengan perusahaan[cite: 105]."
-  },
-  {
-    "question": "Menurut saya, keterlambatan kehadiran di kantor dikarenakan jarak rumah yang jauh merupakan..",
-    "options": [
-      "hal yang dapat diterima",
-      "hal yang harus diperbaiki dan tidak boleh diulangi"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Hal yang harus diperbaiki dan tidak boleh diulangi\n→ Menunjukkan Kompeten dan Loyal[cite: 105]. Kedisiplinan waktu penting dalam budaya kerja yang profesional[cite: 106]."
-  },
-  {
-    "question": "Rekan kerja saya harus mengikuti ujian seleksi beasiswa di saat deadline tugasnya tiba, maka saya...",
-    "options": [
-      "menawarkan diri untuk membantunya menyelesaikan tugas bersama",
-      "menyarankan padanya untuk begadang di malam sebelumnya untuk menyelesaikan tugas terlebih dahulu"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Menawarkan diri untuk membantunya menyelesaikan tugas bersama\n→ Menunjukkan Kolaboratif dan Harmonis[cite: 106]. Membantu rekan kerja agar tetap bisa mengikuti seleksi beasiswa tanpa mengorbankan tanggung jawab kerja[cite: 107]."
-  },
-  {
-    "question": "Ketika hasil kerja anggota tim baru belum sesuai dengan standar sehingga perlu untuk dikerjakan ulang, sikap saya...",
-    "options": [
-      "melakukan mentoring pada anggota tim baru terkait cara-cara penyelesaian tugas yang sesuai standar",
-      "membiarkan anggota tim baru tetap melakukan pekerjaannya dengan cara yang mereka kuasai"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Melakukan mentoring pada anggota tim baru terkait cara-cara penyelesaian tugas yang sesuai standar\n→ Menunjukkan Kompeten dan Kolaboratif[cite: 110]. Memberikan bimbingan agar karyawan baru dapat berkembang dan bekerja sesuai standar perusahaan[cite: 111]."
-  },
-  {
-    "question": "Saat rekan-rekan kerja saya mengajak olah raga bersama setiap pagi...",
-    "options": [
-      "saya tidak perlu mengikutinya karena tidak berkaitan dengan pekerjaan saya",
-      "saya akan mengikutinya sebagai bentuk pendekatan diri dengan mereka"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Saya akan mengikutinya sebagai bentuk pendekatan diri dengan mereka\n→ Menunjukkan Harmonis dan Kolaboratif[cite: 112]. Membangun hubungan baik dengan rekan kerja untuk menciptakan lingkungan kerja yang positif[cite: 113]."
-  },
-  {
-    "question": "Penting bagi saya untuk membuka diri saya kepada rekan-rekan kerja saya agar..",
-    "options": [
-      "mereka dapat menyesuaikan pekerjaan yang diberikan kepada saya sesuai dengan suasana hati saya",
-      "mereka dapat menyesuaikan pekerjaan yang diberikan kepada saya sesuai dengan kemampuan saya"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Mereka dapat menyesuaikan pekerjaan yang diberikan kepada saya sesuai dengan kemampuan saya\n→ Menunjukkan Kompeten dan Kolaboratif[cite: 114]. Membuka diri agar pekerjaan yang diberikan sesuai dengan keahlian, bukan berdasarkan suasana hati[cite: 115]."
-  },
-  {
-    "question": "Memiliki pimpinan yang usianya lebih muda, maka saya..",
-    "options": [
-      "dapat lebih leluasa dalam berdebat selama diskusi",
-      "akan tetap mengedepankan etika berdiskusi"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Akan tetap mengedepankan etika berdiskusi\n→ Menunjukkan Harmonis dan Loyal[cite: 116]. Menghormati pimpinan tanpa memandang usia, serta menjaga profesionalisme dalam berdiskusi[cite: 117]."
-  },
-  {
-    "question": "Saat saya dipindahkan ke divisi lain karena dinilai kurang cakap, maka..",
-    "options": [
-      "saya akan menyampaikan apa yang menjadi kekurangan pada divisi saya sebelumnya sehingga menyebabkan saya kurang berkembang",
-      "saya akan fokus pada pengembangan diri saya di divisi yang baru"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Saya akan fokus pada pengembangan diri saya di divisi yang baru\n→ Menunjukkan Adaptif dan Kompeten[cite: 117]. Fokus pada pertumbuhan diri daripada terjebak dalam evaluasi masa lalu[cite: 118]."
-  },
-  {
-    "question": "Ketika rekan kerja lintas bidang kesulitan menggunakan tools tertentu, maka sikap saya....",
-    "options": [
-      "menyarankannya untuk membaca manual booknya",
-      "mendampinginya untuk mencoba menggunakannya kembali"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Mendampinginya untuk mencoba menggunakannya kembali\n→ Menunjukkan Kolaboratif dan Harmonis[cite: 118]. Membantu rekan kerja agar lebih cepat memahami penggunaan tools tersebut[cite: 119]."
-  },
-  {
-    "question": "Sebagai pimpinan tim, saat terdapat anggota tim saya yang melakukan kesalahan sehingga pengumpulan tugas kami menjadi terhambat, maka..",
-    "options": [
-      "saya akan membantu bagian yang masih keliru untuk mempercepat penyelesaian tugas",
-      "saya akan memintanya bertanggung jawab atas kesalahannya"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Saya akan membantu bagian yang masih keliru untuk mempercepat penyelesaian tugas\n→ Menunjukkan Kolaboratif dan Loyal[cite: 119]. Mengutamakan penyelesaian masalah daripada sekadar menuntut tanggung jawab individu[cite: 120]."
-  },
-  {
-    "question": "Anggota tim yang baru, datang terlambat saat menghadiri rapat dengan klien, maka sikap saya..",
-    "options": [
-      "memakluminya karena masih dalam masa orientasi",
-      "menegurnya secara personal agar kedepannya tidak terjadi lagi"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Menegurnya secara personal agar kedepannya tidak terjadi lagi\n→ Menunjukkan Harmonis dan Loyal[cite: 122]. Memberikan teguran dengan cara yang baik untuk menjaga profesionalisme tanpa mempermalukan anggota tim[cite: 123]."
-  },
-  {
-    "question": "Menjaga kebersihan meja kerja, menurut saya merupakan..",
-    "options": [
-      "kewajiban saya sebagai pengguna fasilitas kantor",
-      "kewajiban cleaning services kantor"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Kewajiban saya sebagai pengguna fasilitas kantor\n← Menunjukkan Amanah dan Loyal[cite: 124]. Menjaga kebersihan adalah tanggung jawab setiap karyawan, bukan hanya cleaning service[cite: 125]."
-  },
-  {
-    "question": "Bagi saya, keterampilan saya perlu dikembangkan saat...",
-    "options": [
-      "kapanpun selama saya menjalankan pekerjaan saya",
-      "terdapat kesempatan untuk naik gaji"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Kapanpun selama saya menjalankan pekerjaan saya\n→ Menunjukkan Kompeten dan Adaptif[cite: 125]. Pengembangan keterampilan harus dilakukan secara kontinu, tidak hanya saat ada insentif tertentu[cite: 126]."
-  },
-  {
-    "question": "Ketika pimpinan mengajak kami ke tempat hiburan yang melanggar norma-norma..",
-    "options": [
-      "saya akan menolaknya dengan sopan",
-      "saya akan menerimanya sebagai kesempatan menambah pengalaman"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Saya akan menolaknya dengan sopan\n→ Menunjukkan Amanah dan Harmonis[cite: 127]. Menghormati pimpinan tetapi tetap memegang teguh prinsip dan nilai pribadi[cite: 128]."
-  },
-  {
-    "question": "Tumpukan dokumen yang begitu banyak di kantor saya merupakan..",
-    "options": [
-      "hal yang perlu disolusikan agar penggunaan dokumen lebih dibuat efisien kedepannya",
-      "hal yang wajar dikarenakan banyaknya pekerjaan yang ada di perusahaan saya"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Hal yang perlu disolusikan agar penggunaan dokumen lebih dibuat efisien ke depannya\n→ Menunjukkan Adaptif dan Kompeten[cite: 128]. Berpikir inovatif dalam mencari solusi untuk meningkatkan efisiensi kerja[cite: 129]."
-  },
-  {
-    "question": "Ketika unit lain menunda memberikan dokumen yang dibutuhkan oleh tim saya, maka...",
-    "options": [
-      "saya akan menyampaikan kepada atasan saya untuk membantu mengkomunikasikan masalah ini kepada atasan divisi tersebut",
-      "saya akan mengadukannya kepada pihak manajemen"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Jawaban: Saya akan menyampaikan kepada atasan saya untuk membantu mengkomunikasikan masalah ini kepada atasan divisi tersebut\n→ Menunjukkan Kolaboratif dan Loyal[cite: 129]. Mengedepankan komunikasi dan solusi yang baik daripada langsung mengadukan ke manajemen[cite: 130]."
-  },
-  {
-    "question": "Banyaknya rekan kerja tim saya yang kurang dapat menyelesaikan tugas dengan baik membuat saya..",
-    "options": [
-      "lebih santai dalam mengerjakan pekerjaan dikarenakan banyak yang juga melakukan hal yang sama",
-      "lebih cepat menyelesaikan tugas saya agar dapat membantu tim dalam menyelesaikan pekerjaan mereka"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Jawaban: Lebih cepat menyelesaikan tugas saya agar dapat membantu tim dalam menyelesaikan pekerjaan mereka\n→ Menunjukkan Kolaboratif dan Kompeten[cite: 131]. Bersikap proaktif dan membantu tim mencapai target bersama[cite: 132]."
+    "material": "Akhlak",
+    "questions": [
+      {
+        "question": "Menurut saya, karyawan yang diberikan beasiswa oleh perusahaan, tetapi memilih resign sebelum masa ikatan dinas selesai merupakan...",
+        "options": [
+          "hal yang kurang profesional",
+          "hal yang dapat diterima karena ia melihat peluang yang lebih baik di perusahaan lain"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Hal yang kurang profesional\n→ Karena menerima beasiswa berarti ada komitmen kepada perusahaan[cite: 2]. Resign sebelum ikatan dinas selesai bisa dianggap sebagai tindakan yang kurang bertanggung jawab[cite: 3]."
+      },
+      {
+        "question": "Jika terdapat rekan kerja yang menggunakan bahasa daerahnya bersama rekan kerja lain pada saat rapat, maka sikap saya...",
+        "options": [
+          "memberi tahunya bahwa hal tersebut dapat menimbulkan kesalahpahaman",
+          "langsung menegurnya saat itu juga"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Memberi tahunya bahwa hal tersebut dapat menimbulkan kesalahpahaman\n→ Komunikasi harus inklusif agar semua peserta rapat dapat memahami isi pembahasan[cite: 4]."
+      },
+      {
+        "question": "Saat beberapa rekan kerja menilai perilaku bekerja saya masih kurang baik, maka.....",
+        "options": [
+          "saya akan mengajak mereka berdiskusi untuk mengetahui hal yang perlu saya tingkatkan",
+          "saya akan tetap pada pendirian saya dan menjadi diri saya sendiri"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Saya akan mengajak mereka berdiskusi untuk mengetahui hal yang perlu saya tingkatkan\n← Sikap terbuka terhadap kritik menunjukkan profesionalisme dan keinginan untuk terus berkembang[cite: 5, 6]."
+      },
+      {
+        "question": "Memiliki banyak anggota tim yang merupakan generasi Z, maka saya akan..",
+        "options": [
+          "lebih mendisiplinkan mereka",
+          "memberikan penugasan yang sesuai dengan hal yang menjadi kelebihan generasi"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Memberikan penugasan yang sesuai dengan hal yang menjadi kelebihan generasi\n→ Generasi Z memiliki karakteristik unik[cite: 6]. Memanfaatkan kelebihan mereka akan meningkatkan produktivitas[cite: 7]."
+      },
+      {
+        "question": "Pada saat terjadi kerusakan pada alat kantor yang menghambat kinerja saya, saya akan..",
+        "options": [
+          "menunggu hingga perusahaan saya memberikan peralatan penggantinya",
+          "mengerjakan bagian pekerjaan yang dapat dikerjakan dahulu untuk sementara waktu"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Mengerjakan bagian pekerjaan yang dapat dikerjakan dahulu untuk sementara waktu\n→ Menghindari keterlambatan kerja dengan tetap produktif meskipun ada kendala teknis[cite: 7]."
+      },
+      {
+        "question": "Metode untuk memperluas wawasan dan berpikir inovatif menurut saya lebih efektif dengan...",
+        "options": [
+          "memperbanyak liburan untuk mencari ide segar",
+          "memperbanyak diskusi dengan berbagai pihak"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Memperbanyak diskusi dengan berbagai pihak\n→ Diskusi membuka wawasan dan peluang inovasi melalui berbagai perspektif[cite: 8]."
+      },
+      {
+        "question": "Ketika banyak data yang tersimpan pada teknologi kami seringkali dibiarkan menjadi sumber daya yang tidak terpakai, menurut saya...",
+        "options": [
+          "dapat berkolaborasi dengan pihak eksternal yang ahli mengolah data menjadi informasi strategis",
+          "sebaiknya tetap disimpan sebagai arsip perusahaan"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Dapat berkolaborasi dengan pihak eksternal yang ahli mengolah data menjadi informasi strategis\n→ Data sebaiknya dioptimalkan untuk mendukung pengambilan keputusan perusahaan[cite: 11]."
+      },
+      {
+        "question": "Ruang lingkup kerja sama yang dapat dilakukan pada tempat kerja saya sebaiknya...",
+        "options": [
+          "difokuskan pada perusahaan-perusahaan yang memiliki teknologi yang sama dengan perusahaan kami",
+          "dibuka seluas mungkin untuk seluruh kalangan"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Dibuka seluas mungkin untuk seluruh kalangan\n→ Kolaborasi yang luas memberikan peluang inovasi dan pertumbuhan perusahaan[cite: 12]."
+      },
+      {
+        "question": "Saat terdapat perangkat lunak terbaru yang menjadi standar di perusahaan, tetapi saya belum pernah memakainya, saya akan..",
+        "options": [
+          "mengisi waktu saya untuk mempelajari perangkat lunak baru tersebut",
+          "memohon izin pimpinan agar saya dipersilakan menggunakan perangkat lunak yang biasa saya pakai"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Mengisi waktu saya untuk mempelajari perangkat lunak baru tersebut\n→ Adaptasi dengan teknologi baru menunjukkan sikap kompeten dan siap berkembang[cite: 13]."
+      },
+      {
+        "question": "Saat terdapat kesempatan bekerja sama dengan universitas di Indonesia, pertimbangan saya untuk mengambil kesempatan tersebut adalah...",
+        "options": [
+          "untuk memberikan kebermanfaatan bagi dua belah pihak",
+          "untuk menghemat biaya riset dan pengembangan"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Untuk memberikan kebermanfaatan bagi dua belah pihak\n→ Kolaborasi harus bersifat win-win agar hubungan jangka panjang bisa terjalin[cite: 14]."
+      },
+      {
+        "question": "Salah satu rekan kerja kami terdampak musibah bencana alam sehingga menyebabkan rumahnya rusak, sikap saya..",
+        "options": [
+          "menyarankan dirinya untuk mencari kost di sekitar kantor",
+          "memberi tahu kepada manajemen untuk melakukan penggalangan dana"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Memberi tahu kepada manajemen untuk melakukan penggalangan dana\n→ Membantu rekan kerja yang sedang kesulitan menunjukkan nilai harmonis dan kepedulian[cite: 15]."
+      },
+      {
+        "question": "Ketika perusahaan saya memiliki kerja sama dengan perusahaan mitra yang nilai bagi hasilnya kurang menguntungkan perusahaan, sikap saya..",
+        "options": [
+          "mempercayakan nilai bagi hasil sesuai kesepakatan sebelumnya",
+          "merekomendasikan perusahaan saya untuk melakukan negosiasi ulang"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Merekomendasikan perusahaan saya untuk melakukan negosiasi ulang\n→ Jika hasil kerja sama kurang menguntungkan, negosiasi ulang adalah langkah bijak[cite: 16]."
+      },
+      {
+        "question": "Di tempat kerja saya terdapat budaya lembur yang mengurangi waktu saya bersama keluarga di rumah, sikap saya...",
+        "options": [
+          "mengikuti budaya lembur tersebut sebagai totalitas saya di pekerjaan",
+          "mencoba cara kerja yang lebih efisien agar dapat mengurangi lembur"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Mencoba cara kerja yang lebih efisien agar dapat mengurangi lembur\n→ Efisiensi kerja lebih baik dibanding sekadar mengikuti budaya lembur[cite: 17]."
+      },
+      {
+        "question": "Kebiasaan untuk saling sapa dan menjawab adalah hal yang...",
+        "options": [
+          "efektif hanya karyawan yang ekstrovert",
+          "baik untuk mendukung kohesivitas tim"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Baik untuk mendukung kohesivitas tim\n→ Kebiasaan saling sapa menciptakan lingkungan kerja yang harmonis[cite: 18]."
+      },
+      {
+        "question": "Banyaknya pengetahuan dalam setiap divisi yang tidak terbagi satu sama lain, menurut saya...",
+        "options": [
+          "hal tersebut perlu disolusikan melalui diskusi bersama antar divisi",
+          "hal tersebut merupakan hal normal dalam setiap perusahaan"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Hal tersebut perlu disolusikan melalui diskusi bersama antar divisi\n← Pertukaran informasi antardivisi meningkatkan efektivitas kerja[cite: 20]."
+      },
+      {
+        "question": "Ketika pimpinan saya memberikan kepercayaan kepada saya untuk memimpin tim padahal saya merasa belum mampu..",
+        "options": [
+          "saya akan menerimanya sebagai kesempatan belajar",
+          "saya akan menolaknya dengan sopan"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Saya akan menerimanya sebagai kesempatan belajar\n→ Mengambil tantangan baru menunjukkan sikap adaptif dan kompeten[cite: 21]."
+      },
+      {
+        "question": "Cara saya meminta bantuan kepada anggota tim saya..",
+        "options": [
+          "langsung memberikan instruksi untuk menghemat waktu",
+          "meminta bantuan dengan kata \"tolong\""
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Meminta bantuan dengan kata \"tolong\"\n→ Berkomunikasi dengan sopan meningkatkan hubungan baik dalam tim[cite: 21]."
+      },
+      {
+        "question": "Saat internet kantor saya seringkali mati, saya akan..",
+        "options": [
+          "segera melaporkan kepada pihak terkait agar dapat diperbaiki",
+          "menunggu perusahaan mengganti penyedia layanan internet"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Segera melaporkan kepada pihak terkait agar dapat diperbaiki\n→ Proaktif dalam menyelesaikan masalah akan mempercepat solusi[cite: 22]."
+      },
+      {
+        "question": "Banyak dari peserta magang di perusahaan saya yang ingin menyumbangkan ide-ide untuk perusahaan kami, sikap saya...",
+        "options": [
+          "menganggap ide mereka kurang relevan karena belum lama terlibat di perusahaan",
+          "menyediakan wadah untuk menampung ide-ide mereka"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Menyediakan wadah untuk menampung ide-ide mereka\n← Menghargai ide peserta magang menunjukkan nilai kolaboratif[cite: 23]."
+      },
+      {
+        "question": "Saat terdapat mahasiswa magang di perusahaan saya yang belum terampil, tetapi sangat disiplin dalam kehadirannya...",
+        "options": [
+          "saya akan mengembangkannya dengan menjadikannya anggota tim saya dalam bekerja",
+          "saya akan memberinya buku-buku untuk dipelajarinya"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Saya akan mengembangkannya dengan menjadikannya anggota tim saya dalam bekerja\n→ Bekerja langsung dalam tim akan mempercepat pembelajaran dibanding hanya membaca buku[cite: 24]."
+      },
+      {
+        "question": "Ketika saya memiliki tugas yang cukup sulit diselesaikan sesuai deadline, maka saya akan..",
+        "options": [
+          "bertanya cara mengerjakannya kepada rekan yang dianggap lebih menguasai agar dapat memenuhi deadline tersebut",
+          "meminta perpanjangan waktu untuk dapat menyelesaikan sesuai kemampuan saya"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Bertanya cara mengerjakannya kepada rekan yang dianggap lebih menguasai agar dapat memenuhi deadline tersebut\n→ Sikap kolaboratif dan mau belajar lebih baik daripada hanya meminta perpanjangan waktu[cite: 25]."
+      },
+      {
+        "question": "Jika hasil kerja tim saya tidak sesuai yang diharapkan, maka sikap saya sebagai ketua kelompok..",
+        "options": [
+          "bersama-sama dengan anggota tim mengevaluasi proses kerja yang dapat diperbaiki",
+          "mengarahkan anggota tim untuk mengulang semua proses kerja"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Bersama-sama dengan anggota tim mengevaluasi proses kerja yang dapat diperbaiki\n→ Evaluasi tim mendorong perbaikan berkelanjutan tanpa menyalahkan satu pihak[cite: 28]."
+      },
+      {
+        "question": "Saat terdapat prosedur perusahaan yang menurut saya kurang efektif, sikap saya..",
+        "options": [
+          "akan membuat prosedur baru yang lebih baik",
+          "tetap mengikutinya sambil menawarkan ide yang lebih baik di kemudian hari"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Tetap mengikutinya sambil menawarkan ide yang lebih baik di kemudian hari\n→ Mengikuti prosedur yang ada sambil tetap memberikan masukan adalah langkah profesional[cite: 29]."
+      },
+      {
+        "question": "Saat pimpinan saya seringkali salah dalam memberikan masukan, maka saya..",
+        "options": [
+          "akan mengangkat permasalahan tersebut kepada pihak management",
+          "mengajaknya diskusi one on one untuk membahas persoalan yang dihadapi bersama"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Mengajaknya diskusi one on one untuk membahas persoalan yang dihadapi bersama\n→ Diskusi langsung lebih efektif daripada mengangkat masalah ke level manajemen[cite: 30]."
+      },
+      {
+        "question": "Saat terdapat hutang pekerjaan yang belum dapat saya selesaikan maka..",
+        "options": [
+          "saya akan membiarkannya selama atasan saya tidak menagihnya",
+          "saya akan mengalokasikan waktu di luar jam kerja untuk menyelesaikannya"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Saya akan mengalokasikan waktu di luar jam kerja untuk menyelesaikannya\n→ Menyelesaikan tanggung jawab tanpa menunggu teguran mencerminkan sikap amanah[cite: 31]."
+      },
+      {
+        "question": "Menurut saya, cara paling efektif untuk memastikan hasil kerja saya sudah memiliki kualitas terbaik adalah dengan...",
+        "options": [
+          "meminta masukan dari pihak lain yang berkaitan dengan pekerjaan tersebut",
+          "membandingkan dengan kualitas hasil kerja orang lain"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Meminta masukan dari pihak lain yang berkaitan dengan pekerjaan tersebut\n→ Umpan balik dari pihak lain membantu memastikan kualitas kerja yang lebih baik[cite: 32]."
+      },
+      {
+        "question": "Ketika atasan memberikan masukan kepada hasil kerja tim saya, maka sikap saya..",
+        "options": [
+          "langsung merevisinya",
+          "menolaknya, karena pekerjaan sudah diselesaikan"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Langsung merevisinya\n→ Menunjukkan sikap profesional dalam menerima kritik dan saran dari atasan[cite: 33]."
+      },
+      {
+        "question": "Ketika saya mengalami kesulitan dalam menyelesaikan tugas, maka sikap saya..",
+        "options": [
+          "menunggu arahan dari atasan untuk mendapatkan solusinya",
+          "bertanya kepada rekan kerja lain yang dianggap lebih menguasai"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Bertanya kepada rekan kerja lain yang dianggap lebih menguasai\n→ Mencari solusi secara proaktif lebih baik daripada hanya menunggu arahan atasan[cite: 34]."
+      },
+      {
+        "question": "Menurut saya, cara efektif untuk dapat mengenal lingkungan dan tim yang baru adalah...",
+        "options": [
+          "dengan mengamati lingkungan dan rekan kerja tersebut",
+          "dengan membuka komunikasi dan belajar kepada para rekan kerja di lingkungan tersebut"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Dengan membuka komunikasi dan belajar kepada para rekan kerja di lingkungan tersebut\n→ Interaksi aktif mempercepat proses adaptasi dalam lingkungan kerja baru[cite: 35]."
+      },
+      {
+        "question": "Pada saat terdapat rekan kerja yang sering membicarakan saya di belakang, maka...",
+        "options": [
+          "saya akan langsung menegurnya di depan umum",
+          "saya akan mengklarifikasi langsung kepada yang bersangkutan"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Saya akan mengklarifikasi langsung kepada yang bersangkutan\n← Klarifikasi langsung menghindari kesalahpahaman dan menjaga hubungan kerja tetap harmonis[cite: 38]."
+      },
+      {
+        "question": "Saat saya memiliki hutang kepada rekan kerja..",
+        "options": [
+          "menghindari rekan kerja saya sambil berharap ia segera melupakannya",
+          "segera membayarnya saat terdapat dana yang cukup"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Segera membayarnya saat terdapat dana yang cukup\n← Menunjukkan sikap Amanah dan bertanggung jawab terhadap kewajiban[cite: 39]. Menghindari rekan kerja bukanlah perilaku profesional[cite: 40]."
+      },
+      {
+        "question": "Anggota tim yang baru menggebu-gebu dalam menyampaikan setiap pendapatnya dan terkadang sampai mengganggu jalannya pertemuan, maka sikap saya...",
+        "options": [
+          "mengapresiasi semangatnya dengan tetap memberikan masukan agar tidak mengganggu jalannya pertemuan",
+          "membiarkannya karena hal tersebut wajar"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Mengapresiasi semangatnya dengan tetap memberikan masukan agar tidak mengganggu jalannya pertemuan\n→ Mencerminkan nilai Harmonis dan Kolaboratif, dengan tetap menghargai semangat anggota tim, tetapi juga mengarahkan agar komunikasi tetap efektif[cite: 40]."
+      },
+      {
+        "question": "Bila terdapat pekerjaan yang sering membuat saya hingga jatuh sakit, maka saya akan...",
+        "options": [
+          "mengevaluasi gaya kerja saya yang tidak efisien",
+          "menyampaikan permohonan kepada atasan agar mengurangi pekerjaan saya"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Mengevaluasi gaya kerja saya yang tidak efisien\n→ Menunjukkan nilai Kompeten dan Adaptif, karena mencari solusi dengan meningkatkan efisiensi kerja tanpa langsung mengandalkan atasan[cite: 41]."
+      },
+      {
+        "question": "Terdapat rekan kerja saya yang mengalami penurunan semangat dikarenakan seringkali gagal mencapai target yang ditetapkan atasan. Hal tersebut mulai membuatnya meragukan kemampuan dirinya, maka....",
+        "options": [
+          "saya akan menyarankan atasan agar dapat mendekatinya secara personal",
+          "saya akan membiarkannya meningkatkan semangat secara mandiri"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Saya akan menyarankan atasan agar dapat mendekatinya secara personal\n→ Sesuai dengan nilai Harmonis, dengan peduli terhadap kesejahteraan rekan kerja dan mendorong pendekatan yang lebih personal dari atasan[cite: 43]."
+      },
+      {
+        "question": "Terdapat rekan saya yang kurang produktif karena saat ini memiliki permasalahan keluarga maka sikap saya..",
+        "options": [
+          "menawarkan bantuan untuk melakukan penyesuaian kembali",
+          "memberinya pandangan untuk menyesuaikan produktivitasnya dengan kemampuan"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Menawarkan bantuan untuk melakukan penyesuaian kembali\n→ Sesuai dengan nilai Harmonis dan Kolaboratif, menunjukkan empati terhadap rekan kerja agar tetap bisa produktif tanpa mengabaikan kesejahteraannya[cite: 44]."
+      },
+      {
+        "question": "Ketika ada permintaan dari klien dengan budget yang terbatas, maka saya akan...",
+        "options": [
+          "tetap memberikan kualitas kerja yang baik",
+          "memberikan kualitas kerja sesuai budget klien tersebut"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Tetap memberikan kualitas kerja yang baik\n→ Menunjukkan nilai Amanah dan Kompeten, dengan tetap menjaga standar profesionalisme dan kepercayaan klien terhadap perusahaan[cite: 45]."
+      },
+      {
+        "question": "Atasan saya memberikan kami kewajiban untuk selalu memberikan ide inovasi terkait perusahaan kami tetapi sayangnya tidak semua karyawan melakukannya. Hal yang akan saya lakukan adalah...",
+        "options": [
+          "mengajak brainstorming rekan-rekan kerja saya agar semua terbiasa berdiskusi dan berinovasi",
+          "mengikuti rekan-rekan kerja yang tidak melakukannya"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Mengajak brainstorming rekan-rekan kerja saya agar semua terbiasa berdiskusi dan berinovasi\n← Menunjukkan nilai Kolaboratif dan Adaptif, dengan mendorong budaya inovasi dalam tim[cite: 48]."
+      },
+      {
+        "question": "Terdapat anggota tim yang kesulitan dalam menggunakan perangkat lunak baru, sikap saya..",
+        "options": [
+          "membiarkannya untuk mencoba menggunakan perangkat lunak tersebut",
+          "menawarkan diri untuk membantunya dalam menggunakan perangkat lunak"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Menawarkan diri untuk membantunya dalam menggunakan perangkat lunak\n→ Mencerminkan nilai Kolaboratif, dengan bersedia membantu sesama rekan kerja dalam beradaptasi dengan teknologi baru[cite: 49]."
+      },
+      {
+        "question": "Banyak buku di kantor saya yang tidak terpakai, sikap saya...",
+        "options": [
+          "mengembangkan perpustakaan kantor agar buku-buku tersebut dapat dimanfaatkan oleh karyawan",
+          "menyumbangkan buku-buku tersebut ke perpustakaan terdekat"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Mengembangkan perpustakaan kantor agar buku-buku tersebut dapat dimanfaatkan oleh karyawan\n→ Sesuai dengan nilai Kompeten dan Kolaboratif, dengan memanfaatkan sumber daya yang ada untuk meningkatkan pengetahuan bersama[cite: 50]."
+      },
+      {
+        "question": "Membaca buku dan informasi terbaru sebaiknya...",
+        "options": [
+          "dijadikan kebiasaan",
+          "dilakukan saat terdapat kebutuhan"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Dijadikan kebiasaan\n→ Sesuai dengan nilai Kompeten, menunjukkan semangat belajar dan pengembangan diri secara berkelanjutan[cite: 51]."
+      },
+      {
+        "question": "Salah satu anggota tim kerja terbiasa untuk melimpahkan pekerjaannya kepada saya, sikap saya...",
+        "options": [
+          "saya akan tetap mengerjakan pekerjaannya",
+          "saya akan menyarankan kepada pimpinan tim untuk membuat pembagian tugas dengan jelas"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Saya akan menyarankan kepada pimpinan tim untuk membuat pembagian tugas dengan jelas\n→ Mencerminkan nilai Amanah dan Loyal, dengan menegakkan keadilan dalam pembagian tugas agar tidak ada yang terbebani secara tidak adil[cite: 52]."
+      },
+      {
+        "question": "Ketika terdapat mitra kerja yang skalanya belum terlalu besar menawarkan kerja sama, maka sikap saya...",
+        "options": [
+          "memberikan kesempatan kepada mereka untuk menjelaskan portofolio yang mereka miliki",
+          "memprioritaskan mitra yang sudah memiliki pengalaman lebih banyak"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Memberikan kesempatan kepada mereka untuk menjelaskan portofolio yang mereka miliki\n→ Sesuai dengan nilai Kolaboratif, mendukung peluang bagi mitra baru yang berpotensi tanpa mengesampingkan kualitas[cite: 53]."
+      },
+      {
+        "question": "Ketika saya harus mengikuti pelatihan dan pelatihan tersebut membutuhkan beberapa persyaratan yang harus dipenuhi terlebih dahulu, maka sikap saya..",
+        "options": [
+          "akan berusaha memenuhi prasyarat pelatihan tersebut",
+          "akan mengajukan penggantian pelatihan yang lebih dapat saya kuasai"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Akan berusaha memenuhi prasyarat pelatihan tersebut\n→ Menunjukkan nilai Kompeten, dengan berusaha memenuhi standar sebelum mengikuti pelatihan[cite: 56]."
+      },
+      {
+        "question": "Pimpinan yang harus saya taati di perusahaan adalah...",
+        "options": [
+          "seseorang yang ditunjuk oleh perusahaan sebagai pimpinan saya",
+          "seseorang yang menurut saya mampu menjadi panutan"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Seseorang yang ditunjuk oleh perusahaan sebagai pimpinan saya\n← Menunjukkan nilai Loyal, dengan menghormati sistem dan struktur perusahaan[cite: 57]."
+      },
+      {
+        "question": "Saat menjabat sebagai pimpinan tim dan saya mengambil keputusan yang keliru, maka...",
+        "options": [
+          "saya akan menyampaikan siapa saja orang lain yang juga melakukan kesalahan serupa dengan saya",
+          "saya akan meminta maaf kepada semua pihak dan lebih membuka diri terhadap segala masukan"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Saya akan meminta maaf kepada semua pihak dan lebih membuka diri terhadap segala masukan\n→ Mencerminkan nilai Amanah dan Harmonis, dengan mengakui kesalahan dan siap menerima masukan demi perbaikan[cite: 58]."
+      },
+      {
+        "question": "Saat perusahaan saya belum mampu mengembangkan teknologi tertentu untuk suatu kebutuhan, yang akan saya lakukan adalah...",
+        "options": [
+          "mencari perusahaan lain yang berpotensi menjadi mitra",
+          "meminta anggota tim untuk segera menguasai ilmu-ilmu yang dibutuhkan guna mengembangkan teknologi tersebut"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Mencari perusahaan lain yang berpotensi menjadi mitra\n→ Sesuai dengan nilai Kolaboratif, dengan mencari solusi melalui kerja sama strategis[cite: 59]."
+      },
+      {
+        "question": "Banyaknya calon karyawan yang memiliki keterampilan teknis yang baik, tetapi memiliki soft skill yang kurang memadai, menurut saya..",
+        "options": [
+          "mereka harus diberi kesempatan dengan diberikan pelatihan soft skill",
+          "sebaiknya tidak perlu menerima mereka karena soft skill adalah segalanya"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Mereka harus diberi kesempatan dengan diberikan pelatihan soft skill\n→ Sesuai dengan nilai Kompeten, memberikan peluang pengembangan bagi calon karyawan[cite: 60]."
+      },
+      {
+        "question": "Ketika saya harus piket di hari libur dan bersamaan dengan acara keluarga, maka sikap saya..",
+        "options": [
+          "mendahulukan acara keluarga saya",
+          "memenuhi jadwal piket yang diberikan kantor"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Memenuhi jadwal piket yang diberikan kantor\n→ Menunjukkan nilai Loyal, dengan tetap menjalankan tanggung jawab pekerjaan[cite: 61]."
+      },
+      {
+        "question": "Saya merasa revisi tugas yang diberikan dari atasan sangat banyak, menurut saya hal tersebut merupakan...",
+        "options": [
+          "bukti bahwa hasil kerja saya masih perlu ditingkatkan",
+          "cara atasan saya agar saya lebih terlihat bekerja"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Bukti bahwa hasil kerja saya masih perlu ditingkatkan\n→ Sesuai dengan nilai Kompeten, dengan menjadikan revisi sebagai pembelajaran untuk peningkatan kualitas kerja[cite: 62]."
+      },
+      {
+        "question": "Saat terdapat rekan kerja yang tertarik dengan buku yang saya miliki, maka...",
+        "options": [
+          "saya akan menyarankannya meminta bantuan kepada pihak lain",
+          "saya akan membantunya mencari referensi yang relevan"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Saya akan membantunya mencari referensi yang relevan\n→ Mencerminkan nilai Kolaboratif, dengan membantu rekan kerja dalam mencari sumber informasi[cite: 63]."
+      },
+      {
+        "question": "Saat terdapat beberapa komputer di tempat kerja kami yang rusak dan saya memiliki kemampuan untuk memperbaikinya, maka saya akan...",
+        "options": [
+          "menawarkan diri untuk memperbaikinya",
+          "merekomendasikan perusahaan untuk segera menyewa teknisi komputer"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Menawarkan diri untuk memperbaikinya\n→ Menunjukkan Adaptif dan Kolaboratif[cite: 65]. Jika memiliki keterampilan, membantu perbaikan akan meningkatkan efisiensi dan menghemat biaya perusahaan[cite: 66]."
+      },
+      {
+        "question": "Terdapat perusahaan mitra kami yang seringkali menawarkan produk mereka untuk berkolaborasi dengan program-program yang dimiliki perusahaan, sikap saya...",
+        "options": [
+          "melihat dahulu kesesuaian produk mereka dengan program perusahaan",
+          "menolak produk tersebut karena bukan produk orisinal hasil karya kami"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Melihat dahulu kesesuaian produk mereka dengan program perusahaan\n→ Menunjukkan sikap Loyal dan Harmonis[cite: 67]. Tidak langsung menolak, tetapi melakukan analisis terlebih dahulu agar keputusan yang diambil tetap menguntungkan perusahaan[cite: 68]."
+      },
+      {
+        "question": "Saat terdapat beberapa startup yang dikembangkan oleh mahasiswa dan membutuhkan pendanaan dari perusahaan tempat saya bekerja, sikap saya..",
+        "options": [
+          "menyampaikan pesan tersebut kepada manajemen perusahaan kami agar ditindaklanjuti",
+          "memberikan sumbangan semampu saya untuk membantu pendanaan mereka"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Menyampaikan pesan tersebut kepada manajemen perusahaan kami agar ditindaklanjuti\n→ Menunjukkan sikap Harmonis dan Kolaboratif[cite: 69]. Menghubungkan startup dengan pihak yang memiliki kapasitas lebih besar untuk membantu mereka secara lebih strategis[cite: 70]."
+      },
+      {
+        "question": "Saya kurang memiliki pemahaman mengenai produk yang dikembangkan perusahaan, maka saya..",
+        "options": [
+          "mempertimbangkan masukan tersebut sebagai acuan pengembangan kedepan",
+          "akan menjelaskan kembali bahwa yang kami kerjakan sudah mengacu pada spesifikasi yang diberikan"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Mempertimbangkan masukan tersebut sebagai acuan pengembangan ke depan\n→ Menunjukkan Adaptif dan Kompeten[cite: 71]. Selalu terbuka terhadap masukan demi pengembangan perusahaan[cite: 72]."
+      },
+      {
+        "question": "Saat terdapat suatu keterampilan yang bukan bidang saya namun terlihat menjadi kebutuhan perusahaan saya di masa depan...",
+        "options": [
+          "meluangkan waktu untuk mempelajarinya",
+          "menunggu hingga bidang tersebut populer di masyarakat"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Meluangkan waktu untuk mempelajarinya\n← Menunjukkan Adaptif dan Kompeten[cite: 72]. Mengembangkan keterampilan baru secara proaktif untuk kemajuan diri dan perusahaan[cite: 73]."
+      },
+      {
+        "question": "Ketika rapat berjalan kurang efektif, maka sikap saya..",
+        "options": [
+          "berinisiatif untuk memimpin jalannya rapat dengan mengajak setiap anggota tim menyatakan pendapatnya",
+          "mengandalkan pimpinan dalam mengarahkan rapat"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Berinisiatif untuk memimpin jalannya rapat dengan mengajak setiap anggota tim menyatakan pendapatnya\n→ Menunjukkan Harmonis dan Kolaboratif[cite: 73]. Mengambil inisiatif untuk memastikan rapat berjalan efektif dengan keterlibatan semua pihak[cite: 74]."
+      },
+      {
+        "question": "Saat terdapat rekan kerja saya yang sering beribadah terlalu lama hingga membuat pertemuan sering tertunda, maka...",
+        "options": [
+          "mengajaknya diskusi untuk mencari solusi bersama",
+          "menegurnya karena menghambat kinerja tim"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Mengajaknya diskusi untuk mencari solusi bersama\n→ Menunjukkan Harmonis dan Loyal[cite: 76]. Mengedepankan komunikasi yang baik agar semua pihak dapat menjalankan kewajibannya tanpa merasa tersisihkan[cite: 77]."
+      },
+      {
+        "question": "Bagi saya, keterampilan diri dapat dikembangkan selama terdapat...",
+        "options": [
+          "arahan dari manajemen",
+          "kebutuhan dari dalam diri untuk melakukannya"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Kebutuhan dari dalam diri untuk melakukannya\n→ Menunjukkan Adaptif dan Kompeten[cite: 78]. Pengembangan diri sebaiknya datang dari motivasi internal, bukan hanya instruksi dari manajemen[cite: 79]."
+      },
+      {
+        "question": "Ketika selesai mengerjakan tugas, maka sikap saya...",
+        "options": [
+          "percaya diri langsung mengirimkan kepada atasan",
+          "memeriksa terlebih dahulu untuk memastikan kualitas hasil kerja saya"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Memeriksa terlebih dahulu untuk memastikan kualitas hasil kerja saya\n→ Menunjukkan Kompeten dan Loyal[cite: 80]. Mengecek hasil kerja sebelum diserahkan agar kualitas tetap terjaga[cite: 81]."
+      },
+      {
+        "question": "Ketika seringkali tim saya terlambat dalam mengumpulkan tugas masing-masing, menurut saya..",
+        "options": [
+          "satu tim perlu melakukan evaluasi untuk perbaikan efektivitas kerja tim",
+          "perlu melaporkannya kepada atasan untuk mengajukan penggantian anggota tim"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Satu tim perlu melakukan evaluasi untuk perbaikan efektivitas kerja tim\n→ Menunjukkan Kolaboratif dan Kompeten[cite: 81]. Evaluasi internal lebih baik dibanding langsung melapor ke atasan, karena ini menunjukkan inisiatif dalam mencari solusi[cite: 82]."
+      },
+      {
+        "question": "Ketika anak magang mengeluh mengenai unit saya di media sosial, maka sikap saya..",
+        "options": [
+          "membiarkannya karena magang berbatas waktu",
+          "memberitahunya agar tidak mengulanginya di kemudian hari"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Memberitahunya agar tidak mengulanginya di kemudian hari\n→ Menunjukkan Loyal dan Harmonis[cite: 83]. Mengedukasi agar perilaku yang kurang profesional tidak terulang, tanpa menciptakan konflik[cite: 84]."
+      },
+      {
+        "question": "Saat diskusi, rekan kerja dari bidang lain ragu dalam menyampaikan pendapatnya, maka saya..",
+        "options": [
+          "meyakinkan mereka bahwa perbedaan pendapat adalah hal yang umum dalam sebuah diskusi",
+          "membiarkannya agar tidak terjadi konflik"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Meyakinkan mereka bahwa perbedaan pendapat adalah hal yang umum dalam sebuah diskusi\n→ Menunjukkan Harmonis dan Kolaboratif[cite: 84]. Mendukung keberagaman pemikiran dalam tim demi pengambilan keputusan yang lebih baik[cite: 85]."
+      },
+      {
+        "question": "Saat saya dipercaya perusahaan mengikuti beasiswa tertentu..",
+        "options": [
+          "saya akan menggunakan semua dana yang diberikan secara maksimal",
+          "saya akan mengoptimalkan waktu tempuh studi saya"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Saya akan mengoptimalkan waktu tempuh studi saya\n← Menunjukkan Loyal dan Kompeten[cite: 86]. Bertanggung jawab atas beasiswa yang diberikan dengan menyelesaikan studi seefisien mungkin[cite: 87]."
+      },
+      {
+        "question": "Sikap saya kepada para senior saya...",
+        "options": [
+          "terus memantaunya karena senior semestinya menjadi contoh bagi yang lain",
+          "tetap menghormatinya dan menyampaikan feedback dengan sopan"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Tetap menghormatinya dan menyampaikan feedback dengan sopan\n→ Menunjukkan Harmonis dan Loyal[cite: 88]. Menghormati senior tetapi tetap memberikan masukan yang membangun dengan cara yang baik[cite: 89]."
+      },
+      {
+        "question": "Saya seringkali tidak mengetahui apa yang sedang dikerjakan oleh rekan kerja dalam satu tim saya, maka saya akan..",
+        "options": [
+          "tetap fokus pada tugas yang diberikan kepada saya",
+          "menyarankan atasan untuk mengadakan pertemuan rutin guna membahas pembagian tugas dan laporan kemajuan tugas"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Menyarankan atasan untuk mengadakan pertemuan rutin guna membahas pembagian tugas dan laporan kemajuan tugas\n→ Menunjukkan Kolaboratif dan Loyal[cite: 90]. Memastikan transparansi dalam tim agar pekerjaan lebih terorganisir[cite: 91]."
+      },
+      {
+        "question": "Memberikan masukan kepada orang lain, menurut saya..",
+        "options": [
+          "perlu dilakukan secara frontal",
+          "perlu dilakukan dengan bahasa yang sopan"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Perlu dilakukan dengan bahasa yang sopan\n→ Menunjukkan Harmonis dan Kolaboratif[cite: 91]. Memberikan masukan yang membangun tanpa menyakiti perasaan orang lain[cite: 92]."
+      },
+      {
+        "question": "Saat terdapat kawan saya yang sakit dalam kurun waktu lama sedangkan saya tidak dapat membantunya dikarenakan kurangnya kompetensi saya akan..",
+        "options": [
+          "sementara mengambil pekerjaannya dan meluangkan waktu saya di malam hari untuk mempelajari kompetensi tersebut",
+          "menyarankan atasan saya untuk mencari pengganti sementara"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Mengambil pekerjaannya dan meluangkan waktu saya di malam hari untuk mempelajari kompetensi tersebut\n→ Menunjukkan Adaptif dan Kolaboratif[cite: 92]. Bersedia membantu rekan kerja sambil meningkatkan keterampilan pribadi[cite: 93]."
+      },
+      {
+        "question": "Saat rekan kerja saya menceritakan pengalaman buruknya di masa lalu...",
+        "options": [
+          "saya akan merahasiakannya dan mengambilnya sebagai pelajaran untuk diri saya sendiri",
+          "saya akan membagikannya kepada orang lain sebagai pelajaran bersama"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Saya akan merahasiakannya dan mengambilnya sebagai pelajaran untuk diri saya sendiri\n→ Menunjukkan Loyal dan Harmonis[cite: 93]. Menjaga kepercayaan dan privasi orang lain, serta belajar dari pengalaman mereka[cite: 94]."
+      },
+      {
+        "question": "Bersikap ramah kepada sesama rekan kerja, menurut saya...",
+        "options": [
+          "hal yang harus dibiasakan saat kita menjadi seseorang profesional",
+          "hal yang terlalu dipaksakan untuk seseorang yang kesehariannya tidak demikian"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Hal yang harus dibiasakan saat kita menjadi seseorang profesional\n→ Menunjukkan Harmonis dan Kolaboratif[cite: 94]. Bersikap ramah membantu menciptakan lingkungan kerja yang positif dan produktif[cite: 95]."
+      },
+      {
+        "question": "Ketika saya harus menyelesaikan pekerjaan yang belum pernah saya lakukan sebelumnya, maka sikap saya akan...",
+        "options": [
+          "mengajak rekan kerja yang dianggap ahli untuk mengerjakannya",
+          "mencoba menyelesaikannya dengan mencari beragam referensi yang relevan"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Mencoba menyelesaikannya dengan mencari beragam referensi yang relevan\n→ Menunjukkan Kompeten dan Adaptif[cite: 97]. Mengambil inisiatif untuk belajar sebelum meminta bantuan, menunjukkan kemandirian dalam menyelesaikan tugas[cite: 98]."
+      },
+      {
+        "question": "Saat melihat pimpinan saya sering terlambat dalam memimpin rapat...",
+        "options": [
+          "saya akan mendengarkan pendapat-pendapatnya karena kegagalannya dalam memberi contoh yang baik",
+          "saya akan memulai diskusi kecil untuk mengisi kekosongan"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Saya akan memulai diskusi kecil untuk mengisi kekosongan\n→ Menunjukkan Kolaboratif dan Adaptif[cite: 99]. Mengambil inisiatif untuk menjaga produktivitas tim meskipun pimpinan terlambat[cite: 100]."
+      },
+      {
+        "question": "Menurut saya bila terdapat ruang khusus liburan dan tempat bermain di kantor merupakan...",
+        "options": [
+          "hal yang tidak ada korelasinya dengan kebutuhan perusahaan",
+          "hal yang membangun produktivitas selama diawasi penggunanya"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Hal yang membangun produktivitas selama diawasi penggunanya\n→ Menunjukkan Harmonis dan Loyal[cite: 100]. Fasilitas ini dapat meningkatkan kesejahteraan karyawan dan produktivitas jika digunakan dengan bijak[cite: 101]."
+      },
+      {
+        "question": "Bagi saya, pekerjaan sosial merupakan tipe pekerjaan yang..",
+        "options": [
+          "Dapat dilakukan untuk memberikan kontribusi ke masyarakat",
+          "Sebaiknya dihindari apalagi jika sedang banyak pekerjaan"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Dapat dilakukan untuk memberikan kontribusi ke masyarakat\n→ Menunjukkan Amanah dan Harmonis[cite: 102]. Pekerjaan sosial sejalan dengan tanggung jawab sosial perusahaan dan kepedulian terhadap masyarakat[cite: 103]."
+      },
+      {
+        "question": "Ketika saya menjadi pembicara dan menerima honor, maka sikap saya...",
+        "options": [
+          "menggunakannya sesuai kebutuhan karena itu merupakan hak saya",
+          "melaporkannya kepada perusahaan"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Melaporkannya kepada perusahaan\n→ Menunjukkan Amanah dan Loyal[cite: 104]. Menghindari potensi konflik kepentingan dan menjaga transparansi dengan perusahaan[cite: 105]."
+      },
+      {
+        "question": "Menurut saya, keterlambatan kehadiran di kantor dikarenakan jarak rumah yang jauh merupakan..",
+        "options": [
+          "hal yang dapat diterima",
+          "hal yang harus diperbaiki dan tidak boleh diulangi"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Hal yang harus diperbaiki dan tidak boleh diulangi\n→ Menunjukkan Kompeten dan Loyal[cite: 105]. Kedisiplinan waktu penting dalam budaya kerja yang profesional[cite: 106]."
+      },
+      {
+        "question": "Rekan kerja saya harus mengikuti ujian seleksi beasiswa di saat deadline tugasnya tiba, maka saya...",
+        "options": [
+          "menawarkan diri untuk membantunya menyelesaikan tugas bersama",
+          "menyarankan padanya untuk begadang di malam sebelumnya untuk menyelesaikan tugas terlebih dahulu"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Menawarkan diri untuk membantunya menyelesaikan tugas bersama\n→ Menunjukkan Kolaboratif dan Harmonis[cite: 106]. Membantu rekan kerja agar tetap bisa mengikuti seleksi beasiswa tanpa mengorbankan tanggung jawab kerja[cite: 107]."
+      },
+      {
+        "question": "Ketika hasil kerja anggota tim baru belum sesuai dengan standar sehingga perlu untuk dikerjakan ulang, sikap saya...",
+        "options": [
+          "melakukan mentoring pada anggota tim baru terkait cara-cara penyelesaian tugas yang sesuai standar",
+          "membiarkan anggota tim baru tetap melakukan pekerjaannya dengan cara yang mereka kuasai"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Melakukan mentoring pada anggota tim baru terkait cara-cara penyelesaian tugas yang sesuai standar\n→ Menunjukkan Kompeten dan Kolaboratif[cite: 110]. Memberikan bimbingan agar karyawan baru dapat berkembang dan bekerja sesuai standar perusahaan[cite: 111]."
+      },
+      {
+        "question": "Saat rekan-rekan kerja saya mengajak olah raga bersama setiap pagi...",
+        "options": [
+          "saya tidak perlu mengikutinya karena tidak berkaitan dengan pekerjaan saya",
+          "saya akan mengikutinya sebagai bentuk pendekatan diri dengan mereka"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Saya akan mengikutinya sebagai bentuk pendekatan diri dengan mereka\n→ Menunjukkan Harmonis dan Kolaboratif[cite: 112]. Membangun hubungan baik dengan rekan kerja untuk menciptakan lingkungan kerja yang positif[cite: 113]."
+      },
+      {
+        "question": "Penting bagi saya untuk membuka diri saya kepada rekan-rekan kerja saya agar..",
+        "options": [
+          "mereka dapat menyesuaikan pekerjaan yang diberikan kepada saya sesuai dengan suasana hati saya",
+          "mereka dapat menyesuaikan pekerjaan yang diberikan kepada saya sesuai dengan kemampuan saya"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Mereka dapat menyesuaikan pekerjaan yang diberikan kepada saya sesuai dengan kemampuan saya\n→ Menunjukkan Kompeten dan Kolaboratif[cite: 114]. Membuka diri agar pekerjaan yang diberikan sesuai dengan keahlian, bukan berdasarkan suasana hati[cite: 115]."
+      },
+      {
+        "question": "Memiliki pimpinan yang usianya lebih muda, maka saya..",
+        "options": [
+          "dapat lebih leluasa dalam berdebat selama diskusi",
+          "akan tetap mengedepankan etika berdiskusi"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Akan tetap mengedepankan etika berdiskusi\n→ Menunjukkan Harmonis dan Loyal[cite: 116]. Menghormati pimpinan tanpa memandang usia, serta menjaga profesionalisme dalam berdiskusi[cite: 117]."
+      },
+      {
+        "question": "Saat saya dipindahkan ke divisi lain karena dinilai kurang cakap, maka..",
+        "options": [
+          "saya akan menyampaikan apa yang menjadi kekurangan pada divisi saya sebelumnya sehingga menyebabkan saya kurang berkembang",
+          "saya akan fokus pada pengembangan diri saya di divisi yang baru"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Saya akan fokus pada pengembangan diri saya di divisi yang baru\n→ Menunjukkan Adaptif dan Kompeten[cite: 117]. Fokus pada pertumbuhan diri daripada terjebak dalam evaluasi masa lalu[cite: 118]."
+      },
+      {
+        "question": "Ketika rekan kerja lintas bidang kesulitan menggunakan tools tertentu, maka sikap saya....",
+        "options": [
+          "menyarankannya untuk membaca manual booknya",
+          "mendampinginya untuk mencoba menggunakannya kembali"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Mendampinginya untuk mencoba menggunakannya kembali\n→ Menunjukkan Kolaboratif dan Harmonis[cite: 118]. Membantu rekan kerja agar lebih cepat memahami penggunaan tools tersebut[cite: 119]."
+      },
+      {
+        "question": "Sebagai pimpinan tim, saat terdapat anggota tim saya yang melakukan kesalahan sehingga pengumpulan tugas kami menjadi terhambat, maka..",
+        "options": [
+          "saya akan membantu bagian yang masih keliru untuk mempercepat penyelesaian tugas",
+          "saya akan memintanya bertanggung jawab atas kesalahannya"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Saya akan membantu bagian yang masih keliru untuk mempercepat penyelesaian tugas\n→ Menunjukkan Kolaboratif dan Loyal[cite: 119]. Mengutamakan penyelesaian masalah daripada sekadar menuntut tanggung jawab individu[cite: 120]."
+      },
+      {
+        "question": "Anggota tim yang baru, datang terlambat saat menghadiri rapat dengan klien, maka sikap saya..",
+        "options": [
+          "memakluminya karena masih dalam masa orientasi",
+          "menegurnya secara personal agar kedepannya tidak terjadi lagi"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Menegurnya secara personal agar kedepannya tidak terjadi lagi\n→ Menunjukkan Harmonis dan Loyal[cite: 122]. Memberikan teguran dengan cara yang baik untuk menjaga profesionalisme tanpa mempermalukan anggota tim[cite: 123]."
+      },
+      {
+        "question": "Menjaga kebersihan meja kerja, menurut saya merupakan..",
+        "options": [
+          "kewajiban saya sebagai pengguna fasilitas kantor",
+          "kewajiban cleaning services kantor"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Kewajiban saya sebagai pengguna fasilitas kantor\n← Menunjukkan Amanah dan Loyal[cite: 124]. Menjaga kebersihan adalah tanggung jawab setiap karyawan, bukan hanya cleaning service[cite: 125]."
+      },
+      {
+        "question": "Bagi saya, keterampilan saya perlu dikembangkan saat...",
+        "options": [
+          "kapanpun selama saya menjalankan pekerjaan saya",
+          "terdapat kesempatan untuk naik gaji"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Kapanpun selama saya menjalankan pekerjaan saya\n→ Menunjukkan Kompeten dan Adaptif[cite: 125]. Pengembangan keterampilan harus dilakukan secara kontinu, tidak hanya saat ada insentif tertentu[cite: 126]."
+      },
+      {
+        "question": "Ketika pimpinan mengajak kami ke tempat hiburan yang melanggar norma-norma..",
+        "options": [
+          "saya akan menolaknya dengan sopan",
+          "saya akan menerimanya sebagai kesempatan menambah pengalaman"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Saya akan menolaknya dengan sopan\n→ Menunjukkan Amanah dan Harmonis[cite: 127]. Menghormati pimpinan tetapi tetap memegang teguh prinsip dan nilai pribadi[cite: 128]."
+      },
+      {
+        "question": "Tumpukan dokumen yang begitu banyak di kantor saya merupakan..",
+        "options": [
+          "hal yang perlu disolusikan agar penggunaan dokumen lebih dibuat efisien kedepannya",
+          "hal yang wajar dikarenakan banyaknya pekerjaan yang ada di perusahaan saya"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Hal yang perlu disolusikan agar penggunaan dokumen lebih dibuat efisien ke depannya\n→ Menunjukkan Adaptif dan Kompeten[cite: 128]. Berpikir inovatif dalam mencari solusi untuk meningkatkan efisiensi kerja[cite: 129]."
+      },
+      {
+        "question": "Ketika unit lain menunda memberikan dokumen yang dibutuhkan oleh tim saya, maka...",
+        "options": [
+          "saya akan menyampaikan kepada atasan saya untuk membantu mengkomunikasikan masalah ini kepada atasan divisi tersebut",
+          "saya akan mengadukannya kepada pihak manajemen"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jawaban: Saya akan menyampaikan kepada atasan saya untuk membantu mengkomunikasikan masalah ini kepada atasan divisi tersebut\n→ Menunjukkan Kolaboratif dan Loyal[cite: 129]. Mengedepankan komunikasi dan solusi yang baik daripada langsung mengadukan ke manajemen[cite: 130]."
+      },
+      {
+        "question": "Banyaknya rekan kerja tim saya yang kurang dapat menyelesaikan tugas dengan baik membuat saya..",
+        "options": [
+          "lebih santai dalam mengerjakan pekerjaan dikarenakan banyak yang juga melakukan hal yang sama",
+          "lebih cepat menyelesaikan tugas saya agar dapat membantu tim dalam menyelesaikan pekerjaan mereka"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Jawaban: Lebih cepat menyelesaikan tugas saya agar dapat membantu tim dalam menyelesaikan pekerjaan mereka\n→ Menunjukkan Kolaboratif dan Kompeten[cite: 131]. Bersikap proaktif dan membantu tim mencapai target bersama[cite: 132]."
+      }
+    ]
   }
 ]

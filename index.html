@@ -285,7 +285,7 @@
       ];
 
       // --- SIMULASI HASIL BUILD STEP ---
-      const availableSoalFiles = ["soal-verbal-logic1.json","soal-verbal-logic2.json","soal-tkd-word-classification1.json","soal-tkd-word-classification2.json","soal-akhlak.json","soal-akhlak2.json","soal-twk1.json",];
+      const availableSoalFiles = ["soal-verbal-logic1.json", "soal-verbal-logic2.json", "soal-tkd-word-classification1.json", "soal-tkd-word-classification2.json", "soal-akhlak.json", "soal-akhlak2.json", "soal-twk1.json"];
       // --- AKHIR SIMULASI HASIL BUILD STEP ---
 
       // --- SIMULASI KONTEN FILE JSON ---
@@ -305,11 +305,13 @@
       // --- AKHIR SIMULASI KONTEN FILE JSON ---
 
       // --- Elemen DOM ---
+      // Mendapatkan referensi ke elemen-elemen HTML yang akan dimanipulasi
       const appContainer = document.getElementById("app-container");
       const landingPage = document.getElementById("landing-page");
       const onboardingPage = document.getElementById("onboarding-page");
       const examPage = document.getElementById("exam-page");
       const resultsPage = document.getElementById("results-page");
+      // Landing Page
       const uploadArea = document.getElementById("upload-area");
       const uploadLoading = document.getElementById("upload-loading");
       const loadingText = document.getElementById("loading-text");
@@ -317,8 +319,10 @@
       const pdfUploadInput = document.getElementById("pdf-upload");
       const jsonUploadInput = document.getElementById("json-upload");
       const openJsonModalButton = document.getElementById("open-json-modal-button");
+      // Onboarding Page
       const analysisResult = document.getElementById("analysis-result");
       const questionCountEl = document.getElementById("question-count");
+      // Exam Page
       const currentQuestionNumberEl = document.getElementById("current-question-number");
       const totalQuestionsEl = document.getElementById("total-questions");
       const questionTextEl = document.getElementById("question-text");
@@ -327,63 +331,103 @@
       const nextButton = document.getElementById("next-button");
       const submitButton = document.getElementById("submit-button");
       const progressBarInner = document.getElementById("progress-bar-inner");
+      // Resul Page
       const finalScoreEl = document.getElementById("final-score");
       const scoreSummaryEl = document.getElementById("score-summary");
       const resultsDetailsContainerEl = document.getElementById("results-details-container");
+      // Error Dialog PDF
       const errorDialog = document.getElementById("error-confirmation-dialog");
       const errorMessageDetail = document.getElementById("error-message-detail");
       const useDummyDataButton = document.getElementById("use-dummy-data-button");
       const tryAnotherFileButton = document.getElementById("try-another-file-button");
+      // Json Source Modal
       const jsonSourceModal = document.getElementById("json-source-modal");
       const jsonModalInitialOptions = document.getElementById("json-modal-initial-options");
       const jsonModalAvailableList = document.getElementById("json-modal-available-list");
       const availableJsonListContainer = document.getElementById("available-json-list");
       const triggerJsonUploadButton = document.getElementById("trigger-json-upload-button");
       const showAvailableJsonButton = document.getElementById("show-available-json-button");
+      // Confetti Canvas
       const confettiCanvas = document.getElementById("confetti-canvas");
       const myConfetti = confetti.create(confettiCanvas, { resize: true, useWorker: true });
 
       // --- Fungsi Navigasi Halaman & UI Bantuan ---
-
+      /**
+       * Menampilkan halaman yang ditentukan dan menyembunyikan yang lain.
+       * @param {string} pageId - ID elemen halaman yang akan ditampilkan.
+       */
       function showPage(pageId) {
         const mainPages = [landingPage, onboardingPage, examPage, resultsPage];
-        mainPages.forEach((page) => page.classList.add("hidden"));
+        mainPages.forEach((page) => page.classList.add("hidden")); // Sembunyikan semua halaman utama
         const pageToShow = document.getElementById(pageId);
         if (pageToShow) {
-          pageToShow.classList.remove("hidden");
-          currentPage = pageId;
+          pageToShow.classList.remove("hidden"); // Tampilkan halaman yang diminta
+          currentPage = pageId; // Update state halaman saat ini
         } else {
           console.error("Page not found:", pageId);
-          landingPage.classList.remove("hidden");
+          landingPage.classList.remove("hidden"); // Tampilkan halaman landing page jika tidak ada yang ditemukan
           currentPage = "landing-page";
         }
       }
+
+      
+      /**
+       * Menampilkan indikator loading.
+       * @param {string} [message="Memproses..."] - Pesan yang ditampilkan saat loading.
+       */
       function showLoading(message = "Memproses...") {
         loadingText.textContent = message;
-        uploadArea.classList.add("hidden");
-        uploadStatusEl.classList.add("hidden");
-        uploadLoading.classList.remove("hidden");
+        uploadArea.classList.add("hidden"); // Sembunyikan area tombol unggah
+        uploadStatusEl.classList.add("hidden"); // Sembunyikan status sebelumnya
+        uploadLoading.classList.remove("hidden"); // Tampilkan spinner dan teks loading
       }
+
+      /**
+       * Menyembunyikan indikator loading.
+       */
       function hideLoading() {
         uploadLoading.classList.add("hidden");
         uploadArea.classList.remove("hidden");
       }
+
+      
+      /**
+       * Menampilkan pesan status (info atau error) di area upload.
+       * @param {string} message - Pesan yang akan ditampilkan.
+       * @param {boolean} [isError=false] - True jika pesan adalah error (warna merah).
+       */
       function showStatus(message, isError = false) {
         uploadStatusEl.textContent = message;
         uploadStatusEl.classList.remove("hidden", "text-red-500", "text-gray-600");
         uploadStatusEl.classList.add(isError ? "text-red-500" : "text-gray-600");
-        hideLoading();
+        hideLoading(); // Selalu sembunyikan loading saat status muncul
       }
+
+      
+      /**
+       * Menampilkan dialog konfirmasi error khusus untuk parsing PDF.
+       * @param {string} message - Pesan detail error.
+       */
       function showErrorDialog(message) {
         errorMessageDetail.textContent = message || "Kami tidak dapat mengurai soal dari file PDF yang Anda unggah.";
         errorDialog.classList.remove("hidden");
-        errorDialog.classList.add("flex");
+        errorDialog.classList.add("flex"); // Tampilkan modal overlay
       }
+
+      
+      /**
+       * Menyembunyikan dialog konfirmasi error PDF dan mereset state upload.
+       */
       function hideErrorDialog() {
         errorDialog.classList.add("hidden");
         errorDialog.classList.remove("flex");
         resetUploadState();
       }
+
+      
+      /**
+       * Mereset nilai input file dan menyembunyikan status/loading.
+       */
       function resetUploadState() {
         pdfUploadInput.value = null;
         jsonUploadInput.value = null;
@@ -393,34 +437,54 @@
       }
 
       // --- Fungsi Modal Pemilihan Sumber JSON ---
-
+      /**
+       * Membuka modal untuk memilih sumber file JSON.
+       */
       function openJsonSourceModal() {
         jsonSourceModal.classList.remove("hidden");
-        jsonSourceModal.classList.add("flex");
-        showInitialJsonOptions();
+        jsonSourceModal.classList.add("flex"); // Tampilkan modal overlay
+        showInitialJsonOptions(); // Tampilkan opsi awal yang tersedia
       }
+      
+      /**
+       * Menutup modal pemilihan sumber file JSON.
+       */
       function closeJsonSourceModal() {
         jsonSourceModal.classList.add("hidden");
         jsonSourceModal.classList.remove("flex");
       }
+      
+      /**
+       * Menampilkan bagian opsi awal (Unggah/Pilih Tersedia) di dalam modal JSON.
+       */
       function showInitialJsonOptions() {
         jsonModalInitialOptions.classList.remove("hidden");
         jsonModalAvailableList.classList.add("hidden");
       }
+
+      
+      /**
+       * Menampilkan bagian daftar file JSON yang tersedia di dalam modal JSON.
+       */
       function showAvailableJsonList() {
         jsonModalInitialOptions.classList.add("hidden");
         jsonModalAvailableList.classList.remove("hidden");
-        displayAvailableJsonFiles();
+        displayAvailableJsonFiles(); // Panggil fungsi untuk mengisi daftar
       }
 
-      /** Mengisi daftar tombol file JSON yang tersedia. */
+
+      /**
+       * Mengisi daftar tombol file JSON yang tersedia berdasarkan array `availableSoalFiles`.
+       * KOMENTAR INTEGRASI: Fungsi ini menggunakan array `availableSoalFiles` hasil simulasi build step.
+       */
       function displayAvailableJsonFiles() {
-        availableJsonListContainer.innerHTML = "";
+        availableJsonListContainer.innerHTML = ""; // Kosongkan daftar
         const fileNames = availableSoalFiles;
         if (!fileNames || fileNames.length === 0) {
           availableJsonListContainer.innerHTML = '<p class="text-sm text-gray-500 italic">Tidak ada soal tersedia (simulasi).</p>';
           return;
         }
+        // Buat tombol untuk setiap file JSON yang tersedia
         fileNames.forEach((fileName) => {
           const button = document.createElement("button");
           button.className = "py-2 px-3 text-sm md:text-base w-full text-left mb-2 border border-gray-200 rounded-md bg-gray-50 hover:bg-gray-100 transition-colors duration-200"; // Menggabungkan gaya dari CSS ke JS
@@ -434,26 +498,38 @@
         });
       }
 
-      /** Memuat data soal dari file JSON yang telah ditentukan (simulasi). */
+      /**
+       * Memuat data soal dari file JSON yang telah ditentukan.
+       * KOMENTAR INTEGRASI: Fungsi ini masih menggunakan `availableJsonData` untuk KONTEN soal
+       * dalam simulasi ini karena keterbatasan browser.
+       * @param {string} fileName - Nama file yang dipilih dari daftar (hasil build step).
+       */
       async function loadPredefinedJson(fileName) {
         console.log(`Memuat soal dari file: ${fileName}`);
         closeJsonSourceModal();
         showLoading(`Memuat soal ${fileName.replace(".json", "").replace(/_/g, " ")}...`);
-        await new Promise((resolve) => setTimeout(resolve, 300));
+        
+        // --- KOMENTAR INTEGRASI: Bagian ini masih menggunakan data simulasi untuk konten ---
+        // Di aplikasi nyata, Anda akan fetch konten berdasarkan `fileName`
+        // Contoh fetch: const response = await fetch(`/soal_json/${fileName}`); data = await response.json();
+        await new Promise((resolve) => setTimeout(resolve, 500));
         try {
-          // const data = availableJsonData[fileName];
+          // const data = availableJsonData[fileName]; // Ambil KONTEN dari data simulasi
           const response = await fetch(`src/soal-json/${fileName}`);
           const data = await response.json();
           if (data === undefined) throw new Error(`Konten simulasi untuk ${fileName} tidak ditemukan.`);
+          // Validasi konten yang didapat
           if (validateJsonData(data, fileName)) {
-            questions = data;
+            questions = data; // Gunakan data ini
             console.log("Soal berhasil dimuat dari file JSON (simulasi):", questions);
             hideLoading();
-            proceedToOnboarding();
+            proceedToOnboarding(); // Tampilkan halaman onboarding
           } else {
+            // Jika Validasi Gagal
             resetUploadState();
           }
         } catch (error) {
+          // Jika nama file ada di `availableSoalFiles` tapi tidak ada kontennya di `availableJsonData`
           console.error(`Gagal memuat atau memvalidasi file JSON: ${fileName}`, error);
           showStatus(`Gagal memuat soal dari ${fileName}. ${error.message}`, true);
           resetUploadState();
@@ -461,7 +537,10 @@
       }
 
       // --- Fungsi Logika Inti Ujian ---
-
+      /**
+       * Menangani unggahan file PDF, mengekstrak teks, dan mencoba mengurainya.
+       * @param {Event} event - Event dari input file.
+       */
       async function handleFileUpload(event) {
         const file = event.target.files[0];
         uploadStatusEl.classList.add("hidden");
@@ -503,8 +582,8 @@
               }
             } catch (parseError) {
               console.error("Error saat memproses atau mengurai PDF:", parseError);
-              hideLoading();
-              showErrorDialog(`Gagal memproses PDF: ${parseError.message}.`);
+              hideLoading();   
+              showErrorDialog(`Gagal memproses PDF: ${parseError.message}. Format mungkin tidak didukung atau tidak ada soal terdeteksi.`);
             }
           };
           fileReader.onerror = () => {
@@ -521,8 +600,15 @@
           resetUploadState();
         }
       }
+
+      
+      /**
+       * Menangani unggahan file JSON, mem-parsing, dan memvalidasinya.
+       * Dipicu oleh input file tersembunyi.
+       * @param {Event} event - Event dari input file.
+       */
       async function handleJsonFileUpload(event) {
-        closeJsonSourceModal();
+        closeJsonSourceModal(); // Tutup modal jika masih terbuka
         const file = event.target.files[0];
         uploadStatusEl.classList.add("hidden");
         if (!file) {
@@ -569,9 +655,20 @@
           resetUploadState();
         }
       }
+
+      
+      /**
+       * Memvalidasi struktur array data soal JSON.
+       * @param {Array<object>} data - Array objek soal yang akan divalidasi.
+       * @returns {boolean} - True jika data valid, false jika tidak.
+       */
       function validateJsonData(data, sourceName = "Data") {
         if (!Array.isArray(data)) {
           showStatus(`Struktur tidak valid (${sourceName}): Data harus berupa array.`, true);
+          return false;
+        }
+        if (data.length === 0) {
+          showStatus("Struktur JSON tidak valid: Array soal tidak boleh kosong.", true);
           return false;
         }
         for (let i = 0; i < data.length; i++) {
@@ -602,8 +699,14 @@
             return false;
           }
         }
-        return true;
+        return true; // Semua validasi berhasil
       }
+
+      /**
+       * Mencoba mengurai teks mentah dari PDF menjadi struktur soal.
+       * @param {string} text - Teks mentah yang diekstrak dari PDF.
+       * @returns {Array<object>} - Array objek soal yang berhasil diurai.
+       */
       function parseQuestionsFromText(text) {
         console.log("Mencoba mengurai teks PDF...");
         const parsed = [];
@@ -636,8 +739,14 @@
         console.log(`Hasil parsing PDF: ${parsed.length} soal ditemukan.`);
         return parsed;
       }
+
+      /**
+       * Mempersiapkan dan menampilkan halaman onboarding setelah soal dimuat.
+       */
       function proceedToOnboarding() {
-        if (!uploadLoading.classList.contains("hidden")) hideLoading();
+        if (!uploadLoading.classList.contains("hidden")) {
+          hideLoading();
+        }
         userAnswers = new Array(questions.length).fill(null);
         currentQuestionIndex = 0;
         score = 0;
@@ -650,6 +759,11 @@
           resetUploadState();
         }
       }
+
+      
+      /**
+       * Memulai ujian dan menampilkan soal pertama.
+       */
       function startExam() {
         if (questions.length === 0) return;
         currentQuestionIndex = 0;
@@ -659,8 +773,8 @@
       }
 
       /**
-       * Menampilkan soal dan opsi jawaban.
-       * @param {number} index - Indeks soal.
+       * Menampilkan soal dan opsi jawaban berdasarkan indeks.
+       * @param {number} index - Indeks soal yang akan ditampilkan.
        */
       function displayQuestion(index) {
         if (index < 0 || index >= questions.length) return;
@@ -697,7 +811,10 @@
         });
         updateNavigationButtons();
       }
-
+      
+      /**
+       * Memperbarui status enabled/disabled dan visibility tombol navigasi ujian.
+       */
       function updateNavigationButtons() {
         prevButton.disabled = currentQuestionIndex === 0;
         const isCurrentAnswered = userAnswers[currentQuestionIndex] !== null;
@@ -711,6 +828,12 @@
           submitButton.classList.add("hidden");
         }
       }
+
+      /**
+       * Menyimpan jawaban pengguna dan memperbarui tampilan visual opsi.
+       * @param {number} questionIndex - Indeks soal yang dijawab.
+       * @param {number} answerIndex - Indeks opsi yang dipilih.
+       */
       function selectAnswer(questionIndex, answerIndex) {
         userAnswers[questionIndex] = answerIndex;
         const currentOptions = optionsContainerEl.querySelectorAll(".option-card");
@@ -725,18 +848,25 @@
         }
         updateNavigationButtons();
       }
+
+      /** Pindah ke soal berikutnya. */
       function nextQuestion() {
         if (currentQuestionIndex < questions.length - 1) {
           currentQuestionIndex++;
           displayQuestion(currentQuestionIndex);
         }
       }
+
+      /** Pindah ke soal sebelumnya. */
       function previousQuestion() {
         if (currentQuestionIndex > 0) {
           currentQuestionIndex--;
           displayQuestion(currentQuestionIndex);
         }
       }
+
+      
+      /** Mengirim jawaban ujian, menghitung skor, dan menampilkan halaman hasil. */
       function submitExam() {
         const unanswered = userAnswers.filter((ans) => ans === null).length;
         if (unanswered > 0) {
@@ -753,7 +883,8 @@
         showPage("results-page");
       }
 
-      /** Menampilkan halaman hasil. */
+
+      /** Menampilkan halaman hasil ujian, termasuk skor, rincian jawaban, dan confetti. */
       function displayResults() {
         finalScoreEl.textContent = `${score} / 100`;
         const correctCount = questions.length > 0 ? Math.round((score / 100) * questions.length) : 0;
@@ -812,14 +943,17 @@
           }
           resultsDetailsContainerEl.appendChild(resultDiv);
         });
-        triggerConfetti();
+        triggerConfetti(); // Memicu animasi confetti
       }
 
+      /** Memulai animasi confetti. */
       function triggerConfetti() {
         myConfetti({ particleCount: 150, spread: 100, origin: { y: 0.6 } });
         myConfetti({ particleCount: 50, angle: 60, spread: 55, origin: { x: 0 } });
         myConfetti({ particleCount: 50, angle: 120, spread: 55, origin: { x: 1 } });
       }
+
+      /** Mengatur ulang aplikasi untuk memulai ujian baru dari halaman landing. */
       function restartExam() {
         questions = [];
         resetUploadState();
@@ -828,6 +962,7 @@
       }
 
       // --- Event Listeners ---
+      // Listener untuk tombol di dialog error PDF
       useDummyDataButton.addEventListener("click", () => {
         console.log("Menggunakan data contoh...");
         questions = [...mockQuestions];
@@ -838,10 +973,12 @@
         console.log("Memilih file lain...");
         hideErrorDialog();
       });
-      triggerJsonUploadButton.addEventListener("click", () => jsonUploadInput.click());
-      showAvailableJsonButton.addEventListener("click", showAvailableJsonList);
+      // Listener untuk tombol di dalam Modal JSON
+      triggerJsonUploadButton.addEventListener("click", () => jsonUploadInput.click()); // Trigger input file JSON
+      showAvailableJsonButton.addEventListener("click", showAvailableJsonList); // Tampilkan daftar file JSON yang tersedia
 
       // --- Inisialisasi Aplikasi ---
+      // Tampilkan halaman landing saat pertama kali dimuat
       showPage("landing-page");
     </script>
   </body>
