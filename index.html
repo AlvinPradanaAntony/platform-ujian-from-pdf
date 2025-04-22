@@ -124,6 +124,33 @@
       #available-json-list button:hover {
         background-color: #f3f4f6; /* gray-100 */
       }
+      /* Gaya untuk tag materi */
+      .material-tag {
+        display: inline-block;
+        background-color: #e0e7ff; /* indigo-100 */
+        color: #3730a3; /* indigo-800 */
+        padding: 0.25rem 0.6rem; /* py-1 px-2.5 */
+        border-radius: 0.375rem; /* rounded-md */
+        font-size: 0.75rem; /* text-xs */
+        font-weight: 500; /* font-medium */
+        margin-bottom: 0.75rem; /* mb-3 */
+      }
+      /* Gaya untuk display timer */
+      #timer-display {
+        font-weight: 600; /* font-semibold */
+        color: #1f2937; /* gray-800 */
+        background-color: #f3f4f6; /* gray-100 */
+        padding: 0.25rem 0.75rem; /* py-1 px-3 */
+        border-radius: 9999px; /* rounded-full */
+        font-size: 0.875rem; /* text-sm */
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem; /* space-x-1.5 */
+      }
+      #timer-display.time-low {
+        color: #dc2626; /* red-600 */
+        background-color: #fee2e2; /* red-100 */
+      }
     </style>
   </head>
   <body class="flex items-center justify-center min-h-screen p-4 bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -173,7 +200,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-3">File Siap!</h2>
-            <p class="text-base md:text-lg text-gray-600 mb-4 md:mb-6">Kami mendeteksi <strong id="question-count" class="text-blue-600">0</strong> soal dari file Anda.</p>
+            <p class="text-base md:text-lg text-gray-600 mb-2">Kami mendeteksi <strong id="question-count" class="text-blue-600">0</strong> soal dari file Anda.</p>
+            <p id="total-time-info" class="text-base md:text-lg text-gray-600 mb-4 md:mb-6 hidden">Perkiraan total waktu pengerjaan: <strong id="total-time-value" class="text-blue-600">0 menit</strong></p>
             <p class="text-base md:text-lg text-gray-600 mb-6 md:mb-8">Apakah Anda siap untuk memulai ujian?</p>
             <button onclick="startExam()" class="w-full md:w-auto bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 text-sm md:py-3 md:px-8 md:text-base rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-lg">Mulai Ujian</button>
           </div>
@@ -181,8 +209,17 @@
       </div>
 
       <div id="exam-page" class="hidden p-4 md:p-8 lg:p-10">
-        <div class="mb-4 flex justify-between items-center">
+        <div class="mb-4 flex flex-wrap justify-between items-center gap-y-2">
           <h2 class="text-lg md:text-xl font-semibold text-gray-800">Soal <span id="current-question-number">1</span> dari <span id="total-questions">0</span></h2>
+          <div class="flex items-center gap-x-3">
+            <span id="material-tag-exam" class="material-tag hidden"></span>
+            <div id="timer-display" class="hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span id="time-left">--:--</span>
+            </div>
+          </div>
         </div>
         <div class="mb-6 w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
           <div id="progress-bar-inner" class="bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
@@ -204,6 +241,7 @@
           <p class="text-base md:text-lg mb-2">Skor Akhir Anda:</p>
           <p id="final-score" class="text-4xl md:text-5xl font-bold mb-2">0 / 100</p>
           <p id="score-summary" class="text-sm md:text-base text-blue-100">Anda menjawab 0 dari 0 soal dengan benar.</p>
+          <p id="time-up-info" class="text-yellow-300 text-sm mt-2 hidden">Ujian dihentikan karena waktu habis.</p>
         </div>
         <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-5 md:mb-6">Rincian Jawaban & Pembahasan:</h3>
         <div id="results-details-container" class="space-y-6 md:space-y-8"></div>
@@ -270,35 +308,76 @@
     <script>
       // --- State Aplikasi (Variabel Global) ---
       let currentPage = "landing-page"; // Halaman aktif saat ini
-      let questions = []; // Array untuk menyimpan data soal
+      let questions = []; // Array FLAT untuk menyimpan data soal (termasuk materi)
       let userAnswers = []; // Array untuk menyimpan jawaban pengguna
       let currentQuestionIndex = 0; // Indeks soal yang ditampilkan
       let score = 0; // Skor akhir
+      let timerInterval = null; // ID interval timer
+      let timerSeconds = 0; // Sisa waktu dalam detik
+      let totalExamTimeSeconds = 0; // Total waktu ujian dalam detik
+      let timeIsUp = false; // Flag jika waktu habis
+
+      // --- Konfigurasi Waktu per Materi (dalam detik) ---
+      const timeLimitsPerMaterial = {
+        "Word Classification": 8 * 60, // 8 menit
+        "Verbal Logic": 18 * 60, // 18 menit
+        Akhlak: 30 * 60, // 30 menit
+        "Wawasan Kebangsaan": 5 * 60, // 5 menit
+        "Pengetahuan Umum": 10 * 60, // Contoh: 10 menit
+        "Matematika Dasar": 15 * 60, // Contoh: 15 menit
+        "Dari PDF": 1 * 60, // Default: 1 menit per soal PDF
+      };
+      const defaultTimePerPdfQuestion = 1 * 60; // 1 menit per soal PDF jika materi tidak terdeteksi
 
       // --- Data Soal Contoh (Digunakan jika PDF gagal atau sebagai fallback) ---
       const mockQuestions = [
-        { question: "Apa ibu kota negara Indonesia?", options: ["Jakarta", "Bandung", "Surabaya", "Yogyakarta"], correctAnswer: 0, explanation: "Jakarta adalah ibu kota resmi Republik Indonesia sesuai dengan Undang-Undang." },
-        { question: "Siapakah presiden pertama Republik Indonesia?", options: ["Soeharto", "Joko Widodo", "Soekarno", "B.J. Habibie"], correctAnswer: 2, explanation: "Ir. Soekarno adalah proklamator kemerdekaan sekaligus presiden pertama Indonesia." },
-        { question: "Gunung tertinggi di Indonesia adalah...", options: ["Gunung Semeru", "Gunung Rinjani", "Puncak Jaya", "Gunung Kerinci"], correctAnswer: 2, explanation: "Puncak Jaya (Cartensz Pyramid) adalah puncak tertinggi di Indonesia." },
-        { question: "Apa warna bendera Indonesia?", options: ["Merah Putih", "Putih Merah", "Biru Putih", "Merah Kuning"], correctAnswer: 0, explanation: "Bendera Indonesia adalah Sang Merah Putih." },
-        { question: "Pulau terbesar di Indonesia berdasarkan luas wilayah adalah...", options: ["Jawa", "Sumatra", "Kalimantan (bagian Indonesia)", "Papua (bagian Indonesia)"], correctAnswer: 3, explanation: "Bagian Indonesia di Pulau Papua memiliki luas daratan terbesar." },
+        {
+          material: "Wawasan Kebangsaan",
+          questions: [
+            { question: "Hari Sumpah Pemuda diperingati setiap tanggal...", options: ["28 Oktober", "17 Agustus", "10 November", "1 Mei"], correctAnswer: 0, explanation: "Sumpah Pemuda diikrarkan pada tanggal 28 Oktober 1928." },
+            { question: "Bhinneka Tunggal Ika memiliki arti...", options: ["Berbeda-beda tetapi tetap satu jua", "Bersatu kita teguh", "Majulah tanpa menyingkirkan", "Merdeka atau mati"], correctAnswer: 0, explanation: "Frasa ini berasal dari bahasa Jawa Kuno yang berarti 'Berbeda-beda tetapi tetap satu'." },
+          ],
+        },
+        {
+          material: "Akhlak",
+          questions: [
+            {
+              question: "Prinsip dasar Akhlak BUMN adalah...",
+              options: ["Amanah, Kompeten, Harmonis, Loyal, Adaptif, Kolaboratif", "Jujur, Adil, Bijaksana", "Cepat, Tepat, Akurat", "Inovatif, Kreatif, Produktif"],
+              correctAnswer: 0,
+              explanation: "AKHLAK merupakan akronim dari Amanah, Kompeten, Harmonis, Loyal, Adaptif, dan Kolaboratif.",
+            },
+          ],
+        },
+        { material: "Verbal Logic", questions: [{ question: "Semua mamalia menyusui. Kucing adalah mamalia. Kesimpulan?", options: ["Kucing menyusui", "Beberapa kucing menyusui", "Kucing tidak menyusui", "Tidak dapat disimpulkan"], correctAnswer: 0, explanation: "Ini adalah contoh silogisme deduktif yang valid." }] },
+        { material: "Word Classification", questions: [{ question: "Manakah yang tidak termasuk kelompok: Meja, Kursi, Lemari, Buku", options: ["Meja", "Kursi", "Lemari", "Buku"], correctAnswer: 3, explanation: "Meja, Kursi, Lemari adalah perabotan, sedangkan Buku adalah alat tulis/baca." }] },
       ];
 
-      // --- SIMULASI HASIL BUILD STEP ---
+      // --- SIMULASI HASIL BUILD STEP (Daftar file JSON yang tersedia) --
       const availableSoalFiles = ["soal-verbal-logic1.json", "soal-verbal-logic2.json", "soal-tkd-word-classification1.json", "soal-tkd-word-classification2.json", "soal-akhlak.json", "soal-akhlak2.json", "soal-twk1.json"];
       // --- AKHIR SIMULASI HASIL BUILD STEP ---
 
       // --- SIMULASI KONTEN FILE JSON ---
       const availableJsonData = {
         "soal_pengetahuan_umum.json": [
-          { question: "Apa ibu kota negara Indonesia?", options: ["Jakarta", "Bandung", "Surabaya", "Yogyakarta"], correctAnswer: 0, explanation: "Jakarta adalah ibu kota resmi Republik Indonesia sesuai dengan Undang-Undang." },
-          { question: "Siapakah presiden pertama Republik Indonesia?", options: ["Soeharto", "Joko Widodo", "Soekarno", "B.J. Habibie"], correctAnswer: 2, explanation: "Ir. Soekarno adalah proklamator kemerdekaan sekaligus presiden pertama Indonesia." },
-          { question: "Gunung tertinggi di Indonesia adalah...", options: ["Gunung Semeru", "Gunung Rinjani", "Puncak Jaya", "Gunung Kerinci"], correctAnswer: 2, explanation: "Puncak Jaya (Cartensz Pyramid) adalah puncak tertinggi di Indonesia." },
+          {
+            material: "Pengetahuan Umum",
+            questions: [
+              { question: "Apa ibu kota negara Indonesia?", options: ["Jakarta", "Bandung", "Surabaya", "Yogyakarta"], correctAnswer: 0, explanation: "Jakarta adalah ibu kota resmi Republik Indonesia sesuai dengan Undang-Undang." },
+              { question: "Siapakah presiden pertama Republik Indonesia?", options: ["Soeharto", "Joko Widodo", "Soekarno", "B.J. Habibie"], correctAnswer: 2, explanation: "Ir. Soekarno adalah proklamator kemerdekaan sekaligus presiden pertama Indonesia." },
+              { question: "Gunung tertinggi di Indonesia adalah...", options: ["Gunung Semeru", "Gunung Rinjani", "Puncak Jaya", "Gunung Kerinci"], correctAnswer: 2, explanation: "Puncak Jaya (Cartensz Pyramid) adalah puncak tertinggi di Indonesia." },
+            ],
+          },
         ],
         "soal_matematika_dasar.json": [
-          { question: "Berapa hasil dari 5 + 7?", options: ["10", "11", "12", "13"], correctAnswer: 2, explanation: "5 + 7 = 12" },
-          { question: "Berapa hasil dari 3 * 4?", options: ["9", "10", "11", "12"], correctAnswer: 3, explanation: "3 dikali 4 sama dengan 12" },
-          { question: "Mana yang lebih besar, 1/2 atau 1/4?", options: ["1/2", "1/4", "Sama besar"], correctAnswer: 0, explanation: "Setengah (1/2) lebih besar dari seperempat (1/4)." },
+          {
+            material: "Matematika Dasar",
+            questions: [
+              { question: "Berapa hasil dari 5 + 7?", options: ["10", "11", "12", "13"], correctAnswer: 2, explanation: "5 + 7 = 12" },
+              { question: "Berapa hasil dari 3 * 4?", options: ["9", "10", "11", "12"], correctAnswer: 3, explanation: "3 dikali 4 sama dengan 12" },
+              { question: "Mana yang lebih besar, 1/2 atau 1/4?", options: ["1/2", "1/4", "Sama besar"], correctAnswer: 0, explanation: "Setengah (1/2) lebih besar dari seperempat (1/4)." },
+            ],
+          },
         ],
         "soal_kosong.json": [],
       };
@@ -322,9 +401,14 @@
       // Onboarding Page
       const analysisResult = document.getElementById("analysis-result");
       const questionCountEl = document.getElementById("question-count");
+      const totalTimeInfoEl = document.getElementById("total-time-info"); // Elemen info total waktu
+      const totalTimeValueEl = document.getElementById("total-time-value"); // Elemen nilai total waktu
       // Exam Page
       const currentQuestionNumberEl = document.getElementById("current-question-number");
       const totalQuestionsEl = document.getElementById("total-questions");
+      const materialTagExamEl = document.getElementById("material-tag-exam");
+      const timerDisplayEl = document.getElementById("timer-display"); // Elemen display timer
+      const timeLeftEl = document.getElementById("time-left"); // Elemen sisa waktu
       const questionTextEl = document.getElementById("question-text");
       const optionsContainerEl = document.getElementById("options-container");
       const prevButton = document.getElementById("prev-button");
@@ -334,6 +418,7 @@
       // Resul Page
       const finalScoreEl = document.getElementById("final-score");
       const scoreSummaryEl = document.getElementById("score-summary");
+      const timeUpInfoEl = document.getElementById("time-up-info"); // Elemen info waktu habis
       const resultsDetailsContainerEl = document.getElementById("results-details-container");
       // Error Dialog PDF
       const errorDialog = document.getElementById("error-confirmation-dialog");
@@ -368,9 +453,11 @@
           landingPage.classList.remove("hidden"); // Tampilkan halaman landing page jika tidak ada yang ditemukan
           currentPage = "landing-page";
         }
+        // Sembunyikan info waktu habis saat pindah halaman
+        if (timeUpInfoEl) timeUpInfoEl.classList.add("hidden");
+        timeIsUp = false; // Reset flag waktu habis
       }
 
-      
       /**
        * Menampilkan indikator loading.
        * @param {string} [message="Memproses..."] - Pesan yang ditampilkan saat loading.
@@ -390,7 +477,6 @@
         uploadArea.classList.remove("hidden");
       }
 
-      
       /**
        * Menampilkan pesan status (info atau error) di area upload.
        * @param {string} message - Pesan yang akan ditampilkan.
@@ -403,7 +489,6 @@
         hideLoading(); // Selalu sembunyikan loading saat status muncul
       }
 
-      
       /**
        * Menampilkan dialog konfirmasi error khusus untuk parsing PDF.
        * @param {string} message - Pesan detail error.
@@ -414,7 +499,6 @@
         errorDialog.classList.add("flex"); // Tampilkan modal overlay
       }
 
-      
       /**
        * Menyembunyikan dialog konfirmasi error PDF dan mereset state upload.
        */
@@ -424,7 +508,6 @@
         resetUploadState();
       }
 
-      
       /**
        * Mereset nilai input file dan menyembunyikan status/loading.
        */
@@ -445,7 +528,7 @@
         jsonSourceModal.classList.add("flex"); // Tampilkan modal overlay
         showInitialJsonOptions(); // Tampilkan opsi awal yang tersedia
       }
-      
+
       /**
        * Menutup modal pemilihan sumber file JSON.
        */
@@ -453,7 +536,7 @@
         jsonSourceModal.classList.add("hidden");
         jsonSourceModal.classList.remove("flex");
       }
-      
+
       /**
        * Menampilkan bagian opsi awal (Unggah/Pilih Tersedia) di dalam modal JSON.
        */
@@ -462,7 +545,6 @@
         jsonModalAvailableList.classList.add("hidden");
       }
 
-      
       /**
        * Menampilkan bagian daftar file JSON yang tersedia di dalam modal JSON.
        */
@@ -471,7 +553,6 @@
         jsonModalAvailableList.classList.remove("hidden");
         displayAvailableJsonFiles(); // Panggil fungsi untuk mengisi daftar
       }
-
 
       /**
        * Mengisi daftar tombol file JSON yang tersedia berdasarkan array `availableSoalFiles`.
@@ -490,7 +571,7 @@
           button.className = "py-2 px-3 text-sm md:text-base w-full text-left mb-2 border border-gray-200 rounded-md bg-gray-50 hover:bg-gray-100 transition-colors duration-200"; // Menggabungkan gaya dari CSS ke JS
           const displayName = fileName
             .replace(".json", "")
-            .replace(/_/g, " ")
+            .replace(/[_-]/g, " ")
             .replace(/\b\w/g, (l) => l.toUpperCase());
           button.textContent = displayName;
           button.onclick = () => loadPredefinedJson(fileName);
@@ -508,20 +589,30 @@
         console.log(`Memuat soal dari file: ${fileName}`);
         closeJsonSourceModal();
         showLoading(`Memuat soal ${fileName.replace(".json", "").replace(/_/g, " ")}...`);
-        
+
         // --- KOMENTAR INTEGRASI: Bagian ini masih menggunakan data simulasi untuk konten ---
         // Di aplikasi nyata, Anda akan fetch konten berdasarkan `fileName`
         // Contoh fetch: const response = await fetch(`/soal_json/${fileName}`); data = await response.json();
-        await new Promise((resolve) => setTimeout(resolve, 500));
+        await new Promise((resolve) => setTimeout(resolve, 300));
         try {
           // const data = availableJsonData[fileName]; // Ambil KONTEN dari data simulasi
-          const response = await fetch(`src/soal-json/${fileName}`);
-          const data = await response.json();
-          if (data === undefined) throw new Error(`Konten simulasi untuk ${fileName} tidak ditemukan.`);
+          let data;
+          try {
+            const response = await fetch(`src/soal-json/${fileName}`);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            data = await response.json();
+            console.log(`Soal berhasil di-fetch dari src/soal-json/${fileName}`);
+          } catch (fetchError) {
+            console.warn(`Fetch gagal untuk ${fileName}, mencoba data simulasi. Error: ${fetchError.message}`);
+            data = availableJsonData[fileName];
+            if (data === undefined) throw new Error(`Konten simulasi untuk ${fileName} tidak ditemukan.`);
+            console.log(`Menggunakan data simulasi untuk ${fileName}`);
+          }
           // Validasi konten yang didapat
           if (validateJsonData(data, fileName)) {
-            questions = data; // Gunakan data ini
-            console.log("Soal berhasil dimuat dari file JSON (simulasi):", questions);
+            questions = flattenJsonData(data); // Gunakan data ini
+            console.log("Soal berhasil dimuat dan diflatten:", questions);
+            calculateAndShowTotalTime(); // Hitung dan tampilkan total waktu
             hideLoading();
             proceedToOnboarding(); // Tampilkan halaman onboarding
           } else {
@@ -564,8 +655,9 @@
                 let lastY = -1;
                 let pageText = "";
                 textContent.items.forEach((item) => {
-                  if (lastY !== -1 && item.transform[5] < lastY) pageText += "\n";
-                  pageText += item.str + " ";
+                  if (lastY !== -1 && item.transform[5] < lastY - 5) pageText += "\n";
+                  else if (lastY !== -1 && item.transform[5] === lastY) pageText += " ";
+                  pageText += item.str;
                   lastY = item.transform[5];
                 });
                 fullText += pageText.replace(/\s+/g, " ").trim() + "\n\n";
@@ -582,7 +674,7 @@
               }
             } catch (parseError) {
               console.error("Error saat memproses atau mengurai PDF:", parseError);
-              hideLoading();   
+              hideLoading();
               showErrorDialog(`Gagal memproses PDF: ${parseError.message}. Format mungkin tidak didukung atau tidak ada soal terdeteksi.`);
             }
           };
@@ -601,7 +693,6 @@
         }
       }
 
-      
       /**
        * Menangani unggahan file JSON, mem-parsing, dan memvalidasinya.
        * Dipicu oleh input file tersembunyi.
@@ -628,8 +719,9 @@
             try {
               const jsonData = JSON.parse(loadEvent.target.result);
               if (validateJsonData(jsonData, file.name)) {
-                questions = jsonData;
-                console.log("Soal berhasil dimuat dari JSON:", questions);
+                questions = flattenJsonData(jsonData);
+                console.log("Soal berhasil dimuat dan diflatten dari JSON:", questions);
+                calculateAndShowTotalTime(); // Hitung waktu setelah flatten
                 hideLoading();
                 proceedToOnboarding();
               } else {
@@ -656,52 +748,75 @@
         }
       }
 
-      
       /**
        * Memvalidasi struktur array data soal JSON.
        * @param {Array<object>} data - Array objek soal yang akan divalidasi.
        * @returns {boolean} - True jika data valid, false jika tidak.
        */
+
       function validateJsonData(data, sourceName = "Data") {
+        // 1. Periksa array utama
         if (!Array.isArray(data)) {
-          showStatus(`Struktur tidak valid (${sourceName}): Data harus berupa array.`, true);
+          showStatus(`Struktur tidak valid (${sourceName}): Data utama harus berupa array materi.`, true);
           return false;
         }
-        if (data.length === 0) {
-          showStatus("Struktur JSON tidak valid: Array soal tidak boleh kosong.", true);
-          return false;
-        }
+        // 2. Iterasi item materi
         for (let i = 0; i < data.length; i++) {
-          const q = data[i];
-          const questionNumber = i + 1;
-          if (!q || typeof q !== "object" || !q.hasOwnProperty("question") || !q.hasOwnProperty("options") || !q.hasOwnProperty("correctAnswer") || !q.hasOwnProperty("explanation")) {
-            showStatus(`Struktur tidak valid (${sourceName}): Soal #${questionNumber} kekurangan kunci.`, true);
+          /* ... (validasi item materi) ... */
+          const materialItem = data[i];
+          const materialNumber = i + 1;
+          if (!materialItem || typeof materialItem !== "object" || !materialItem.hasOwnProperty("material") || typeof materialItem.material !== "string" || materialItem.material.trim() === "" || !materialItem.hasOwnProperty("questions") || !Array.isArray(materialItem.questions)) {
+            showStatus(`Struktur tidak valid (${sourceName}): Item #${materialNumber} harus objek dengan 'material' (string) dan 'questions' (array).`, true);
             return false;
           }
-          if (typeof q.question !== "string" || q.question.trim() === "") {
-            showStatus(`Struktur tidak valid (${sourceName}): 'question' soal #${questionNumber} harus teks.`, true);
-            return false;
-          }
-          if (!Array.isArray(q.options) || q.options.length < 2) {
-            showStatus(`Struktur tidak valid (${sourceName}): 'options' soal #${questionNumber} harus array min 2 opsi.`, true);
-            return false;
-          }
-          if (!q.options.every((opt) => typeof opt === "string" && opt.trim() !== "")) {
-            showStatus(`Struktur tidak valid (${sourceName}): Setiap 'options' soal #${questionNumber} harus teks.`, true);
-            return false;
-          }
-          if (typeof q.correctAnswer !== "number" || !Number.isInteger(q.correctAnswer) || q.correctAnswer < 0 || q.correctAnswer >= q.options.length) {
-            showStatus(`Struktur tidak valid (${sourceName}): 'correctAnswer' soal #${questionNumber} harus indeks valid.`, true);
-            return false;
-          }
-          if (typeof q.explanation !== "string") {
-            showStatus(`Struktur tidak valid (${sourceName}): 'explanation' soal #${questionNumber} harus teks.`, true);
-            return false;
+          // 3. Iterasi soal dalam materi
+          for (let j = 0; j < materialItem.questions.length; j++) {
+            /* ... (validasi soal) ... */
+            const q = materialItem.questions[j];
+            const questionNumberInMaterial = j + 1;
+            if (
+              !q ||
+              typeof q !== "object" ||
+              !q.hasOwnProperty("question") ||
+              typeof q.question !== "string" ||
+              q.question.trim() === "" ||
+              !q.hasOwnProperty("options") ||
+              !Array.isArray(q.options) ||
+              q.options.length < 2 ||
+              !q.hasOwnProperty("correctAnswer") ||
+              typeof q.correctAnswer !== "number" ||
+              !Number.isInteger(q.correctAnswer) ||
+              !q.hasOwnProperty("explanation") ||
+              typeof q.explanation !== "string"
+            ) {
+              showStatus(`Struktur tidak valid (${sourceName}): Soal #${questionNumberInMaterial} dalam materi "${materialItem.material}" error.`, true);
+              return false;
+            }
+            if (!q.options.every((opt) => typeof opt === "string" && opt.trim() !== "")) {
+              showStatus(`Struktur tidak valid (${sourceName}): 'options' soal #${questionNumberInMaterial} dalam materi "${materialItem.material}" harus teks.`, true);
+              return false;
+            }
+            if (q.correctAnswer < 0 || q.correctAnswer >= q.options.length) {
+              showStatus(`Struktur tidak valid (${sourceName}): 'correctAnswer' soal #${questionNumberInMaterial} dalam materi "${materialItem.material}" tidak valid.`, true);
+              return false;
+            }
           }
         }
-        return true; // Semua validasi berhasil
+        return true; // Valid
       }
 
+      /** Mengubah struktur data JSON menjadi array soal tunggal (flat). */
+      function flattenJsonData(jsonData) {
+        const flatQuestions = [];
+        jsonData.forEach((materialItem) => {
+          if (materialItem && materialItem.questions && Array.isArray(materialItem.questions)) {
+            materialItem.questions.forEach((question) => {
+              flatQuestions.push({ ...question, material: materialItem.material });
+            });
+          }
+        });
+        return flatQuestions;
+      }
       /**
        * Mencoba mengurai teks mentah dari PDF menjadi struktur soal.
        * @param {string} text - Teks mentah yang diekstrak dari PDF.
@@ -724,20 +839,53 @@
           while ((optionMatch = optionRegex.exec(fullBlock)) !== null) {
             const optionLetter = optionMatch[1];
             const optionText = optionMatch[2].trim();
-            if (["A", "B", "C", "D"].includes(optionLetter)) optionMap[optionLetter] = optionText;
-            if (options.length === 0) questionText = fullBlock.substring(0, optionMatch.index).trim();
+            if (["A", "B", "C", "D", "E"].includes(optionLetter)) optionMap[optionLetter] = optionText;
+            if (Object.keys(optionMap).length === 1) questionText = fullBlock.substring(0, optionMatch.index).trim();
           }
-          ["A", "B", "C", "D"].forEach((letter) => {
+          ["A", "B", "C", "D", "E"].forEach((letter) => {
             if (optionMap[letter]) options.push(optionMap[letter]);
           });
           if (questionText && options.length >= 2) {
-            parsed.push({ question: questionText, options: options, correctAnswer: 0, explanation: "Pembahasan tidak tersedia dari PDF." });
+            parsed.push({ material: "Dari PDF", question: questionText, options: options, correctAnswer: 0, explanation: "Pembahasan tidak tersedia dari PDF." });
           } else {
             console.warn(`Gagal mengurai blok soal PDF di sekitar nomor ${questionNumber}.`);
           }
         }
         console.log(`Hasil parsing PDF: ${parsed.length} soal ditemukan.`);
         return parsed;
+      }
+
+      /** Menghitung total waktu ujian berdasarkan materi soal. */
+      function calculateAndShowTotalTime() {
+        totalExamTimeSeconds = 0;
+        const uniqueMaterials = new Set(questions.map((q) => q.material)); // Dapatkan materi unik
+
+        uniqueMaterials.forEach((material) => {
+          if (material === "Dari PDF") {
+            // Hitung jumlah soal PDF
+            const pdfQuestionCount = questions.filter((q) => q.material === "Dari PDF").length;
+            totalExamTimeSeconds += pdfQuestionCount * defaultTimePerPdfQuestion;
+            console.log(`Waktu untuk ${pdfQuestionCount} soal PDF: ${(pdfQuestionCount * defaultTimePerPdfQuestion) / 60} menit`);
+          } else if (timeLimitsPerMaterial[material]) {
+            totalExamTimeSeconds += timeLimitsPerMaterial[material];
+            console.log(`Waktu untuk materi "${material}": ${timeLimitsPerMaterial[material] / 60} menit`);
+          } else {
+            // Jika materi tidak dikenal, beri waktu default (misal 1 menit per soal)
+            const unknownMaterialCount = questions.filter((q) => q.material === material).length;
+            totalExamTimeSeconds += unknownMaterialCount * defaultTimePerPdfQuestion; // Gunakan default PDF
+            console.warn(`Materi "${material}" tidak dikenal, menggunakan waktu default ${defaultTimePerPdfQuestion / 60} menit per soal.`);
+          }
+        });
+
+        console.log(`Total waktu ujian dihitung: ${totalExamTimeSeconds} detik (${totalExamTimeSeconds / 60} menit)`);
+
+        // Tampilkan info total waktu di halaman onboarding
+        if (totalExamTimeSeconds > 0) {
+          totalTimeValueEl.textContent = `${Math.ceil(totalExamTimeSeconds / 60)} menit`;
+          totalTimeInfoEl.classList.remove("hidden");
+        } else {
+          totalTimeInfoEl.classList.add("hidden");
+        }
       }
 
       /**
@@ -750,17 +898,18 @@
         userAnswers = new Array(questions.length).fill(null);
         currentQuestionIndex = 0;
         score = 0;
+        stopTimer(); // Hentikan timer jika ada dari sesi sebelumnya
         if (questions.length > 0) {
           showPage("onboarding-page");
           questionCountEl.textContent = questions.length;
           if (totalQuestionsEl) totalQuestionsEl.textContent = questions.length;
+          // Info waktu sudah dihitung dan ditampilkan oleh calculateAndShowTotalTime()
         } else {
           showStatus("File berhasil diproses, tetapi tidak ada soal yang ditemukan.", true);
           resetUploadState();
         }
       }
 
-      
       /**
        * Memulai ujian dan menampilkan soal pertama.
        */
@@ -770,6 +919,7 @@
         if (totalQuestionsEl) totalQuestionsEl.textContent = questions.length;
         displayQuestion(currentQuestionIndex);
         showPage("exam-page");
+        startTimer(); // Mulai timer
       }
 
       /**
@@ -782,6 +932,12 @@
         currentQuestionNumberEl.textContent = index + 1;
         questionTextEl.textContent = q.question;
         optionsContainerEl.innerHTML = "";
+        if (q.material && materialTagExamEl) {
+          materialTagExamEl.textContent = q.material;
+          materialTagExamEl.classList.remove("hidden");
+        } else if (materialTagExamEl) {
+          materialTagExamEl.classList.add("hidden");
+        }
         const progressPercentage = questions.length > 0 ? ((index + 1) / questions.length) * 100 : 0;
         if (progressBarInner) progressBarInner.style.width = `${progressPercentage}%`;
         q.options.forEach((option, i) => {
@@ -811,7 +967,7 @@
         });
         updateNavigationButtons();
       }
-      
+
       /**
        * Memperbarui status enabled/disabled dan visibility tombol navigasi ujian.
        */
@@ -865,50 +1021,74 @@
         }
       }
 
-      
       /** Mengirim jawaban ujian, menghitung skor, dan menampilkan halaman hasil. */
-      function submitExam() {
+
+      function submitExam(isTimeUp = false) {
+        // Tambahkan parameter untuk menandai jika waktu habis
+        stopTimer(); // Hentikan timer saat submit
+        timeIsUp = isTimeUp; // Set flag waktu habis
         const unanswered = userAnswers.filter((ans) => ans === null).length;
-        if (unanswered > 0) {
+        // Hanya konfirmasi jika submit manual dan ada jawaban kosong
+        if (!isTimeUp && unanswered > 0) {
           const confirmation = confirm(`Ada ${unanswered} soal yang belum terjawab. Yakin ingin mengirim?`);
-          if (!confirmation) return;
+          if (!confirmation) {
+            startTimer(); // Mulai lagi timer jika dibatalkan
+            return;
+          }
         }
         score = 0;
         let correctCount = 0;
         for (let i = 0; i < questions.length; i++) {
-          if (userAnswers[i] !== null && userAnswers[i] === questions[i].correctAnswer) correctCount++;
+          if (questions[i] && userAnswers[i] !== null && userAnswers[i] === questions[i].correctAnswer) {
+            correctCount++;
+          }
         }
         score = questions.length > 0 ? Math.round((correctCount / questions.length) * 100) : 0;
         displayResults();
         showPage("results-page");
       }
 
-
       /** Menampilkan halaman hasil ujian, termasuk skor, rincian jawaban, dan confetti. */
+
       function displayResults() {
         finalScoreEl.textContent = `${score} / 100`;
         const correctCount = questions.length > 0 ? Math.round((score / 100) * questions.length) : 0;
         scoreSummaryEl.textContent = `Anda menjawab ${correctCount} dari ${questions.length} soal dengan benar.`;
         resultsDetailsContainerEl.innerHTML = "";
+
+        // Tampilkan pesan jika waktu habis
+        if (timeIsUp && timeUpInfoEl) {
+          timeUpInfoEl.classList.remove("hidden");
+        } else if (timeUpInfoEl) {
+          timeUpInfoEl.classList.add("hidden");
+        }
+
         questions.forEach((q, index) => {
+          /* ... (render rincian hasil) ... */
+          if (!q) return;
           const resultDiv = document.createElement("div");
           resultDiv.classList.add("p-4", "md:p-5", "bg-white", "rounded-lg", "border", "border-gray-200", "shadow-sm");
+          if (q.material) {
+            const materialTag = document.createElement("span");
+            materialTag.className = "material-tag";
+            materialTag.textContent = q.material;
+            resultDiv.appendChild(materialTag);
+          }
           const questionP = document.createElement("p");
-          questionP.classList.add("text-base", "md:text-lg", "font-medium", "text-gray-800", "mb-4");
+          questionP.classList.add("text-base", "md:text-lg", "font-medium", "text-gray-800", "mb-4", "mt-1");
           questionP.textContent = `${index + 1}. ${q.question}`;
           resultDiv.appendChild(questionP);
           const optionsDiv = document.createElement("div");
           optionsDiv.classList.add("space-y-2", "md:space-y-3");
           q.options.forEach((option, i) => {
             const optionCard = document.createElement("div");
-            optionCard.className = "p-2 text-sm md:p-3 md:text-base rounded-md border"; // Menggabungkan gaya dari CSS ke JS
+            optionCard.className = "p-2 text-sm md:p-3 md:text-base rounded-md border";
             const isCorrectAnswer = i === q.correctAnswer;
             const isUserChoice = userAnswers[index] === i;
             const optionLabel = String.fromCharCode(65 + i);
             optionCard.textContent = `${optionLabel}. ${option}`;
             const originalTextContent = optionCard.textContent;
             let statusText = "";
-            // Tambahkan kelas style spesifik (benar/salah) setelah kelas dasar
             if (isCorrectAnswer) {
               optionCard.classList.add("correct-answer-style");
               statusText = "(Jawaban Benar)";
@@ -943,7 +1123,7 @@
           }
           resultsDetailsContainerEl.appendChild(resultDiv);
         });
-        triggerConfetti(); // Memicu animasi confetti
+        triggerConfetti();
       }
 
       /** Memulai animasi confetti. */
@@ -955,17 +1135,72 @@
 
       /** Mengatur ulang aplikasi untuk memulai ujian baru dari halaman landing. */
       function restartExam() {
+        stopTimer(); // Hentikan timer saat restart
         questions = [];
         resetUploadState();
         if (progressBarInner) progressBarInner.style.width = "0%";
+        if (materialTagExamEl) materialTagExamEl.classList.add("hidden");
+        if (timerDisplayEl) timerDisplayEl.classList.add("hidden"); // Sembunyikan timer
         showPage("landing-page");
+      }
+
+      // --- Fungsi Timer ---
+
+      /** Memulai timer ujian. */
+      function startTimer() {
+        stopTimer(); // Hentikan timer sebelumnya jika ada
+        timerSeconds = totalExamTimeSeconds; // Set waktu awal dari total yang dihitung
+        if (timerSeconds <= 0) {
+          console.warn("Total waktu ujian 0 atau negatif, timer tidak dimulai.");
+          if (timerDisplayEl) timerDisplayEl.classList.add("hidden");
+          return; // Jangan mulai timer jika waktu tidak valid
+        }
+
+        if (timerDisplayEl) timerDisplayEl.classList.remove("hidden"); // Tampilkan elemen timer
+        updateTimerDisplay(); // Tampilkan waktu awal
+
+        timerInterval = setInterval(() => {
+          timerSeconds--; // Kurangi waktu
+          updateTimerDisplay(); // Update tampilan
+
+          if (timerSeconds <= 0) {
+            console.log("Waktu habis!");
+            stopTimer(); // Hentikan interval
+            alert("Waktu pengerjaan telah habis!"); // Beri notifikasi (bisa diganti modal)
+            submitExam(true); // Submit otomatis, tandai waktu habis
+          }
+        }, 1000); // Jalankan setiap 1 detik
+      }
+
+      /** Menghentikan timer ujian. */
+      function stopTimer() {
+        clearInterval(timerInterval); // Hapus interval
+        timerInterval = null; // Reset ID interval
+      }
+
+      /** Memperbarui tampilan sisa waktu. */
+      function updateTimerDisplay() {
+        if (!timeLeftEl || !timerDisplayEl) return;
+
+        const minutes = Math.floor(timerSeconds / 60);
+        const seconds = timerSeconds % 60;
+        // Format MM:SS
+        timeLeftEl.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+
+        // Tambahkan style jika waktu hampir habis (misal < 1 menit)
+        if (timerSeconds < 60) {
+          timerDisplayEl.classList.add("time-low");
+        } else {
+          timerDisplayEl.classList.remove("time-low");
+        }
       }
 
       // --- Event Listeners ---
       // Listener untuk tombol di dialog error PDF
       useDummyDataButton.addEventListener("click", () => {
         console.log("Menggunakan data contoh...");
-        questions = [...mockQuestions];
+        questions = flattenJsonData(mockQuestions);
+        calculateAndShowTotalTime(); // Hitung waktu untuk data contoh
         hideErrorDialog();
         proceedToOnboarding();
       });
