@@ -151,6 +151,35 @@
         color: #dc2626; /* red-600 */
         background-color: #fee2e2; /* red-100 */
       }
+      /* Gaya tambahan untuk teks soal */
+      #question-text {
+        white-space: normal; /* Kembali ke normal agar list wrap benar */
+        line-height: 1.6; /* Atur jarak antar baris */
+      }
+      /* Styling untuk list di dalam teks soal */
+      #question-text ul {
+        list-style: none; /* Hapus bullet default */
+        padding-left: 0; /* Hapus padding default */
+        margin-top: 0.5rem; /* Jarak dari teks sebelumnya */
+        margin-bottom: 0.5rem; /* Jarak ke teks sesudahnya */
+      }
+      #question-text li {
+        padding-left: 1.5em; /* Indentasi untuk teks setelah bullet */
+        position: relative; /* Untuk posisi bullet custom */
+        margin-bottom: 0.25rem; /* Jarak antar item list */
+      }
+      #question-text li::before {
+        content: "•"; /* Gunakan bullet custom */
+        position: absolute;
+        left: 0.5em; /* Posisi bullet */
+        top: 0;
+        font-weight: bold;
+        color: #4b5563; /* Warna bullet (gray-600) */
+      }
+      /* Styling untuk paragraf simpulan */
+      #question-text .conclusion-paragraph {
+        margin-top: 0.75rem; /* Kurangi jarak atas simpulan */
+      }
     </style>
   </head>
   <body class="flex items-center justify-center min-h-screen p-4 bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -225,7 +254,7 @@
           <div id="progress-bar-inner" class="bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
         </div>
         <div id="question-container" class="mb-6 md:mb-8 p-4 md:p-6 bg-gray-50 rounded-lg border border-gray-200">
-          <p id="question-text" class="text-base md:text-lg text-gray-700 mb-5 md:mb-6 font-medium"></p>
+          <div id="question-text" class="text-base md:text-lg text-gray-700 mb-5 md:mb-6 font-medium"></div>
           <div id="options-container" class="space-y-3 md:space-y-4"></div>
         </div>
         <div class="flex justify-between items-center">
@@ -349,17 +378,138 @@
             },
           ],
         },
-        { material: "Verbal Logic", questions: [{ question: "Semua mamalia menyusui. Kucing adalah mamalia. Kesimpulan?", options: ["Kucing menyusui", "Beberapa kucing menyusui", "Kucing tidak menyusui", "Tidak dapat disimpulkan"], correctAnswer: 0, explanation: "Ini adalah contoh silogisme deduktif yang valid." }] },
+        // Contoh Soal Verbal Logic untuk testing format
+        {
+          material: "Verbal Logic",
+          questions: [
+            {
+              // Contoh dengan cite dan simpulan di akhir
+              question:
+                "KONTEN IV: KOMPETISI WORK COFFEE EVENT\nTujuh orang barista kopi asal Indonesia akan mendatangi kompetisi Work Coffee Event yang diselenggarakan di Korea Selatan di tahun depan. Diketahui juga bahwa: • Terdapat tiga kategori pada kompetisi tersebut, yaitu brewer, baristo, dan spirit. [cite: 3] • Tiga orang dari Indonesia bertanding pada kategori brewer, sedangkan pada dua kategori lainnya diikuti oleh dua orang perwakilan. [cite: 5] Simpulan: Surya membayar biaya pendaftaran kompetisi sebesar Rp7.500.000,00. [cite: 7]",
+              options: ["Simpulan Benar", "Simpulan Salah", "Tidak dapat disimpulkan"],
+              correctAnswer: 2, // Contoh jawaban
+              explanation: "Informasi mengenai Surya tidak ada dalam premis.",
+            },
+            {
+              // Contoh tanpa kata "Simpulan:" tapi ada baris terakhir setelah list
+              question: "KONTEN V: ATURAN PERPUSTAKAAN\nPengunjung harus menjaga ketenangan. • Dilarang membawa makanan atau minuman. • Buku yang dipinjam harus dikembalikan tepat waktu. Pengunjung yang melanggar akan dikenakan sanksi.",
+              options: ["Benar", "Salah"],
+              correctAnswer: 0,
+              explanation: "Ini adalah contoh soal dimana baris terakhir dianggap simpulan.",
+            },
+            {
+              // Contoh tanpa list dan tanpa kata "Simpulan:", hanya premis dan kesimpulan
+              question: "Semua mamalia menyusui. Kucing adalah mamalia. Kucing menyusui.",
+              options: ["Benar", "Salah"],
+              correctAnswer: 0,
+              explanation: "Ini adalah contoh silogisme deduktif yang valid.",
+            },
+          ],
+        },
         { material: "Word Classification", questions: [{ question: "Manakah yang tidak termasuk kelompok: Meja, Kursi, Lemari, Buku", options: ["Meja", "Kursi", "Lemari", "Buku"], correctAnswer: 3, explanation: "Meja, Kursi, Lemari adalah perabotan, sedangkan Buku adalah alat tulis/baca." }] },
       ];
 
       // --- SIMULASI HASIL BUILD STEP (Daftar file JSON yang tersedia) --
-      const availableSoalFiles = ["soal-verbal-logic1.json", "soal-verbal-logic2.json", "soal-tkd-word-classification1.json", "soal-tkd-word-classification2.json", "soal-akhlak.json", "soal-akhlak2.json", "soal-twk1.json"];
+      // CATATAN: Di lingkungan nyata, daftar ini mungkin dihasilkan oleh skrip build
+      // atau diambil dari API. Untuk demonstrasi ini, kita hardcode.
+      const availableSoalFiles = [
+        "soal-verbal-logic1.json", // Akan diformat jika dipilih
+        "soal-verbal-logic2.json", // Akan diformat jika dipilih
+        "soal-tkd-word-classification1.json",
+        "soal-tkd-word-classification2.json",
+        "soal-akhlak.json",
+        "soal-akhlak2.json",
+        "soal-twk1.json",
+        "soal_pengetahuan_umum.json",
+        "soal_matematika_dasar.json",
+        "soal_kosong.json",
+      ];
       // --- AKHIR SIMULASI HASIL BUILD STEP ---
 
       // --- SIMULASI KONTEN FILE JSON ---
+      // CATATAN: Di lingkungan nyata, konten ini akan di-fetch dari server/file
+      // berdasarkan nama file yang dipilih dari `availableSoalFiles`.
       const availableJsonData = {
+        "soal-verbal-logic1.json": [
+          {
+            material: "Verbal Logic",
+            questions: [
+              {
+                question: "KONTEN I: DATA PENJUALAN BUKU\nSebuah toko buku mencatat penjualan buku selama seminggu. • Senin terjual 50 buku fiksi dan 30 buku non-fiksi. • Selasa terjual 40 buku fiksi. • Rabu terjual 60 buku non-fiksi. Simpulan: Total buku yang terjual pada hari Senin lebih banyak dari hari Rabu.",
+                options: ["Benar", "Salah", "Tidak relevan"],
+                correctAnswer: 0,
+                explanation: "Senin terjual 50+30=80 buku. Rabu terjual 60 buku. 80 > 60.",
+              },
+              {
+                question: "Jika hari ini cerah, maka saya akan pergi ke pantai. Hari ini tidak cerah. Simpulan: Saya tidak akan pergi ke pantai. [cite: 1]",
+                options: ["Benar", "Salah", "Mungkin"],
+                correctAnswer: 1,
+                explanation: "Ini adalah fallacy 'denying the antecedent'. Tidak cerah bukan berarti pasti tidak pergi ke pantai.",
+              },
+            ],
+          },
+        ],
+        "soal-verbal-logic2.json": [
+          {
+            material: "Verbal Logic",
+            questions: [
+              { question: "Beberapa dosen adalah peneliti. Semua peneliti membutuhkan dana riset. Simpulan: Beberapa dosen membutuhkan dana riset.", options: ["Benar", "Salah"], correctAnswer: 0, explanation: "Kesimpulan valid berdasarkan premis." },
+              {
+                question: "KONTEN II: JADWAL KERETA API\nKereta A berangkat pukul 08:00. Kereta B berangkat 30 menit setelah Kereta A. • Perjalanan Kereta A memakan waktu 2 jam. • Perjalanan Kereta B memakan waktu 1 jam 45 menit. Simpulan: Kereta B tiba lebih dulu daripada Kereta A.",
+                options: ["Benar", "Salah"],
+                correctAnswer: 1,
+                explanation: "Kereta A tiba 08:00 + 2jam = 10:00. Kereta B berangkat 08:30, tiba 08:30 + 1j 45m = 10:15. Kereta A tiba lebih dulu.",
+              },
+            ],
+          },
+        ],
+        "soal-tkd-word-classification1.json": [
+          {
+            material: "Word Classification",
+            questions: [
+              { question: "Manakah yang berbeda: Apel, Jeruk, Mangga, Pisang", options: ["Apel", "Jeruk", "Mangga", "Pisang"], correctAnswer: 3, explanation: "Apel, Jeruk, Mangga umumnya dianggap buah tropis/subtropis, Pisang lebih spesifik." }, // Contoh klasifikasi bisa bervariasi
+              { question: "Manakah yang berbeda: Jakarta, Surabaya, Bandung, Malaysia", options: ["Jakarta", "Surabaya", "Bandung", "Malaysia"], correctAnswer: 3, explanation: "Jakarta, Surabaya, Bandung adalah kota di Indonesia, Malaysia adalah negara." },
+            ],
+          },
+        ],
+        "soal-tkd-word-classification2.json": [
+          {
+            material: "Word Classification",
+            questions: [
+              { question: "Manakah yang berbeda: Sepeda, Motor, Mobil, Pesawat", options: ["Sepeda", "Motor", "Mobil", "Pesawat"], correctAnswer: 3, explanation: "Sepeda, Motor, Mobil adalah kendaraan darat, Pesawat adalah kendaraan udara." },
+              { question: "Manakah yang berbeda: Merah, Biru, Hijau, Terang", options: ["Merah", "Biru", "Hijau", "Terang"], correctAnswer: 3, explanation: "Merah, Biru, Hijau adalah warna spesifik, Terang adalah deskripsi intensitas cahaya/warna." },
+            ],
+          },
+        ],
+        "soal-akhlak.json": [
+          {
+            material: "Akhlak",
+            questions: [
+              { question: "Menjaga kerahasiaan data dan informasi perusahaan termasuk dalam nilai...", options: ["Amanah", "Kompeten", "Loyal", "Adaptif"], correctAnswer: 0, explanation: "Amanah berarti dapat dipercaya, termasuk dalam menjaga kerahasiaan." },
+              { question: "Terus belajar dan mengembangkan kapabilitas adalah cerminan dari nilai...", options: ["Amanah", "Kompeten", "Harmonis", "Kolaboratif"], correctAnswer: 1, explanation: "Kompeten berarti terus meningkatkan kemampuan diri." },
+            ],
+          },
+        ],
+        "soal-akhlak2.json": [
+          {
+            material: "Akhlak",
+            questions: [
+              { question: "Membangun lingkungan kerja yang kondusif adalah bagian dari nilai...", options: ["Kompeten", "Harmonis", "Loyal", "Adaptif"], correctAnswer: 1, explanation: "Harmonis berarti saling peduli dan menghargai perbedaan untuk menciptakan lingkungan kerja yang kondusif." },
+              { question: "Menjaga nama baik sesama karyawan, pimpinan, BUMN, dan Negara adalah implementasi nilai...", options: ["Amanah", "Kompeten", "Harmonis", "Loyal"], correctAnswer: 3, explanation: "Loyal berarti berdedikasi dan mengutamakan kepentingan Bangsa dan Negara, termasuk menjaga nama baik." },
+            ],
+          },
+        ],
+        "soal-twk1.json": [
+          {
+            material: "Wawasan Kebangsaan",
+            questions: [
+              { question: "Lambang negara Indonesia adalah...", options: ["Garuda Pancasila", "Bendera Merah Putih", "Bhinneka Tunggal Ika", "Indonesia Raya"], correctAnswer: 0, explanation: "Garuda Pancasila dengan semboyan Bhinneka Tunggal Ika adalah lambang negara." },
+              { question: "Dasar negara Republik Indonesia adalah...", options: ["UUD 1945", "Pancasila", "Tap MPR", "GBHN"], correctAnswer: 1, explanation: "Pancasila adalah dasar filosofis dan ideologi negara Indonesia." },
+            ],
+          },
+        ],
         "soal_pengetahuan_umum.json": [
+          // Konten untuk file simulasi baru
           {
             material: "Pengetahuan Umum",
             questions: [
@@ -370,6 +520,7 @@
           },
         ],
         "soal_matematika_dasar.json": [
+          // Konten untuk file simulasi baru
           {
             material: "Matematika Dasar",
             questions: [
@@ -379,7 +530,7 @@
             ],
           },
         ],
-        "soal_kosong.json": [],
+        "soal_kosong.json": [], // Konten untuk file simulasi kosong
       };
       // --- AKHIR SIMULASI KONTEN FILE JSON ---
 
@@ -409,7 +560,7 @@
       const materialTagExamEl = document.getElementById("material-tag-exam");
       const timerDisplayEl = document.getElementById("timer-display"); // Elemen display timer
       const timeLeftEl = document.getElementById("time-left"); // Elemen sisa waktu
-      const questionTextEl = document.getElementById("question-text");
+      const questionTextEl = document.getElementById("question-text"); // DIV untuk innerHTML
       const optionsContainerEl = document.getElementById("options-container");
       const prevButton = document.getElementById("prev-button");
       const nextButton = document.getElementById("next-button");
@@ -568,11 +719,13 @@
         // Buat tombol untuk setiap file JSON yang tersedia
         fileNames.forEach((fileName) => {
           const button = document.createElement("button");
-          button.className = "py-2 px-3 text-sm md:text-base w-full text-left mb-2 border border-gray-200 rounded-md bg-gray-50 hover:bg-gray-100 transition-colors duration-200"; // Menggabungkan gaya dari CSS ke JS
+          // Menggabungkan gaya dari CSS ke JS untuk konsistensi
+          button.className = "py-2 px-3 text-sm md:text-base w-full text-left mb-2 border border-gray-200 rounded-md bg-gray-50 hover:bg-gray-100 transition-colors duration-200";
+          // Membuat nama tampilan yang lebih ramah
           const displayName = fileName
-            .replace(".json", "")
-            .replace(/[_-]/g, " ")
-            .replace(/\b\w/g, (l) => l.toUpperCase());
+            .replace(".json", "") // Hapus ekstensi
+            .replace(/[-_]/g, " ") // Ganti '-' atau '_' dengan spasi
+            .replace(/\b\w/g, (l) => l.toUpperCase()); // Kapitalisasi setiap kata
           button.textContent = displayName;
           button.onclick = () => loadPredefinedJson(fileName);
           availableJsonListContainer.appendChild(button);
@@ -580,9 +733,10 @@
       }
 
       /**
-       * Memuat data soal dari file JSON yang telah ditentukan.
+       * Memuat data soal dari file JSON yang telah ditentukan (simulasi).
        * KOMENTAR INTEGRASI: Fungsi ini masih menggunakan `availableJsonData` untuk KONTEN soal
-       * dalam simulasi ini karena keterbatasan browser.
+       * dalam simulasi ini karena keterbatasan browser untuk membaca file lokal secara langsung
+       * atau fetch dari path lokal tanpa server.
        * @param {string} fileName - Nama file yang dipilih dari daftar (hasil build step).
        */
       async function loadPredefinedJson(fileName) {
@@ -647,45 +801,63 @@
             const pdfData = new Uint8Array(loadEvent.target.result);
             showLoading("Mengekstrak teks dari PDF...");
             try {
+              // Memuat dokumen PDF
               const pdfDocument = await pdfjsLib.getDocument({ data: pdfData }).promise;
               let fullText = "";
+              // Iterasi melalui setiap halaman
               for (let i = 1; i <= pdfDocument.numPages; i++) {
                 const page = await pdfDocument.getPage(i);
                 const textContent = await page.getTextContent();
+                // Menggabungkan item teks, mencoba mempertahankan baris baru
                 let lastY = -1;
                 let pageText = "";
                 textContent.items.forEach((item) => {
-                  if (lastY !== -1 && item.transform[5] < lastY - 5) pageText += "\n";
-                  else if (lastY !== -1 && item.transform[5] === lastY) pageText += " ";
+                  // Cek posisi Y untuk mendeteksi baris baru (perkiraan)
+                  if (lastY !== -1 && item.transform[5] < lastY - 5) {
+                    // Toleransi 5 unit
+                    pageText += "\n";
+                  } else if (lastY !== -1 && item.transform[5] === lastY && !pageText.endsWith(" ")) {
+                    // Tambah spasi jika item berada di baris yang sama dan belum ada spasi
+                    pageText += " ";
+                  }
                   pageText += item.str;
-                  lastY = item.transform[5];
+                  lastY = item.transform[5]; // Simpan posisi Y terakhir
                 });
+                // Tambahkan teks halaman ke teks keseluruhan, bersihkan spasi ganda
                 fullText += pageText.replace(/\s+/g, " ").trim() + "\n\n";
               }
+
               showLoading("Mengurai soal dari PDF...");
               const parsedQuestions = parseQuestionsFromText(fullText);
+
               if (parsedQuestions.length > 0) {
-                questions = parsedQuestions;
+                questions = parsedQuestions; // Langsung gunakan hasil parse PDF
                 console.log("Soal berhasil diparsing dari PDF:", questions);
+                calculateAndShowTotalTime(); // Hitung waktu setelah parsing
                 hideLoading();
                 proceedToOnboarding();
               } else {
-                throw new Error("Tidak ada soal yang dapat diurai dari teks PDF. Pastikan format penomoran (1.) dan opsi (A.) jelas.");
+                // Jika parsing tidak menghasilkan soal
+                throw new Error("Tidak ada soal yang dapat diurai dari teks PDF. Pastikan format penomoran (misal: 1.) dan opsi (misal: A.) jelas dan konsisten.");
               }
             } catch (parseError) {
+              // Tangani error saat memproses atau mengurai PDF
               console.error("Error saat memproses atau mengurai PDF:", parseError);
               hideLoading();
               showErrorDialog(`Gagal memproses PDF: ${parseError.message}. Format mungkin tidak didukung atau tidak ada soal terdeteksi.`);
             }
           };
           fileReader.onerror = () => {
+            // Tangani error saat membaca file
             console.error("Gagal membaca file PDF.");
             showStatus("Gagal membaca file PDF.", true);
             hideLoading();
             resetUploadState();
           };
+          // Baca file sebagai ArrayBuffer
           fileReader.readAsArrayBuffer(file);
         } catch (uploadError) {
+          // Tangani error pada persiapan upload
           console.error("Error saat persiapan unggah PDF:", uploadError);
           showStatus("Terjadi kesalahan saat memproses file PDF.", true);
           hideLoading();
@@ -704,7 +876,7 @@
         uploadStatusEl.classList.add("hidden");
         if (!file) {
           resetUploadState();
-          return;
+          return; // Tidak ada file dipilih
         }
         if (file.type !== "application/json") {
           showStatus("Harap unggah file dengan format JSON.", true);
@@ -719,28 +891,40 @@
             try {
               const jsonData = JSON.parse(loadEvent.target.result);
               if (validateJsonData(jsonData, file.name)) {
+                // Panggil flattenJsonData yang sudah dimodifikasi
                 questions = flattenJsonData(jsonData);
                 console.log("Soal berhasil dimuat dan diflatten dari JSON:", questions);
-                calculateAndShowTotalTime(); // Hitung waktu setelah flatten
-                hideLoading();
-                proceedToOnboarding();
+                if (questions.length > 0) {
+                  calculateAndShowTotalTime(); // Hitung waktu setelah flatten
+                  hideLoading();
+                  proceedToOnboarding();
+                } else {
+                  // Kasus file JSON valid tapi kosong
+                  showStatus(`File "${file.name}" berhasil dimuat tetapi tidak berisi soal.`, true);
+                  resetUploadState();
+                }
               } else {
+                // Jika validasi gagal, pesan error sudah ditampilkan oleh validateJsonData
                 resetUploadState();
               }
             } catch (parseError) {
+              // Tangani error jika JSON tidak valid
               console.error("Error parsing JSON:", parseError);
               showStatus(`Gagal memproses file ${file.name}: Format JSON tidak valid.`, true);
               resetUploadState();
             }
           };
           fileReader.onerror = () => {
+            // Tangani error saat membaca file
             console.error("Gagal membaca file JSON.");
             showStatus("Gagal membaca file JSON.", true);
             hideLoading();
             resetUploadState();
           };
+          // Baca file sebagai teks
           fileReader.readAsText(file);
         } catch (uploadError) {
+          // Tangani error pada persiapan upload
           console.error("Error saat persiapan unggah JSON:", uploadError);
           showStatus("Terjadi kesalahan saat memproses file JSON.", true);
           hideLoading();
@@ -750,30 +934,50 @@
 
       /**
        * Memvalidasi struktur array data soal JSON.
-       * @param {Array<object>} data - Array objek soal yang akan divalidasi.
+       * Struktur yang diharapkan: Array of Objects, setiap Object punya key 'material' (string)
+       * dan 'questions' (Array of question Objects).
+       * Setiap question Object punya 'question' (string), 'options' (Array of strings min 2),
+       * 'correctAnswer' (number/index), 'explanation' (string).
+       * @param {any} data - Data yang akan divalidasi.
+       * @param {string} [sourceName="Data"] - Nama sumber data untuk pesan error.
        * @returns {boolean} - True jika data valid, false jika tidak.
        */
-
       function validateJsonData(data, sourceName = "Data") {
-        // 1. Periksa array utama
+        // 1. Periksa apakah data utama adalah array
         if (!Array.isArray(data)) {
           showStatus(`Struktur tidak valid (${sourceName}): Data utama harus berupa array materi.`, true);
           return false;
         }
-        // 2. Iterasi item materi
+
+        // Jika array kosong, anggap valid tapi beri info (ditangani setelah flatten)
+        if (data.length === 0) {
+          console.log(`Data JSON (${sourceName}) valid tetapi kosong.`);
+          return true; // Valid tapi kosong
+        }
+
+        // 2. Iterasi setiap item materi dalam array utama
         for (let i = 0; i < data.length; i++) {
-          /* ... (validasi item materi) ... */
           const materialItem = data[i];
           const materialNumber = i + 1;
+
+          // 2a. Periksa apakah item materi adalah objek valid dengan properti yang diperlukan
           if (!materialItem || typeof materialItem !== "object" || !materialItem.hasOwnProperty("material") || typeof materialItem.material !== "string" || materialItem.material.trim() === "" || !materialItem.hasOwnProperty("questions") || !Array.isArray(materialItem.questions)) {
-            showStatus(`Struktur tidak valid (${sourceName}): Item #${materialNumber} harus objek dengan 'material' (string) dan 'questions' (array).`, true);
+            showStatus(`Struktur tidak valid (${sourceName}): Item materi #${materialNumber} harus objek dengan properti 'material' (string non-kosong) dan 'questions' (array).`, true);
             return false;
           }
-          // 3. Iterasi soal dalam materi
+
+          // Jika array questions kosong, lewati ke materi berikutnya (valid tapi tanpa soal)
+          if (materialItem.questions.length === 0) {
+            console.log(`Materi "${materialItem.material}" (${sourceName}) tidak memiliki soal.`);
+            continue;
+          }
+
+          // 3. Iterasi setiap soal dalam array 'questions' materi saat ini
           for (let j = 0; j < materialItem.questions.length; j++) {
-            /* ... (validasi soal) ... */
             const q = materialItem.questions[j];
             const questionNumberInMaterial = j + 1;
+
+            // 3a. Periksa apakah soal adalah objek valid dengan properti yang diperlukan
             if (
               !q ||
               typeof q !== "object" ||
@@ -782,230 +986,446 @@
               q.question.trim() === "" ||
               !q.hasOwnProperty("options") ||
               !Array.isArray(q.options) ||
-              q.options.length < 2 ||
+              q.options.length < 2 || // Harus ada minimal 2 opsi jawaban
               !q.hasOwnProperty("correctAnswer") ||
               typeof q.correctAnswer !== "number" ||
-              !Number.isInteger(q.correctAnswer) ||
-              !q.hasOwnProperty("explanation") ||
-              typeof q.explanation !== "string"
+              !Number.isInteger(q.correctAnswer) || // Pastikan integer
+              !q.hasOwnProperty("explanation") || // Pembahasan wajib ada
+              typeof q.explanation !== "string" // Tipe pembahasan harus string
+              // Kita tidak mewajibkan explanation tidak kosong, bisa saja ""
             ) {
-              showStatus(`Struktur tidak valid (${sourceName}): Soal #${questionNumberInMaterial} dalam materi "${materialItem.material}" error.`, true);
+              showStatus(`Struktur tidak valid (${sourceName}): Soal #${questionNumberInMaterial} dalam materi "${materialItem.material}" memiliki format atau properti yang salah (cek 'question', 'options' [min 2], 'correctAnswer' [integer], 'explanation').`, true);
               return false;
             }
+
+            // 3b. Periksa apakah semua opsi adalah string non-kosong
             if (!q.options.every((opt) => typeof opt === "string" && opt.trim() !== "")) {
-              showStatus(`Struktur tidak valid (${sourceName}): 'options' soal #${questionNumberInMaterial} dalam materi "${materialItem.material}" harus teks.`, true);
+              showStatus(`Struktur tidak valid (${sourceName}): Semua 'options' pada soal #${questionNumberInMaterial} dalam materi "${materialItem.material}" harus berupa teks (string) non-kosong.`, true);
               return false;
             }
+
+            // 3c. Periksa apakah correctAnswer adalah indeks yang valid dalam array options
             if (q.correctAnswer < 0 || q.correctAnswer >= q.options.length) {
-              showStatus(`Struktur tidak valid (${sourceName}): 'correctAnswer' soal #${questionNumberInMaterial} dalam materi "${materialItem.material}" tidak valid.`, true);
+              showStatus(`Struktur tidak valid (${sourceName}): Nilai 'correctAnswer' (${q.correctAnswer}) pada soal #${questionNumberInMaterial} dalam materi "${materialItem.material}" berada di luar rentang indeks opsi yang valid (0 sampai ${q.options.length - 1}).`, true);
               return false;
             }
           }
         }
-        return true; // Valid
+
+        // Jika semua pemeriksaan lolos
+        console.log(`Validasi JSON untuk "${sourceName}" berhasil.`);
+        return true;
       }
 
-      /** Mengubah struktur data JSON menjadi array soal tunggal (flat). */
+      /**
+       * Mengubah struktur data JSON menjadi array soal tunggal (flat)
+       * dan menerapkan format khusus untuk soal "Verbal Logic".
+       * @param {Array<object>} jsonData - Data JSON yang sudah divalidasi.
+       * @returns {Array<object>} - Array soal yang sudah di-flatten dan diformat.
+       */
       function flattenJsonData(jsonData) {
         const flatQuestions = [];
         jsonData.forEach((materialItem) => {
           if (materialItem && materialItem.questions && Array.isArray(materialItem.questions)) {
             materialItem.questions.forEach((question) => {
-              flatQuestions.push({ ...question, material: materialItem.material });
+              let formattedQuestion = { ...question, material: materialItem.material };
+
+              // Terapkan pemformatan hanya untuk materi "Verbal Logic"
+              if (formattedQuestion.material === "Verbal Logic") {
+                let originalText = formattedQuestion.question;
+
+                // 1. Hapus [cite: <angka>] dan spasi sekitarnya
+                originalText = originalText.replace(/\s*\[cite:\s*\d+\]\s*/g, "");
+
+                // 2. Ekstrak teks Simpulan dan hapus dari teks utama
+                let simpulanText = "";
+                const simpulanRegex = /\s*(?:Simpulan:|simpulan:)\s*([\s\S]+)/i;
+                const simpulanMatch = originalText.match(simpulanRegex);
+                if (simpulanMatch) {
+                  simpulanText = simpulanMatch[1].trim();
+                  originalText = originalText.replace(simpulanRegex, "").trim();
+                } else {
+                  // Fallback: Asumsikan baris terakhir yang tidak kosong setelah bullet terakhir adalah simpulan
+                  const lines = originalText
+                    .split("\n")
+                    .map((l) => l.trim())
+                    .filter((l) => l);
+                  const lastBulletLineIndex = lines.findLastIndex((l) => l.startsWith("•"));
+
+                  if (lastBulletLineIndex !== -1 && lastBulletLineIndex < lines.length - 1) {
+                    const potentialSimpulanLines = lines.slice(lastBulletLineIndex + 1);
+                    simpulanText = potentialSimpulanLines.join(" ").trim();
+                    originalText = lines
+                      .slice(0, lastBulletLineIndex + 1)
+                      .join("\n")
+                      .trim();
+                  }
+                }
+
+                // 3. Proses teks utama (sebelum simpulan)
+                let htmlOutput = "";
+                const firstBulletIndex = originalText.indexOf("•");
+
+                if (firstBulletIndex !== -1) {
+                  // Ada daftar berpoin
+                  let textBeforeList = originalText.substring(0, firstBulletIndex).trim();
+                  let listPart = originalText.substring(firstBulletIndex).trim();
+
+                  // Proses teks sebelum daftar
+                  textBeforeList = textBeforeList.replace(/^(KONTEN\s+[IVXLCDM]+:\s*[A-Z\s]+)/gm, (match) => `<strong>${match.trim()}</strong>`);
+                  htmlOutput += textBeforeList.replace(/\n/g, "<br>"); // Ganti newline dengan <br>
+
+                  // Proses daftar berpoin
+                  const listItems = listPart
+                    .split("•")
+                    .map((item) => item.trim())
+                    .filter((item) => item);
+                  if (listItems.length > 0) {
+                    if (htmlOutput.length > 0) {
+                      htmlOutput += "<br>"; // Jarak sebelum list
+                    }
+                    htmlOutput += "<ul>" + listItems.map((item) => `<li>${item}</li>`).join("") + "</ul>";
+                  }
+                } else {
+                  // Tidak ada daftar berpoin, proses sebagai paragraf biasa
+                  originalText = originalText.replace(/^(KONTEN\s+[IVXLCDM]+:\s*[A-Z\s]+)/gm, (match) => `<strong>${match.trim()}</strong>`);
+                  htmlOutput += originalText.replace(/\n/g, "<br>");
+                }
+
+                // 4. Tambahkan Simpulan jika ada
+                if (simpulanText) {
+                  if (htmlOutput.length > 0) {
+                    htmlOutput += "<br>"; // Jarak sebelum simpulan (satu baris)
+                  }
+                  htmlOutput += `<div class="conclusion-paragraph">${simpulanText}</div>`;
+                }
+
+                // Tetapkan HTML yang dihasilkan ke properti question
+                formattedQuestion.question = htmlOutput.trim();
+              }
+              // --- END: Formatting Logic ---
+
+              flatQuestions.push(formattedQuestion);
             });
           }
         });
         return flatQuestions;
       }
+
       /**
        * Mencoba mengurai teks mentah dari PDF menjadi struktur soal.
+       * Menggunakan Regex untuk mencari pola nomor soal diikuti teks,
+       * dan pola opsi (A., B., C., dst.) diikuti teks.
        * @param {string} text - Teks mentah yang diekstrak dari PDF.
        * @returns {Array<object>} - Array objek soal yang berhasil diurai.
        */
       function parseQuestionsFromText(text) {
         console.log("Mencoba mengurai teks PDF...");
         const parsed = [];
-        const questionBlockRegex = /(\d+)\.\s+([\s\S]+?)(?=\n\s*[A-Z]\.\s+|\n\s*\d+\.\s+|$)/g;
-        const optionRegex = /([A-Z])\.\s+([\s\S]+?)(?=\n\s*[A-Z]\.\s+|\n\s*\d+\.\s+|$)/g;
+        // Regex untuk blok soal: angka diikuti titik, spasi, lalu teks (non-greedy),
+        // diakhiri oleh awal opsi (A.), awal soal berikutnya (1.), atau akhir teks.
+        // Modifikasi: Memperbolehkan spasi atau newline setelah nomor soal.
+        // Modifikasi: Mencari opsi dengan lebih fleksibel (A., B., C., D., E.)
+        const questionBlockRegex = /(\d+)\.\s*([\s\S]+?)(?=\n\s*[A-E]\.\s+|\n\s*\d+\.\s+|$)/g;
+
+        // Regex untuk opsi: Huruf A-E diikuti titik, spasi, lalu teks (non-greedy),
+        // diakhiri oleh awal opsi berikutnya, awal soal berikutnya, atau akhir teks.
+        const optionRegex = /([A-E])\.\s+([\s\S]+?)(?=\n\s*[A-E]\.\s+|\n\s*\d+\.\s+|$)/g;
+
         let match;
         while ((match = questionBlockRegex.exec(text)) !== null) {
           const questionNumber = match[1];
-          let fullBlock = match[2].trim();
-          let questionText = fullBlock;
+          let fullBlock = match[2].trim(); // Teks setelah nomor soal sampai sebelum opsi/soal berikutnya
+          let questionText = fullBlock; // Default teks soal adalah seluruh blok
           const options = [];
-          const optionMap = {};
+          const optionMap = {}; // Untuk menyimpan opsi yang ditemukan (A: teks, B: teks, ...)
+
           let optionMatch;
-          optionRegex.lastIndex = 0;
+          optionRegex.lastIndex = 0; // Reset index regex opsi untuk setiap blok soal
+
+          // Cari semua opsi dalam blok saat ini
           while ((optionMatch = optionRegex.exec(fullBlock)) !== null) {
-            const optionLetter = optionMatch[1];
-            const optionText = optionMatch[2].trim();
-            if (["A", "B", "C", "D", "E"].includes(optionLetter)) optionMap[optionLetter] = optionText;
-            if (Object.keys(optionMap).length === 1) questionText = fullBlock.substring(0, optionMatch.index).trim();
+            const optionLetter = optionMatch[1]; // Huruf opsi (A, B, C, ...)
+            const optionText = optionMatch[2].trim(); // Teks opsi
+
+            // Simpan opsi jika hurufnya valid (A-E)
+            if (["A", "B", "C", "D", "E"].includes(optionLetter)) {
+              optionMap[optionLetter] = optionText;
+            }
+
+            // Jika ini adalah opsi pertama yang ditemukan, potong teks soal
+            if (Object.keys(optionMap).length === 1 && optionMatch.index > 0) {
+              questionText = fullBlock.substring(0, optionMatch.index).trim();
+            }
           }
+
+          // Urutkan opsi berdasarkan huruf (A, B, C, D, E) dan masukkan ke array
           ["A", "B", "C", "D", "E"].forEach((letter) => {
-            if (optionMap[letter]) options.push(optionMap[letter]);
+            if (optionMap[letter]) {
+              options.push(optionMap[letter]);
+            }
           });
+
+          // Jika teks soal ditemukan dan ada minimal 2 opsi
           if (questionText && options.length >= 2) {
-            parsed.push({ material: "Dari PDF", question: questionText, options: options, correctAnswer: 0, explanation: "Pembahasan tidak tersedia dari PDF." });
+            parsed.push({
+              material: "Dari PDF", // Materi default untuk soal PDF
+              question: questionText, // Teks soal dari PDF tidak diformat khusus di sini
+              options: options,
+              correctAnswer: 0, // Default jawaban benar (index 0), karena tidak bisa dideteksi dari PDF
+              explanation: "Pembahasan tidak tersedia dari PDF.", // Default pembahasan
+            });
           } else {
-            console.warn(`Gagal mengurai blok soal PDF di sekitar nomor ${questionNumber}.`);
+            console.warn(`Gagal mengurai blok soal PDF di sekitar nomor ${questionNumber}. Teks Soal: "${questionText}", Opsi Ditemukan: ${options.length}`);
           }
         }
         console.log(`Hasil parsing PDF: ${parsed.length} soal ditemukan.`);
         return parsed;
       }
 
-      /** Menghitung total waktu ujian berdasarkan materi soal. */
+      /**
+       * Menghitung total waktu ujian berdasarkan materi soal dalam array `questions`.
+       * Menggunakan konfigurasi `timeLimitsPerMaterial` dan `defaultTimePerPdfQuestion`.
+       * Memperbarui `totalExamTimeSeconds` dan menampilkan info di halaman onboarding.
+       */
       function calculateAndShowTotalTime() {
         totalExamTimeSeconds = 0;
-        const uniqueMaterials = new Set(questions.map((q) => q.material)); // Dapatkan materi unik
+        // Gunakan Set untuk mendapatkan daftar materi unik dari soal yang sudah di-flatten
+        const uniqueMaterials = new Set(questions.map((q) => q.material));
 
         uniqueMaterials.forEach((material) => {
           if (material === "Dari PDF") {
-            // Hitung jumlah soal PDF
+            // Hitung jumlah soal yang berasal dari PDF
             const pdfQuestionCount = questions.filter((q) => q.material === "Dari PDF").length;
             totalExamTimeSeconds += pdfQuestionCount * defaultTimePerPdfQuestion;
             console.log(`Waktu untuk ${pdfQuestionCount} soal PDF: ${(pdfQuestionCount * defaultTimePerPdfQuestion) / 60} menit`);
           } else if (timeLimitsPerMaterial[material]) {
+            // Jika materi ada di konfigurasi waktu
             totalExamTimeSeconds += timeLimitsPerMaterial[material];
             console.log(`Waktu untuk materi "${material}": ${timeLimitsPerMaterial[material] / 60} menit`);
           } else {
-            // Jika materi tidak dikenal, beri waktu default (misal 1 menit per soal)
+            // Jika materi tidak ada di konfigurasi (misal dari JSON tanpa konfigurasi waktu)
+            // Beri waktu default per soal (gunakan default PDF sebagai fallback)
             const unknownMaterialCount = questions.filter((q) => q.material === material).length;
-            totalExamTimeSeconds += unknownMaterialCount * defaultTimePerPdfQuestion; // Gunakan default PDF
-            console.warn(`Materi "${material}" tidak dikenal, menggunakan waktu default ${defaultTimePerPdfQuestion / 60} menit per soal.`);
+            totalExamTimeSeconds += unknownMaterialCount * defaultTimePerPdfQuestion;
+            console.warn(`Materi "${material}" tidak ditemukan dalam konfigurasi waktu. Menggunakan waktu default ${defaultTimePerPdfQuestion / 60} menit per soal (${unknownMaterialCount} soal).`);
           }
         });
 
         console.log(`Total waktu ujian dihitung: ${totalExamTimeSeconds} detik (${totalExamTimeSeconds / 60} menit)`);
 
-        // Tampilkan info total waktu di halaman onboarding
-        if (totalExamTimeSeconds > 0) {
+        // Tampilkan info total waktu di halaman onboarding jika waktu > 0
+        if (totalExamTimeSeconds > 0 && totalTimeInfoEl && totalTimeValueEl) {
           totalTimeValueEl.textContent = `${Math.ceil(totalExamTimeSeconds / 60)} menit`;
           totalTimeInfoEl.classList.remove("hidden");
-        } else {
+        } else if (totalTimeInfoEl) {
+          // Sembunyikan jika waktu 0 atau elemen tidak ada
           totalTimeInfoEl.classList.add("hidden");
         }
       }
 
       /**
-       * Mempersiapkan dan menampilkan halaman onboarding setelah soal dimuat.
+       * Mempersiapkan dan menampilkan halaman onboarding setelah soal berhasil dimuat dan diproses.
+       * Mereset state ujian sebelumnya.
        */
       function proceedToOnboarding() {
+        // Pastikan loading disembunyikan
         if (!uploadLoading.classList.contains("hidden")) {
           hideLoading();
         }
-        userAnswers = new Array(questions.length).fill(null);
-        currentQuestionIndex = 0;
-        score = 0;
+
+        // Reset state ujian
+        userAnswers = new Array(questions.length).fill(null); // Reset jawaban pengguna
+        currentQuestionIndex = 0; // Kembali ke soal pertama
+        score = 0; // Reset skor
         stopTimer(); // Hentikan timer jika ada dari sesi sebelumnya
+        timeIsUp = false; // Reset flag waktu habis
+
+        // Cek apakah ada soal yang valid
         if (questions.length > 0) {
-          showPage("onboarding-page");
-          questionCountEl.textContent = questions.length;
-          if (totalQuestionsEl) totalQuestionsEl.textContent = questions.length;
-          // Info waktu sudah dihitung dan ditampilkan oleh calculateAndShowTotalTime()
+          showPage("onboarding-page"); // Tampilkan halaman onboarding
+          questionCountEl.textContent = questions.length; // Update jumlah soal
+          if (totalQuestionsEl) totalQuestionsEl.textContent = questions.length; // Update total soal di exam page juga
+          // Info waktu sudah dihitung dan ditampilkan oleh calculateAndShowTotalTime() sebelumnya
         } else {
+          // Jika setelah proses (PDF/JSON) tidak ada soal ditemukan
           showStatus("File berhasil diproses, tetapi tidak ada soal yang ditemukan.", true);
-          resetUploadState();
+          resetUploadState(); // Kembali ke state upload awal
+          showPage("landing-page"); // Kembali ke halaman landing
         }
       }
 
       /**
-       * Memulai ujian dan menampilkan soal pertama.
+       * Memulai ujian: menampilkan soal pertama dan memulai timer.
        */
       function startExam() {
-        if (questions.length === 0) return;
-        currentQuestionIndex = 0;
-        if (totalQuestionsEl) totalQuestionsEl.textContent = questions.length;
-        displayQuestion(currentQuestionIndex);
-        showPage("exam-page");
+        // Pastikan ada soal untuk dimulai
+        if (questions.length === 0) {
+          console.error("Tidak ada soal untuk memulai ujian.");
+          // Mungkin kembali ke landing page atau tampilkan pesan error
+          restartExam();
+          showStatus("Gagal memulai ujian karena tidak ada soal.", true);
+          return;
+        }
+        currentQuestionIndex = 0; // Mulai dari soal pertama
+        if (totalQuestionsEl) totalQuestionsEl.textContent = questions.length; // Set total soal
+        displayQuestion(currentQuestionIndex); // Tampilkan soal pertama
+        showPage("exam-page"); // Pindah ke halaman ujian
         startTimer(); // Mulai timer
       }
 
       /**
        * Menampilkan soal dan opsi jawaban berdasarkan indeks.
-       * @param {number} index - Indeks soal yang akan ditampilkan.
+       * Memperbarui UI elemen seperti nomor soal, teks soal (menggunakan innerHTML),
+       * opsi, progress bar, dan tag materi.
+       * @param {number} index - Indeks soal yang akan ditampilkan dalam array `questions`.
        */
       function displayQuestion(index) {
-        if (index < 0 || index >= questions.length) return;
-        const q = questions[index];
+        // Validasi indeks
+        if (index < 0 || index >= questions.length || !questions[index]) {
+          console.error(`Indeks soal tidak valid atau data soal tidak ditemukan: ${index}`);
+          submitExam(); // Atau handle error lain
+          return;
+        }
+
+        const q = questions[index]; // Dapatkan objek soal saat ini
+
+        // Update nomor soal
         currentQuestionNumberEl.textContent = index + 1;
-        questionTextEl.textContent = q.question;
+
+        // Update teks soal MENGGUNAKAN innerHTML untuk merender format HTML (<br>, <strong>, <ul>, <li>)
+        questionTextEl.innerHTML = q.question; // Ganti dari textContent ke innerHTML
+
+        // Kosongkan kontainer opsi sebelum menambahkan yang baru
         optionsContainerEl.innerHTML = "";
+
+        // Tampilkan tag materi jika ada
         if (q.material && materialTagExamEl) {
           materialTagExamEl.textContent = q.material;
           materialTagExamEl.classList.remove("hidden");
         } else if (materialTagExamEl) {
+          // Sembunyikan jika tidak ada materi
           materialTagExamEl.classList.add("hidden");
         }
+
+        // Update progress bar
         const progressPercentage = questions.length > 0 ? ((index + 1) / questions.length) * 100 : 0;
         if (progressBarInner) progressBarInner.style.width = `${progressPercentage}%`;
+
+        // Buat dan tampilkan opsi jawaban
         q.options.forEach((option, i) => {
-          const optionId = `q${index}_option${i}`;
-          const isSelected = userAnswers[index] === i;
+          const optionId = `q${index}_option${i}`; // ID unik untuk input radio
+          const isSelected = userAnswers[index] === i; // Cek apakah opsi ini dipilih sebelumnya
+
+          // Buat div pembungkus (card) untuk setiap opsi
           const card = document.createElement("div");
-          card.classList.add("option-card", "border", "border-gray-300", "rounded-lg", "bg-white");
+          card.classList.add(
+            "option-card", // Kelas dasar dari CSS
+            "border",
+            "border-gray-300", // Styling border
+            "rounded-lg", // Sudut membulat
+            "bg-white" // Background default
+          );
+          // Tambahkan kelas jika opsi ini terpilih
           if (isSelected) {
-            card.classList.add("selected-answer", "bg-blue-100");
-            card.classList.remove("bg-white");
+            card.classList.add("selected-answer", "bg-blue-100"); // Kelas terpilih dari CSS
+            card.classList.remove("bg-white"); // Hapus background default
           }
+
+          // Buat input radio (tersembunyi oleh CSS)
           const input = document.createElement("input");
           input.type = "radio";
           input.id = optionId;
-          input.name = `question_${index}`;
-          input.value = i;
-          input.checked = isSelected;
+          input.name = `question_${index}`; // Nama grup radio (sama untuk semua opsi di soal ini)
+          input.value = i; // Nilai adalah indeks opsi
+          input.checked = isSelected; // Set status checked
+          // Tambahkan event listener untuk memanggil selectAnswer saat dipilih
           input.onchange = () => selectAnswer(index, i);
+
+          // Buat label untuk input radio (ini yang akan terlihat dan diklik)
           const label = document.createElement("label");
-          label.className = "block cursor-pointer user-select-none p-3 text-sm md:p-4 md:text-base"; // Menggabungkan gaya dari CSS ke JS
-          label.htmlFor = optionId;
-          const optionLabel = String.fromCharCode(65 + i);
-          label.textContent = `${optionLabel}. ${option}`;
+          // Menggabungkan gaya dari CSS dan Tailwind untuk label
+          label.className = "block cursor-pointer user-select-none p-3 text-sm md:p-4 md:text-base";
+          label.htmlFor = optionId; // Hubungkan label dengan input radio
+          const optionLabel = String.fromCharCode(65 + i); // Buat label huruf (A, B, C, ...)
+          label.textContent = `${optionLabel}. ${option}`; // Set teks label (misal: "A. Opsi pertama")
+
+          // Masukkan input dan label ke dalam card
           card.appendChild(input);
           card.appendChild(label);
+
+          // Masukkan card ke dalam kontainer opsi
           optionsContainerEl.appendChild(card);
         });
+
+        // Perbarui status tombol navigasi (Sebelumnya, Berikutnya, Submit)
         updateNavigationButtons();
       }
 
       /**
-       * Memperbarui status enabled/disabled dan visibility tombol navigasi ujian.
+       * Memperbarui status enabled/disabled dan visibility tombol navigasi ujian
+       * (Sebelumnya, Berikutnya, Submit) berdasarkan state saat ini.
        */
       function updateNavigationButtons() {
+        // Tombol "Sebelumnya" aktif jika bukan soal pertama
         prevButton.disabled = currentQuestionIndex === 0;
+
+        // Cek apakah soal saat ini sudah dijawab
         const isCurrentAnswered = userAnswers[currentQuestionIndex] !== null;
-        nextButton.disabled = !isCurrentAnswered;
-        submitButton.disabled = !isCurrentAnswered;
+
+        // Tombol "Berikutnya" aktif jika soal saat ini sudah dijawab DAN bukan soal terakhir
+        nextButton.disabled = !isCurrentAnswered || currentQuestionIndex === questions.length - 1;
+
+        // Tombol "Submit" aktif jika soal saat ini sudah dijawab DAN ini adalah soal terakhir
+        submitButton.disabled = !isCurrentAnswered || currentQuestionIndex !== questions.length - 1;
+
+        // Tampilkan/sembunyikan tombol "Berikutnya" dan "Submit"
         if (currentQuestionIndex === questions.length - 1) {
-          nextButton.classList.add("hidden");
-          submitButton.classList.remove("hidden");
+          // Jika di soal terakhir
+          nextButton.classList.add("hidden"); // Sembunyikan "Berikutnya"
+          submitButton.classList.remove("hidden"); // Tampilkan "Submit"
         } else {
-          nextButton.classList.remove("hidden");
-          submitButton.classList.add("hidden");
+          // Jika bukan di soal terakhir
+          nextButton.classList.remove("hidden"); // Tampilkan "Berikutnya"
+          submitButton.classList.add("hidden"); // Sembunyikan "Submit"
         }
       }
 
       /**
-       * Menyimpan jawaban pengguna dan memperbarui tampilan visual opsi.
+       * Menyimpan jawaban pengguna untuk soal tertentu dan memperbarui tampilan visual opsi.
        * @param {number} questionIndex - Indeks soal yang dijawab.
-       * @param {number} answerIndex - Indeks opsi yang dipilih.
+       * @param {number} answerIndex - Indeks opsi yang dipilih pengguna.
        */
       function selectAnswer(questionIndex, answerIndex) {
+        // Simpan jawaban pengguna ke array userAnswers
         userAnswers[questionIndex] = answerIndex;
+
+        // Dapatkan semua elemen card opsi untuk soal saat ini
         const currentOptions = optionsContainerEl.querySelectorAll(".option-card");
+
+        // Reset tampilan semua card opsi (hapus highlight biru)
         currentOptions.forEach((card) => {
           card.classList.remove("selected-answer", "bg-blue-100");
-          card.classList.add("bg-white");
+          card.classList.add("bg-white"); // Kembalikan background putih jika perlu
         });
-        const selectedCard = optionsContainerEl.querySelector(`#q${questionIndex}_option${answerIndex}`).parentElement;
+
+        // Temukan card yang sesuai dengan opsi yang baru dipilih
+        // Kita cari input radio berdasarkan ID, lalu ambil parent elementnya (card)
+        const selectedCard = optionsContainerEl.querySelector(`#q${questionIndex}_option${answerIndex}`)?.parentElement;
+
+        // Jika card ditemukan, tambahkan highlight biru
         if (selectedCard) {
           selectedCard.classList.add("selected-answer", "bg-blue-100");
-          selectedCard.classList.remove("bg-white");
+          selectedCard.classList.remove("bg-white"); // Hapus background putih
+        } else {
+          console.warn(`Card untuk #q${questionIndex}_option${answerIndex} tidak ditemukan.`);
         }
+
+        // Perbarui status tombol navigasi (misalnya, aktifkan tombol "Berikutnya")
         updateNavigationButtons();
       }
 
-      /** Pindah ke soal berikutnya. */
+      /** Pindah ke soal berikutnya jika memungkinkan. */
       function nextQuestion() {
         if (currentQuestionIndex < questions.length - 1) {
           currentQuestionIndex++;
@@ -1013,7 +1433,7 @@
         }
       }
 
-      /** Pindah ke soal sebelumnya. */
+      /** Pindah ke soal sebelumnya jika memungkinkan. */
       function previousQuestion() {
         if (currentQuestionIndex > 0) {
           currentQuestionIndex--;
@@ -1021,39 +1441,61 @@
         }
       }
 
-      /** Mengirim jawaban ujian, menghitung skor, dan menampilkan halaman hasil. */
-
+      /**
+       * Mengirim jawaban ujian, menghitung skor, menghentikan timer,
+       * dan menampilkan halaman hasil.
+       * @param {boolean} [isTimeUp=false] - Opsional, true jika submit dipicu oleh waktu habis.
+       */
       function submitExam(isTimeUp = false) {
-        // Tambahkan parameter untuk menandai jika waktu habis
-        stopTimer(); // Hentikan timer saat submit
-        timeIsUp = isTimeUp; // Set flag waktu habis
+        stopTimer(); // Selalu hentikan timer saat submit
+        timeIsUp = isTimeUp; // Set flag apakah waktu habis
+
+        // Hitung jumlah soal yang belum dijawab
         const unanswered = userAnswers.filter((ans) => ans === null).length;
-        // Hanya konfirmasi jika submit manual dan ada jawaban kosong
+
+        // Tampilkan konfirmasi HANYA jika submit dilakukan manual (bukan karena waktu habis)
+        // DAN masih ada soal yang belum dijawab.
         if (!isTimeUp && unanswered > 0) {
-          const confirmation = confirm(`Ada ${unanswered} soal yang belum terjawab. Yakin ingin mengirim?`);
+          const confirmation = confirm(`Ada ${unanswered} soal yang belum terjawab. Yakin ingin mengirim ujian?`);
           if (!confirmation) {
-            startTimer(); // Mulai lagi timer jika dibatalkan
-            return;
+            // Jika pengguna membatalkan, mulai lagi timer jika masih ada waktu
+            if (timerSeconds > 0) {
+              startTimer();
+            }
+            return; // Hentikan proses submit
           }
         }
+
+        // Lanjutkan proses perhitungan skor
         score = 0;
         let correctCount = 0;
         for (let i = 0; i < questions.length; i++) {
+          // Pastikan data soal ada sebelum membandingkan
           if (questions[i] && userAnswers[i] !== null && userAnswers[i] === questions[i].correctAnswer) {
             correctCount++;
           }
         }
+
+        // Hitung skor (persentase pembulatan)
         score = questions.length > 0 ? Math.round((correctCount / questions.length) * 100) : 0;
+
+        // Tampilkan hasil
         displayResults();
-        showPage("results-page");
+        showPage("results-page"); // Pindah ke halaman hasil
       }
 
-      /** Menampilkan halaman hasil ujian, termasuk skor, rincian jawaban, dan confetti. */
-
+      /**
+       * Menampilkan halaman hasil ujian: skor, ringkasan, rincian jawaban per soal
+       * (termasuk indikasi benar/salah, jawaban pengguna, jawaban benar, dan pembahasan),
+       * serta memicu animasi confetti.
+       */
       function displayResults() {
+        // Tampilkan skor akhir dan ringkasan
         finalScoreEl.textContent = `${score} / 100`;
         const correctCount = questions.length > 0 ? Math.round((score / 100) * questions.length) : 0;
         scoreSummaryEl.textContent = `Anda menjawab ${correctCount} dari ${questions.length} soal dengan benar.`;
+
+        // Kosongkan kontainer rincian sebelum menambahkan yang baru
         resultsDetailsContainerEl.innerHTML = "";
 
         // Tampilkan pesan jika waktu habis
@@ -1063,135 +1505,222 @@
           timeUpInfoEl.classList.add("hidden");
         }
 
+        // Iterasi melalui setiap soal untuk menampilkan rinciannya
         questions.forEach((q, index) => {
-          /* ... (render rincian hasil) ... */
+          // Lewati jika data soal tidak valid (seharusnya tidak terjadi jika validasi benar)
           if (!q) return;
+
+          // Buat div utama untuk rincian soal ini
           const resultDiv = document.createElement("div");
           resultDiv.classList.add("p-4", "md:p-5", "bg-white", "rounded-lg", "border", "border-gray-200", "shadow-sm");
+
+          // Tambahkan tag materi jika ada
           if (q.material) {
             const materialTag = document.createElement("span");
-            materialTag.className = "material-tag";
+            materialTag.className = "material-tag"; // Gunakan kelas CSS yang sudah ada
             materialTag.textContent = q.material;
             resultDiv.appendChild(materialTag);
           }
-          const questionP = document.createElement("p");
+
+          // Tampilkan teks pertanyaan (gunakan innerHTML lagi untuk hasil)
+          const questionP = document.createElement("div"); // Ubah ke div untuk innerHTML
+          // Gunakan kelas CSS yang ditambahkan untuk styling list dan paragraf
           questionP.classList.add("text-base", "md:text-lg", "font-medium", "text-gray-800", "mb-4", "mt-1");
-          questionP.textContent = `${index + 1}. ${q.question}`;
+          questionP.innerHTML = `${index + 1}. ${q.question}`; // Gunakan innerHTML
           resultDiv.appendChild(questionP);
+
+          // Buat kontainer untuk opsi jawaban
           const optionsDiv = document.createElement("div");
-          optionsDiv.classList.add("space-y-2", "md:space-y-3");
+          optionsDiv.classList.add("space-y-2", "md:space-y-3"); // Beri jarak antar opsi
+
+          // Iterasi melalui setiap opsi jawaban
           q.options.forEach((option, i) => {
             const optionCard = document.createElement("div");
+            // Styling dasar card opsi di hasil
             optionCard.className = "p-2 text-sm md:p-3 md:text-base rounded-md border";
-            const isCorrectAnswer = i === q.correctAnswer;
-            const isUserChoice = userAnswers[index] === i;
-            const optionLabel = String.fromCharCode(65 + i);
-            optionCard.textContent = `${optionLabel}. ${option}`;
-            const originalTextContent = optionCard.textContent;
-            let statusText = "";
+
+            const isCorrectAnswer = i === q.correctAnswer; // Apakah ini jawaban yang benar?
+            const isUserChoice = userAnswers[index] === i; // Apakah ini yang dipilih pengguna?
+            const optionLabel = String.fromCharCode(65 + i); // Label huruf (A, B, C...)
+            const optionTextContent = `${optionLabel}. ${option}`; // Teks opsi dasar
+
+            optionCard.textContent = optionTextContent; // Set teks awal
+
+            let statusText = ""; // Teks status (misal: Jawaban Benar)
+            let statusSpanClass = "font-semibold"; // Kelas default untuk span status
+
+            // Tentukan gaya dan teks status berdasarkan kondisi
             if (isCorrectAnswer) {
-              optionCard.classList.add("correct-answer-style");
+              optionCard.classList.add("correct-answer-style"); // Gaya jawaban benar
               statusText = "(Jawaban Benar)";
-              if (isUserChoice) statusText = "(Jawaban Anda Benar)";
+              if (isUserChoice) {
+                statusText = "(Jawaban Anda Benar)"; // Jika pengguna memilih yang benar
+              }
             } else if (isUserChoice) {
-              optionCard.classList.add("incorrect-answer-style");
+              optionCard.classList.add("incorrect-answer-style"); // Gaya jawaban salah yang dipilih
               statusText = "(Jawaban Anda)";
             } else {
+              // Opsi lain yang tidak dipilih dan tidak benar
               optionCard.classList.add("bg-gray-100", "border-gray-200", "text-gray-600");
             }
+
+            // Tambahkan teks status jika ada
             if (statusText) {
-              optionCard.textContent = originalTextContent + " ";
+              optionCard.textContent = optionTextContent + " "; // Tambah spasi setelah teks opsi
               const span = document.createElement("span");
-              span.className = "font-semibold";
+              span.className = statusSpanClass;
               span.textContent = statusText;
-              optionCard.appendChild(span);
+              optionCard.appendChild(span); // Tambahkan span status
             }
-            optionsDiv.appendChild(optionCard);
+
+            optionsDiv.appendChild(optionCard); // Tambahkan card opsi ke kontainer opsi
           });
-          resultDiv.appendChild(optionsDiv);
+
+          resultDiv.appendChild(optionsDiv); // Tambahkan kontainer opsi ke div hasil
+
+          // Tampilkan pembahasan jika ada dan tidak kosong
           if (q.explanation && q.explanation.trim() !== "") {
             const explanationDiv = document.createElement("div");
-            explanationDiv.classList.add("explanation-box");
+            explanationDiv.classList.add("explanation-box"); // Gunakan kelas CSS yang sudah ada
+
             const explanationTitle = document.createElement("strong");
             explanationTitle.textContent = "Pembahasan: ";
-            explanationTitle.classList.add("text-gray-800");
+            explanationTitle.classList.add("text-gray-800"); // Sedikit penekanan pada judul
+
             const explanationText = document.createElement("span");
-            explanationText.textContent = q.explanation;
+            explanationText.textContent = q.explanation; // Teks pembahasan
+
             explanationDiv.appendChild(explanationTitle);
             explanationDiv.appendChild(explanationText);
-            resultDiv.appendChild(explanationDiv);
+            resultDiv.appendChild(explanationDiv); // Tambahkan kotak pembahasan
           }
+
+          // Tambahkan div hasil soal ini ke kontainer utama rincian
           resultsDetailsContainerEl.appendChild(resultDiv);
         });
+
+        // Picu animasi confetti setelah semua hasil ditampilkan
         triggerConfetti();
       }
 
-      /** Memulai animasi confetti. */
+      /** Memulai animasi confetti menggunakan library canvas-confetti. */
       function triggerConfetti() {
-        myConfetti({ particleCount: 150, spread: 100, origin: { y: 0.6 } });
-        myConfetti({ particleCount: 50, angle: 60, spread: 55, origin: { x: 0 } });
-        myConfetti({ particleCount: 50, angle: 120, spread: 55, origin: { x: 1 } });
+        // Pastikan myConfetti sudah diinisialisasi
+        if (typeof myConfetti === "function") {
+          // Tembakan utama dari tengah atas
+          myConfetti({
+            particleCount: 150, // Jumlah partikel lebih banyak
+            spread: 100, // Sebaran lebih lebar
+            origin: { y: 0.6 }, // Mulai sedikit di bawah tengah layar
+          });
+          // Tembakan dari sisi kiri
+          myConfetti({
+            particleCount: 50,
+            angle: 60, // Arah ke kanan atas
+            spread: 55,
+            origin: { x: 0 }, // Mulai dari tepi kiri
+          });
+          // Tembakan dari sisi kanan
+          myConfetti({
+            particleCount: 50,
+            angle: 120, // Arah ke kiri atas
+            spread: 55,
+            origin: { x: 1 }, // Mulai dari tepi kanan
+          });
+        } else {
+          console.warn("Fungsi confetti tidak ditemukan atau belum siap.");
+        }
       }
 
-      /** Mengatur ulang aplikasi untuk memulai ujian baru dari halaman landing. */
+      /**
+       * Mengatur ulang aplikasi ke kondisi awal (halaman landing)
+       * untuk memulai ujian baru. Menghentikan timer dan membersihkan state.
+       */
       function restartExam() {
-        stopTimer(); // Hentikan timer saat restart
-        questions = [];
-        resetUploadState();
+        stopTimer(); // Hentikan timer jika sedang berjalan
+        questions = []; // Kosongkan array soal
+        userAnswers = []; // Kosongkan jawaban pengguna
+        currentQuestionIndex = 0; // Reset indeks soal
+        score = 0; // Reset skor
+        totalExamTimeSeconds = 0; // Reset total waktu
+        timeIsUp = false; // Reset flag waktu habis
+
+        resetUploadState(); // Reset input file dan status di landing page
+
+        // Reset UI elemen di halaman ujian dan hasil jika perlu
         if (progressBarInner) progressBarInner.style.width = "0%";
         if (materialTagExamEl) materialTagExamEl.classList.add("hidden");
-        if (timerDisplayEl) timerDisplayEl.classList.add("hidden"); // Sembunyikan timer
-        showPage("landing-page");
+        if (timerDisplayEl) timerDisplayEl.classList.add("hidden");
+        if (timeLeftEl) timeLeftEl.textContent = "--:--";
+        if (timeUpInfoEl) timeUpInfoEl.classList.add("hidden");
+        if (resultsDetailsContainerEl) resultsDetailsContainerEl.innerHTML = ""; // Kosongkan rincian hasil
+
+        showPage("landing-page"); // Kembali ke halaman landing
       }
 
       // --- Fungsi Timer ---
 
-      /** Memulai timer ujian. */
+      /** Memulai timer ujian berdasarkan `totalExamTimeSeconds`. */
       function startTimer() {
-        stopTimer(); // Hentikan timer sebelumnya jika ada
+        stopTimer(); // Hentikan timer sebelumnya jika ada untuk mencegah duplikasi
         timerSeconds = totalExamTimeSeconds; // Set waktu awal dari total yang dihitung
+
+        // Jangan mulai timer jika waktu tidak valid (0 atau negatif)
         if (timerSeconds <= 0) {
           console.warn("Total waktu ujian 0 atau negatif, timer tidak dimulai.");
-          if (timerDisplayEl) timerDisplayEl.classList.add("hidden");
-          return; // Jangan mulai timer jika waktu tidak valid
+          if (timerDisplayEl) timerDisplayEl.classList.add("hidden"); // Pastikan display timer tersembunyi
+          return;
         }
 
-        if (timerDisplayEl) timerDisplayEl.classList.remove("hidden"); // Tampilkan elemen timer
-        updateTimerDisplay(); // Tampilkan waktu awal
+        // Tampilkan elemen timer jika waktu valid
+        if (timerDisplayEl) timerDisplayEl.classList.remove("hidden");
+        updateTimerDisplay(); // Tampilkan waktu awal (MM:SS)
 
+        // Mulai interval yang berjalan setiap 1 detik (1000 ms)
         timerInterval = setInterval(() => {
-          timerSeconds--; // Kurangi waktu
-          updateTimerDisplay(); // Update tampilan
+          timerSeconds--; // Kurangi sisa waktu
+          updateTimerDisplay(); // Perbarui tampilan timer
 
+          // Cek jika waktu habis
           if (timerSeconds <= 0) {
             console.log("Waktu habis!");
             stopTimer(); // Hentikan interval
-            alert("Waktu pengerjaan telah habis!"); // Beri notifikasi (bisa diganti modal)
-            submitExam(true); // Submit otomatis, tandai waktu habis
+            // Beri notifikasi kepada pengguna (alert sederhana, bisa diganti modal)
+            alert("Waktu pengerjaan telah habis! Ujian akan otomatis dikirim.");
+            submitExam(true); // Submit otomatis, tandai bahwa waktu habis
           }
-        }, 1000); // Jalankan setiap 1 detik
+        }, 1000);
       }
 
-      /** Menghentikan timer ujian. */
+      /** Menghentikan interval timer ujian. */
       function stopTimer() {
-        clearInterval(timerInterval); // Hapus interval
-        timerInterval = null; // Reset ID interval
+        clearInterval(timerInterval); // Hapus interval yang tersimpan
+        timerInterval = null; // Reset variabel ID interval
       }
 
-      /** Memperbarui tampilan sisa waktu. */
+      /** Memperbarui tampilan sisa waktu pada elemen #time-left dalam format MM:SS. */
       function updateTimerDisplay() {
+        // Pastikan elemen display ada
         if (!timeLeftEl || !timerDisplayEl) return;
 
+        // Hitung menit dan detik dari total detik tersisa
         const minutes = Math.floor(timerSeconds / 60);
         const seconds = timerSeconds % 60;
-        // Format MM:SS
+
+        // Format waktu menjadi MM:SS (misal: 05:30)
         timeLeftEl.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 
-        // Tambahkan style jika waktu hampir habis (misal < 1 menit)
-        if (timerSeconds < 60) {
+        // Tambahkan/hapus kelas CSS jika waktu hampir habis (misal, kurang dari 1 menit)
+        if (timerSeconds < 60 && timerSeconds > 0) {
+          // Beri warna merah jika < 60 detik
           timerDisplayEl.classList.add("time-low");
         } else {
+          timerDisplayEl.classList.remove("time-low"); // Hapus warna merah jika >= 60 detik
+        }
+        // Jika waktu 0, pastikan tidak ada kelas 'time-low' lagi
+        if (timerSeconds <= 0) {
           timerDisplayEl.classList.remove("time-low");
+          timeLeftEl.textContent = "00:00"; // Pastikan tampil 00:00 saat habis
         }
       }
 
@@ -1199,22 +1728,26 @@
       // Listener untuk tombol di dialog error PDF
       useDummyDataButton.addEventListener("click", () => {
         console.log("Menggunakan data contoh...");
+        // Gunakan data mock sebagai fallback, panggil flattenJsonData untuk format
         questions = flattenJsonData(mockQuestions);
         calculateAndShowTotalTime(); // Hitung waktu untuk data contoh
-        hideErrorDialog();
-        proceedToOnboarding();
+        hideErrorDialog(); // Sembunyikan dialog error
+        proceedToOnboarding(); // Lanjutkan ke halaman onboarding
       });
       tryAnotherFileButton.addEventListener("click", () => {
         console.log("Memilih file lain...");
-        hideErrorDialog();
+        hideErrorDialog(); // Sembunyikan dialog, pengguna akan memilih file lagi
       });
+
       // Listener untuk tombol di dalam Modal JSON
-      triggerJsonUploadButton.addEventListener("click", () => jsonUploadInput.click()); // Trigger input file JSON
-      showAvailableJsonButton.addEventListener("click", showAvailableJsonList); // Tampilkan daftar file JSON yang tersedia
+      // Memicu klik pada input file JSON yang tersembunyi
+      triggerJsonUploadButton.addEventListener("click", () => jsonUploadInput.click());
+      // Menampilkan daftar file JSON yang tersedia (simulasi)
+      showAvailableJsonButton.addEventListener("click", showAvailableJsonList);
 
       // --- Inisialisasi Aplikasi ---
       // Tampilkan halaman landing saat pertama kali dimuat
-      showPage("landing-page");
+      showPage("landing-page"); // Dikembalikan ke pemanggilan langsung
     </script>
   </body>
 </html>
